@@ -5,4 +5,20 @@
     <string name="gesundheit">Gesundheit</string>
     <string name="aerzteverzeichnis">Ärzteverzeichnis</string>
     <string name="aerztefinder">Ärztefinder</string>
+    <string name="ernaehrung">Ernährung</string>
+    <string name="restaurantsuche">Restaurantsuche</string>
+    <string name="rezepte">Rezepte</string>
+    <string name="diaeten">Diäten</string>
+    <string name="trinkerinnerung">Trinkerinnerung</string>
+    <string name="bmirechner">BMI-Rechner</string>
+    <string name="kfarechner">KFA-Rechner</string>
+    <string name="sport">Sport</string>
+    <string name="uebungen">Übungen</string>
+    <string name="trainingsplaene">Trainingsoläne</string>
+    <string name="sportstaettensuche">Sportstättensuche</string>
+    <string name="schrittzaehler">Schrittzähler</string>
+    <string name="wettbewerb">Wettbewerb</string>
+    <string name="bestenliste">Bestenliste</string>
+    <string name="notruf">Notruf</string>
+    <string name="notrufe">Notrufe</string>
 </resources>

@@ -30,11 +30,36 @@ public class MainActivity extends AppCompatActivity {
                         new SectionDrawerItem().withName(R.string.neuigkeiten),
                         new PrimaryDrawerItem().withName(R.string.neuigkeiten)
                                 .withIcon(GoogleMaterial.Icon.gmd_info_outline),
+
                         new SectionDrawerItem().withName(R.string.gesundheit),
                         new PrimaryDrawerItem().withName(R.string.aerzteverzeichnis)
                                 .withIcon(GoogleMaterial.Icon.gmd_hospital),
                         new PrimaryDrawerItem().withName(R.string.aerztefinder)
-                                .withIcon(GoogleMaterial.Icon.gmd_hospital)
+                                .withIcon(GoogleMaterial.Icon.gmd_hospital),
+
+                        new SectionDrawerItem().withName(R.string.ernaehrung),
+                        new PrimaryDrawerItem().withName(R.string.restaurantsuche)
+                                .withIcon(GoogleMaterial.Icon.gmd_local_dining),
+                        new PrimaryDrawerItem().withName(R.string.rezepte)
+                                .withIcon(GoogleMaterial.Icon.gmd_local_dining),
+                        new PrimaryDrawerItem().withName(R.string.diaeten)
+                                .withIcon(GoogleMaterial.Icon.gmd_local_dining),
+                        new PrimaryDrawerItem().withName(R.string.trinkerinnerung)
+                                .withIcon(GoogleMaterial.Icon.gmd_local_drink),
+                        new PrimaryDrawerItem().withName(R.string.bmirechner)
+                                .withIcon(GoogleMaterial.Icon.gmd_local_dining),
+                        new PrimaryDrawerItem().withName(R.string.kfarechner)
+                                .withIcon(GoogleMaterial.Icon.gmd_local_dining),
+
+                        new SectionDrawerItem().withName(R.string.sport),
+                        new PrimaryDrawerItem().withName(R.string.uebungen)
+                                .withIcon(GoogleMaterial.Icon.gmd_run),
+                        new PrimaryDrawerItem().withName(R.string.trainingsplaene)
+                                .withIcon(GoogleMaterial.Icon.gmd_run),
+                        new PrimaryDrawerItem().withName(R.string.sportstaettensuche)
+                                .withIcon(GoogleMaterial.Icon.gmd_run),
+                        new PrimaryDrawerItem().withName(R.string.schrittzaehler)
+                                .withIcon(GoogleMaterial.Icon.gmd_run)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
