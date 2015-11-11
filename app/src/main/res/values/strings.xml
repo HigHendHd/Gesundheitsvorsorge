@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">GV-App Android</string>
     <string name="action_settings">Settings</string>
+    <string name="neuigkeiten">Neuigkeiten</string>
+    <string name="gesundheit">Gesundheit</string>
+    <string name="aerzteverzeichnis">Ärzteverzeichnis</string>
+    <string name="aerztefinder">Ärztefinder</string>
 </resources>
