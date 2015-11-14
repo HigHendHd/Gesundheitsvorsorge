@@ -17,6 +17,7 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
+import gvapp.diplomprojekt.at.gv_appandroid.DesignKlassen.ApplyColor;
 import gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten.NeuigkeitenListe;
 
 public class MainActivity extends AppCompatActivity {

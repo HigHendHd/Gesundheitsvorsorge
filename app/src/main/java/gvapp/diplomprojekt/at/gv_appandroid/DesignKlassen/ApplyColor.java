@@ -1,11 +1,14 @@
-package gvapp.diplomprojekt.at.gv_appandroid;
+package gvapp.diplomprojekt.at.gv_appandroid.DesignKlassen;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
 import com.mikepenz.materialdrawer.Drawer;
+
+import gvapp.diplomprojekt.at.gv_appandroid.R;
 
 /**
  * Created by Dennis on 14.11.2015.
@@ -13,9 +16,9 @@ import com.mikepenz.materialdrawer.Drawer;
 public class ApplyColor {
 
     public static void ApplyColorNews(Drawer result, Context ctx, int title) {
-        ((AppCompatActivity) ctx).getSupportActionBar().setTitle(ctx.getResources().getString(title));
-        ((AppCompatActivity) ctx).getSupportActionBar().setBackgroundDrawable
-                (new ColorDrawable(ContextCompat.getColor(ctx, R.color.Neuigkeiten500)));
+        ActionBar tb = ((AppCompatActivity) ctx).getSupportActionBar();
+        tb.setTitle(ctx.getResources().getString(title));
+        tb.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(ctx, R.color.Neuigkeiten500)));
         result.setStatusBarColor(ContextCompat.getColor(ctx, R.color.Neuigkeiten700));
     }
 }

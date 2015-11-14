@@ -1,4 +1,4 @@
-package gvapp.diplomprojekt.at.gv_appandroid;
+package gvapp.diplomprojekt.at.gv_appandroid.DesignKlassen;
 
 import android.content.Context;
 import android.content.res.TypedArray;

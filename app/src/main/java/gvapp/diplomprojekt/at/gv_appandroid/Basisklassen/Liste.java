@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import gvapp.diplomprojekt.at.gv_appandroid.DividerItemDecoration;
+import gvapp.diplomprojekt.at.gv_appandroid.DesignKlassen.DividerItemDecoration;
 import gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten.NeuigkeitenAdapter;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 

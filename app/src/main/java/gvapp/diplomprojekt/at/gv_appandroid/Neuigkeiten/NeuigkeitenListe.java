@@ -22,7 +22,9 @@ public class NeuigkeitenListe extends Liste {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = super.onCreateView(inflater, container, savedInstanceState);
+
         super.setmAdapter(new NeuigkeitenAdapter(new String[10]));
+
         return v;
     }
 }
