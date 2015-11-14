@@ -21,7 +21,4 @@
     <string name="bestenliste">Bestenliste</string>
     <string name="notruf">Notruf</string>
     <string name="notrufe">Notrufe</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
