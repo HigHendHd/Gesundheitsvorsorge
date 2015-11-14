@@ -2,6 +2,7 @@ package gvapp.diplomprojekt.at.gv_appandroid;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        final Context ctx = this;
+
         //Standardäßig die Neuigkeiten anzeigen
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         final Drawer result = new DrawerBuilder()
                 .withActivity(this)
                 .withToolbar(toolbar)
+                .withTranslucentStatusBar(true)
                 .addDrawerItems(
                         new SectionDrawerItem().withName(R.string.neuigkeiten),
                         new PrimaryDrawerItem().withName(R.string.neuigkeiten) //pos: 1
@@ -81,27 +85,29 @@ public class MainActivity extends AppCompatActivity {
                         new PrimaryDrawerItem().withName(R.string.notrufe) //pos: 20
                                 .withIcon(GoogleMaterial.Icon.gmd_phone_in_talk)
                 )
-                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-                    @Override
-                    public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-                        // do something with the clicked item :D
-
-                        switch (position) {
-                            case 1:
-                                FragmentManager fragmentManager = getFragmentManager();
-                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-                                NeuigkeitenListe fragment = new NeuigkeitenListe();
-                                fragmentTransaction.add(R.id.fragment_container, fragment);
-                                fragmentTransaction.commit();
-                        }
-
-
-                        return false;
-                    }
-                })
-                .withSelectedItem(1)
                 .build();
+
+        result.setOnDrawerItemClickListener((new Drawer.OnDrawerItemClickListener() {
+            @Override
+            public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+                // do something with the clicked item :D
+
+                switch (position) {
+                    case 1:
+                        FragmentManager fragmentManager = getFragmentManager();
+                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                        NeuigkeitenListe fragment = new NeuigkeitenListe();
+                        ApplyColor.ApplyColorNews(result, ctx, R.string.neuigkeiten);
+                        fragmentTransaction.add(R.id.fragment_container, fragment);
+                        fragmentTransaction.commit();
+                }
+
+                return false;
+            }
+        }));
+
+        result.setSelection(2, true);
 
         //disable scrollbar :D it's ugly
         result.getRecyclerView().setVerticalScrollBarEnabled(false);

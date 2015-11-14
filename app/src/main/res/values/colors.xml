@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2196f3</color>
-    <color name="colorPrimaryDark">#1976d2</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="Neuigkeiten500">#2196f3</color>
+    <color name="Neuigkeiten700">#1976d2</color>
+    <color name="NeuigkeitenA200">#FF4081</color>
+
+    <color name="Gesundheit500">#e91e63</color>
+    <color name="Gesundheit700">#c2185b</color>
 </resources>

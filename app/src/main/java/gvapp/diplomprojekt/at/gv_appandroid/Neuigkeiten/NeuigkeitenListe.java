@@ -3,7 +3,6 @@ package gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -26,14 +25,11 @@ public class NeuigkeitenListe extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_liste, container, false);
-
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.neuigkeiten);
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
 
