@@ -23,6 +23,7 @@ import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.RestaurantLis
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.RezepteListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.AerzteListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten.NeuigkeitenListe;
+import gvapp.diplomprojekt.at.gv_appandroid.Notrufe.NotrufListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Sport.Sportstaetten.SportstaettenListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Sport.Trainingsplaene.TrainingsplanListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Sport.Uebungen.UebungsListe;
@@ -84,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
                         new SectionDrawerItem().withName(R.string.notruf),
                         new PrimaryDrawerItem().withName(R.string.notrufe) //pos: 20
                                 .withIcon(GoogleMaterial.Icon.gmd_phone_in_talk)
+                                .withSelectedIconColorRes(R.color.Notruf500)
+                                .withSelectedTextColorRes(R.color.Notruf700)
                 )
                 .build();
 
@@ -92,9 +95,10 @@ public class MainActivity extends AppCompatActivity {
             public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                 // do something with the clicked item :D
 
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
                 if (position == 1) {
-                    FragmentManager fragmentManager = getFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     NeuigkeitenListe fragment = new NeuigkeitenListe();
                     ApplyColor.ApplyColorNews(result, ctx, R.string.neuigkeiten);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
@@ -102,8 +106,6 @@ public class MainActivity extends AppCompatActivity {
 
                     return false;
                 } else if (position == 3) {
-                    FragmentManager fragmentManager = getFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     AerzteListe fragment = new AerzteListe();
                     ApplyColor.ApplyColorGesundheit(result, ctx, R.string.aerzte);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
@@ -111,17 +113,13 @@ public class MainActivity extends AppCompatActivity {
 
                     return false;
                 } else if (position == 6) {
-                    FragmentManager fragmentManager = getFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     RestaurantListe fragment = new RestaurantListe();
                     ApplyColor.ApplyColorErnaehrung(result, ctx, R.string.restaurants);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
                     fragmentTransaction.commit();
 
                     return false;
-                } else if (position == 8) {
-                    FragmentManager fragmentManager = getFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                } else if (position == 7) {
                     RezepteListe fragment = new RezepteListe();
                     ApplyColor.ApplyColorErnaehrung(result, ctx, R.string.rezepte);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
@@ -129,8 +127,6 @@ public class MainActivity extends AppCompatActivity {
 
                     return false;
                 } else if (position == 8) {
-                    FragmentManager fragmentManager = getFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     DiaetenListe fragment = new DiaetenListe();
                     ApplyColor.ApplyColorErnaehrung(result, ctx, R.string.diaeten);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
@@ -138,8 +134,6 @@ public class MainActivity extends AppCompatActivity {
 
                     return false;
                 } else if (position == 13) {
-                    FragmentManager fragmentManager = getFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     UebungsListe fragment = new UebungsListe();
                     ApplyColor.ApplyColorSport(result, ctx, R.string.uebungen);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
@@ -147,8 +141,6 @@ public class MainActivity extends AppCompatActivity {
 
                     return false;
                 } else if (position == 14) {
-                    FragmentManager fragmentManager = getFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     TrainingsplanListe fragment = new TrainingsplanListe();
                     ApplyColor.ApplyColorSport(result, ctx, R.string.trainingsplaene);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
@@ -156,10 +148,15 @@ public class MainActivity extends AppCompatActivity {
 
                     return false;
                 } else if (position == 15) {
-                    FragmentManager fragmentManager = getFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     SportstaettenListe fragment = new SportstaettenListe();
                     ApplyColor.ApplyColorSport(result, ctx, R.string.sportstaetten);
+                    fragmentTransaction.replace(R.id.fragment_container, fragment);
+                    fragmentTransaction.commit();
+
+                    return false;
+                } else if (position == 20) {
+                    NotrufListe fragment = new NotrufListe();
+                    ApplyColor.ApplyColorNotruf(result, ctx, R.string.notrufe);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
                     fragmentTransaction.commit();
 
@@ -170,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }));
 
-        result.setSelection(2, true);
+        result.setSelection(1, true);
 
         //disable scrollbar :D it's ugly
         result.getRecyclerView().setVerticalScrollBarEnabled(false);

@@ -20,10 +20,6 @@ public class ListenAdapter extends RecyclerView.Adapter<ListenAdapter.ViewHolder
         mDataset = myDataset;
     }
 
-    public ListenAdapter() {
-
-    }
-
     // Create new views (invoked by the layout manager)
     @Override
     public ListenAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,

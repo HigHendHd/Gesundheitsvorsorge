@@ -39,6 +39,16 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppThemeNotruf" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/Notruf500</item>
+        <item name="colorPrimaryDark">@color/Notruf700</item>
+        <item name="colorAccent">@color/NeuigkeitenA200</item>
+        <item name="material_drawer_selected_text">@color/Notruf500</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <style name="AppThemeNeuigkeiten.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

@@ -12,4 +12,7 @@
 
     <color name="Sport500">#9c27b0</color>
     <color name="Sport700">#7b1fa2</color>
+
+    <color name="Notruf500">#f44336</color>
+    <color name="Notruf700">#d32f2f</color>
 </resources>
