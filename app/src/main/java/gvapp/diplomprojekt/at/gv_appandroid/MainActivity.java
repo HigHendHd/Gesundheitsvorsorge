@@ -18,6 +18,7 @@ import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 import gvapp.diplomprojekt.at.gv_appandroid.DesignKlassen.ApplyColor;
+import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.AerzteListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten.NeuigkeitenListe;
 
 public class MainActivity extends AppCompatActivity {
@@ -85,15 +86,26 @@ public class MainActivity extends AppCompatActivity {
             public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                 // do something with the clicked item :D
 
-                switch (position) {
-                    case 1:
-                        FragmentManager fragmentManager = getFragmentManager();
-                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                if (position == 1) {
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    NeuigkeitenListe fragmentNews = new NeuigkeitenListe();
+                    ApplyColor.ApplyColorNews(result, ctx, R.string.neuigkeiten);
+                    fragmentTransaction.replace(R.id.fragment_container, fragmentNews);
+                    fragmentTransaction.commit();
 
-                        NeuigkeitenListe fragment = new NeuigkeitenListe();
-                        ApplyColor.ApplyColorNews(result, ctx, R.string.neuigkeiten);
-                        fragmentTransaction.replace(R.id.fragment_container, fragment);
-                        fragmentTransaction.commit();
+                    return false;
+
+                } else if (position == 3) {
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    AerzteListe fragmentAerzte = new AerzteListe();
+                    ApplyColor.ApplyColorGesundheit(result, ctx, R.string.aerzte);
+                    fragmentTransaction.replace(R.id.fragment_container, fragmentAerzte);
+                    fragmentTransaction.commit();
+
+                    return false;
+
                 }
 
                 return false;

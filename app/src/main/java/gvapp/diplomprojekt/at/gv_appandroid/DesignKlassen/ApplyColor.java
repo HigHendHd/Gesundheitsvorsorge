@@ -20,5 +20,14 @@ public class ApplyColor {
         tb.setTitle(ctx.getResources().getString(title));
         tb.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(ctx, R.color.Neuigkeiten500)));
         result.setStatusBarColor(ContextCompat.getColor(ctx, R.color.Neuigkeiten700));
+        ctx.setTheme(R.style.AppThemeNeuigkeiten);
+    }
+
+    public static void ApplyColorGesundheit(Drawer result, Context ctx, int title) {
+        ActionBar tb = ((AppCompatActivity) ctx).getSupportActionBar();
+        tb.setTitle(ctx.getResources().getString(title));
+        tb.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(ctx, R.color.Gesundheit500)));
+        result.setStatusBarColor(ContextCompat.getColor(ctx, R.color.Gesundheit700));
+        ctx.setTheme(R.style.AppThemeGesundheit);
     }
 }

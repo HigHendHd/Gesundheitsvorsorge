@@ -1,14 +1,21 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppThemeNeuigkeiten" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/Neuigkeiten500</item>
         <item name="colorPrimaryDark">@color/Neuigkeiten700</item>
         <item name="colorAccent">@color/NeuigkeitenA200</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
+    <style name="AppThemeGesundheit" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/Gesundheit500</item>
+        <item name="colorPrimaryDark">@color/Gesundheit700</item>
+        <item name="colorAccent">@color/NeuigkeitenA200</item>
+    </style>
+
+    <style name="AppThemeNeuigkeiten.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
