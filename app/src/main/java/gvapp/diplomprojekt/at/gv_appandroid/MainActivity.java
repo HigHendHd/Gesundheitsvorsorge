@@ -28,43 +28,53 @@ public class MainActivity extends AppCompatActivity {
                 .withToolbar(toolbar)
                 .addDrawerItems(
                         new SectionDrawerItem().withName(R.string.neuigkeiten),
-                        new PrimaryDrawerItem().withName(R.string.neuigkeiten)
+                        new PrimaryDrawerItem().withName(R.string.neuigkeiten) //pos: 1
                                 .withIcon(GoogleMaterial.Icon.gmd_info_outline),
 
                         new SectionDrawerItem().withName(R.string.gesundheit),
-                        new PrimaryDrawerItem().withName(R.string.aerzteverzeichnis)
+                        new PrimaryDrawerItem().withName(R.string.aerzteverzeichnis) //pos: 3
                                 .withIcon(GoogleMaterial.Icon.gmd_hospital),
-                        new PrimaryDrawerItem().withName(R.string.aerztefinder)
+                        new PrimaryDrawerItem().withName(R.string.aerztefinder) //pos: 4
                                 .withIcon(GoogleMaterial.Icon.gmd_hospital),
 
                         new SectionDrawerItem().withName(R.string.ernaehrung),
-                        new PrimaryDrawerItem().withName(R.string.restaurantsuche)
+                        new PrimaryDrawerItem().withName(R.string.restaurantsuche) //pos:6
                                 .withIcon(GoogleMaterial.Icon.gmd_local_dining),
-                        new PrimaryDrawerItem().withName(R.string.rezepte)
+                        new PrimaryDrawerItem().withName(R.string.rezepte) //pos: 7
                                 .withIcon(GoogleMaterial.Icon.gmd_local_dining),
-                        new PrimaryDrawerItem().withName(R.string.diaeten)
+                        new PrimaryDrawerItem().withName(R.string.diaeten) //pos: 8
                                 .withIcon(GoogleMaterial.Icon.gmd_local_dining),
-                        new PrimaryDrawerItem().withName(R.string.trinkerinnerung)
+                        new PrimaryDrawerItem().withName(R.string.trinkerinnerung) //pos: 9
                                 .withIcon(GoogleMaterial.Icon.gmd_local_drink),
-                        new PrimaryDrawerItem().withName(R.string.bmirechner)
+                        new PrimaryDrawerItem().withName(R.string.bmirechner) //pos: 10
                                 .withIcon(GoogleMaterial.Icon.gmd_local_dining),
-                        new PrimaryDrawerItem().withName(R.string.kfarechner)
+                        new PrimaryDrawerItem().withName(R.string.kfarechner) //pos: 11
                                 .withIcon(GoogleMaterial.Icon.gmd_local_dining),
 
                         new SectionDrawerItem().withName(R.string.sport),
-                        new PrimaryDrawerItem().withName(R.string.uebungen)
+                        new PrimaryDrawerItem().withName(R.string.uebungen) //pos: 13
                                 .withIcon(GoogleMaterial.Icon.gmd_run),
-                        new PrimaryDrawerItem().withName(R.string.trainingsplaene)
+                        new PrimaryDrawerItem().withName(R.string.trainingsplaene) //pos: 14
                                 .withIcon(GoogleMaterial.Icon.gmd_run),
-                        new PrimaryDrawerItem().withName(R.string.sportstaettensuche)
+                        new PrimaryDrawerItem().withName(R.string.sportstaettensuche) //pos: 15
                                 .withIcon(GoogleMaterial.Icon.gmd_run),
-                        new PrimaryDrawerItem().withName(R.string.schrittzaehler)
-                                .withIcon(GoogleMaterial.Icon.gmd_run)
+                        new PrimaryDrawerItem().withName(R.string.schrittzaehler) //pos: 16
+                                .withIcon(GoogleMaterial.Icon.gmd_run),
+                        new PrimaryDrawerItem().withName(R.string.wettbewerb) //pos: 17
+                                .withIcon(GoogleMaterial.Icon.gmd_run),
+                        new PrimaryDrawerItem().withName(R.string.bestenliste) //pos: 18
+                                .withIcon(GoogleMaterial.Icon.gmd_run),
+
+                        new SectionDrawerItem().withName(R.string.notruf),
+                        new PrimaryDrawerItem().withName(R.string.notrufe) //pos: 20
+                                .withIcon(GoogleMaterial.Icon.gmd_phone_in_talk)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         // do something with the clicked item :D
+
+
                         return true;
                     }
                 })
