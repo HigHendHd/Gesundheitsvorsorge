@@ -1,5 +1,7 @@
 package gvapp.diplomprojekt.at.gv_appandroid;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -14,6 +16,8 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
+import gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten.NeuigkeitenListe;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -23,7 +27,15 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Drawer result = new DrawerBuilder()
+        //Standardäßig die Neuigkeiten anzeigen
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        NeuigkeitenListe fragment = new NeuigkeitenListe();
+        fragmentTransaction.add(R.id.fragment_container, fragment);
+        fragmentTransaction.commit();
+
+        final Drawer result = new DrawerBuilder()
                 .withActivity(this)
                 .withToolbar(toolbar)
                 .addDrawerItems(
@@ -74,11 +86,25 @@ public class MainActivity extends AppCompatActivity {
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         // do something with the clicked item :D
 
+                        switch (position) {
+                            case 1:
+                                FragmentManager fragmentManager = getFragmentManager();
+                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-                        return true;
+                                NeuigkeitenListe fragment = new NeuigkeitenListe();
+                                fragmentTransaction.add(R.id.fragment_container, fragment);
+                                fragmentTransaction.commit();
+                        }
+
+
+                        return false;
                     }
                 })
+                .withSelectedItem(1)
                 .build();
+
+        //disable scrollbar :D it's ugly
+        result.getRecyclerView().setVerticalScrollBarEnabled(false);
     }
 
     @Override
