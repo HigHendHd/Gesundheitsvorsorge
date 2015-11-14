@@ -1,12 +1,11 @@
 package gvapp.diplomprojekt.at.gv_appandroid.Gesundheit;
 
-import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.Adapter;
+import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.ListenAdapter;
 
 /**
  * Created by Dennis on 14.11.2015.
  */
-public class AerzteAdapter
-        extends Adapter {
+public class AerzteAdapter extends ListenAdapter {
 
     private String[] mDataset;
 

@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/Neuigkeiten500</item>
         <item name="colorPrimaryDark">@color/Neuigkeiten700</item>
         <item name="colorAccent">@color/NeuigkeitenA200</item>
+        <item name="material_drawer_selected_text">@color/Neuigkeiten500</item>
     </style>
 
     <style name="AppThemeGesundheit" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -13,6 +14,29 @@
         <item name="colorPrimary">@color/Gesundheit500</item>
         <item name="colorPrimaryDark">@color/Gesundheit700</item>
         <item name="colorAccent">@color/NeuigkeitenA200</item>
+        <item name="material_drawer_selected_text">@color/Gesundheit500</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppThemeErnaehrung" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/Ernaehrung500</item>
+        <item name="colorPrimaryDark">@color/Ernaehrung700</item>
+        <item name="colorAccent">@color/NeuigkeitenA200</item>
+        <item name="material_drawer_selected_text">@color/Ernaehrung500</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppThemeSport" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/Sport500</item>
+        <item name="colorPrimaryDark">@color/Sport700</item>
+        <item name="colorAccent">@color/NeuigkeitenA200</item>
+        <item name="material_drawer_selected_text">@color/Sport500</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <style name="AppThemeNeuigkeiten.NoActionBar">

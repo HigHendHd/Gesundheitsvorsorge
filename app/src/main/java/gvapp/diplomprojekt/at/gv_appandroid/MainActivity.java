@@ -18,8 +18,14 @@ import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 import gvapp.diplomprojekt.at.gv_appandroid.DesignKlassen.ApplyColor;
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Diaeten.DiaetenListe;
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.RestaurantListe;
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.RezepteListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.AerzteListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten.NeuigkeitenListe;
+import gvapp.diplomprojekt.at.gv_appandroid.Sport.Sportstaetten.SportstaettenListe;
+import gvapp.diplomprojekt.at.gv_appandroid.Sport.Trainingsplaene.TrainingsplanListe;
+import gvapp.diplomprojekt.at.gv_appandroid.Sport.Uebungen.UebungsListe;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -89,23 +95,75 @@ public class MainActivity extends AppCompatActivity {
                 if (position == 1) {
                     FragmentManager fragmentManager = getFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    NeuigkeitenListe fragmentNews = new NeuigkeitenListe();
+                    NeuigkeitenListe fragment = new NeuigkeitenListe();
                     ApplyColor.ApplyColorNews(result, ctx, R.string.neuigkeiten);
-                    fragmentTransaction.replace(R.id.fragment_container, fragmentNews);
+                    fragmentTransaction.replace(R.id.fragment_container, fragment);
                     fragmentTransaction.commit();
 
                     return false;
-
                 } else if (position == 3) {
                     FragmentManager fragmentManager = getFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    AerzteListe fragmentAerzte = new AerzteListe();
+                    AerzteListe fragment = new AerzteListe();
                     ApplyColor.ApplyColorGesundheit(result, ctx, R.string.aerzte);
-                    fragmentTransaction.replace(R.id.fragment_container, fragmentAerzte);
+                    fragmentTransaction.replace(R.id.fragment_container, fragment);
                     fragmentTransaction.commit();
 
                     return false;
+                } else if (position == 6) {
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    RestaurantListe fragment = new RestaurantListe();
+                    ApplyColor.ApplyColorErnaehrung(result, ctx, R.string.restaurants);
+                    fragmentTransaction.replace(R.id.fragment_container, fragment);
+                    fragmentTransaction.commit();
 
+                    return false;
+                } else if (position == 8) {
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    RezepteListe fragment = new RezepteListe();
+                    ApplyColor.ApplyColorErnaehrung(result, ctx, R.string.rezepte);
+                    fragmentTransaction.replace(R.id.fragment_container, fragment);
+                    fragmentTransaction.commit();
+
+                    return false;
+                } else if (position == 8) {
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    DiaetenListe fragment = new DiaetenListe();
+                    ApplyColor.ApplyColorErnaehrung(result, ctx, R.string.diaeten);
+                    fragmentTransaction.replace(R.id.fragment_container, fragment);
+                    fragmentTransaction.commit();
+
+                    return false;
+                } else if (position == 13) {
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    UebungsListe fragment = new UebungsListe();
+                    ApplyColor.ApplyColorSport(result, ctx, R.string.uebungen);
+                    fragmentTransaction.replace(R.id.fragment_container, fragment);
+                    fragmentTransaction.commit();
+
+                    return false;
+                } else if (position == 14) {
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    TrainingsplanListe fragment = new TrainingsplanListe();
+                    ApplyColor.ApplyColorSport(result, ctx, R.string.trainingsplaene);
+                    fragmentTransaction.replace(R.id.fragment_container, fragment);
+                    fragmentTransaction.commit();
+
+                    return false;
+                } else if (position == 15) {
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    SportstaettenListe fragment = new SportstaettenListe();
+                    ApplyColor.ApplyColorSport(result, ctx, R.string.sportstaetten);
+                    fragmentTransaction.replace(R.id.fragment_container, fragment);
+                    fragmentTransaction.commit();
+
+                    return false;
                 }
 
                 return false;

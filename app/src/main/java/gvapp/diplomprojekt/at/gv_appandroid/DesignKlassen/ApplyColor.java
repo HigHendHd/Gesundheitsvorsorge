@@ -30,4 +30,21 @@ public class ApplyColor {
         result.setStatusBarColor(ContextCompat.getColor(ctx, R.color.Gesundheit700));
         ctx.setTheme(R.style.AppThemeGesundheit);
     }
+
+    public static void ApplyColorErnaehrung(Drawer result, Context ctx, int title) {
+        ActionBar tb = ((AppCompatActivity) ctx).getSupportActionBar();
+        tb.setTitle(ctx.getResources().getString(title));
+        tb.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(ctx, R.color.Ernaehrung500)));
+        result.setStatusBarColor(ContextCompat.getColor(ctx, R.color.Ernaehrung700));
+        ctx.setTheme(R.style.AppThemeErnaehrung);
+    }
+
+    public static void ApplyColorSport(Drawer result, Context ctx, int title) {
+        ActionBar tb = ((AppCompatActivity) ctx).getSupportActionBar();
+        tb.setTitle(ctx.getResources().getString(title));
+        tb.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(ctx, R.color.Sport500)));
+        result.setStatusBarColor(ContextCompat.getColor(ctx, R.color.Sport700));
+        ctx.setTheme(R.style.AppThemeSport);
+    }
+
 }

@@ -11,22 +11,22 @@ import gvapp.diplomprojekt.at.gv_appandroid.R;
 /**
  * Created by Dennis on 14.11.2015.
  */
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
+public class ListenAdapter extends RecyclerView.Adapter<ListenAdapter.ViewHolder> {
 
     private String[] mDataset;
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public Adapter(String[] myDataset) {
+    public ListenAdapter(String[] myDataset) {
         mDataset = myDataset;
     }
 
-    public Adapter() {
+    public ListenAdapter() {
 
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public Adapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+    public ListenAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                  int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext())

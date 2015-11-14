@@ -14,7 +14,7 @@
     <string name="kfarechner">KFA-Rechner</string>
     <string name="sport">Sport</string>
     <string name="uebungen">Übungen</string>
-    <string name="trainingsplaene">Trainingsoläne</string>
+    <string name="trainingsplaene">Trainingspläne</string>
     <string name="sportstaettensuche">Sportstättensuche</string>
     <string name="schrittzaehler">Schrittzähler</string>
     <string name="wettbewerb">Wettbewerb</string>
@@ -22,4 +22,6 @@
     <string name="notruf">Notruf</string>
     <string name="notrufe">Notrufe</string>
     <string name="aerzte">Ärzte</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="sportstaetten">Sportstätten</string>
 </resources>
