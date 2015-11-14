@@ -30,14 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
         final Context ctx = this;
 
-        //Standardäßig die Neuigkeiten anzeigen
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-        NeuigkeitenListe fragment = new NeuigkeitenListe();
-        fragmentTransaction.add(R.id.fragment_container, fragment);
-        fragmentTransaction.commit();
-
         final Drawer result = new DrawerBuilder()
                 .withActivity(this)
                 .withToolbar(toolbar)
@@ -99,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
                         NeuigkeitenListe fragment = new NeuigkeitenListe();
                         ApplyColor.ApplyColorNews(result, ctx, R.string.neuigkeiten);
-                        fragmentTransaction.add(R.id.fragment_container, fragment);
+                        fragmentTransaction.replace(R.id.fragment_container, fragment);
                         fragmentTransaction.commit();
                 }
 
