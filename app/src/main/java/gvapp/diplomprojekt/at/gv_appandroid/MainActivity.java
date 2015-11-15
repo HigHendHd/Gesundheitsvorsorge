@@ -181,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
                     return false;
                 } else if (position == 11) {
                     KfaFragment fragment = new KfaFragment();
-                    ApplyColor.ApplyColorErnaehrung(result, ctx, R.string.bmirechner);
+                    ApplyColor.ApplyColorErnaehrung(result, ctx, R.string.kfarechner);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
                     fragmentTransaction.commit();
 

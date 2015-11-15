@@ -92,6 +92,8 @@ public class KfaFragment extends Fragment {
                     tvFalte2Id.setText(R.string.bauchfalte);
                     tvFalte3Id.setText(R.string.oberschenkelfalte);
                 }
+                tvKfa.setText(berechneKfa(sbFalte1.getProgress(), sbFalte2.getProgress(), sbFalte3
+                        .getProgress(), sbAlter.getProgress()) + "");
             }
         };
 
@@ -113,6 +115,8 @@ public class KfaFragment extends Fragment {
         }
 
         double retVal = 495 / x - 450;
+
+        retVal = Math.floor(retVal * 100) / 100;
 
         return retVal;
     }
