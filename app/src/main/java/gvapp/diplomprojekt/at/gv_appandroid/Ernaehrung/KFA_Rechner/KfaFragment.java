@@ -102,7 +102,18 @@ public class KfaFragment extends Fragment {
     }
 
     private double berechneKfa(int falte1, int falte2, int falte3, int alter) {
+        double x = 0;
 
-        return 0;
+        if (weiblich) {
+            x = 1.0994921 - 0.0009929 * (falte1 + falte2 + falte3) + 0.0000023 *
+                    (falte1 + falte2 + falte3) * (falte1 + falte2 + falte3) - 0.0001392 * alter;
+        } else {
+            x = 1.1093800 - 0.0008267 * (falte1 + falte2 + falte3) + 0.0000016 *
+                    (falte1 + falte2 + falte3) * (falte1 + falte2 + falte3) - 0.0002574 * alter;
+        }
+
+        double retVal = 495 / x - 450;
+
+        return retVal;
     }
 }
