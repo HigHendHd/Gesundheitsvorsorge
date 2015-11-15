@@ -18,6 +18,7 @@ import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 import gvapp.diplomprojekt.at.gv_appandroid.DesignKlassen.ApplyColor;
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.BMI_Rechner.BmiFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Diaeten.DiaetenListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.RestaurantListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.RezepteListe;
@@ -159,6 +160,13 @@ public class MainActivity extends AppCompatActivity {
                 } else if (position == 8) {
                     DiaetenListe fragment = new DiaetenListe();
                     ApplyColor.ApplyColorErnaehrung(result, ctx, R.string.diaeten);
+                    fragmentTransaction.replace(R.id.fragment_container, fragment);
+                    fragmentTransaction.commit();
+
+                    return false;
+                } else if (position == 10) {
+                    BmiFragment fragment = new BmiFragment();
+                    ApplyColor.ApplyColorErnaehrung(result, ctx, R.string.bmirechner);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
                     fragmentTransaction.commit();
 

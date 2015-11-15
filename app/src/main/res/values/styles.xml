@@ -23,7 +23,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/Ernaehrung500</item>
         <item name="colorPrimaryDark">@color/Ernaehrung700</item>
-        <item name="colorAccent">@color/NeuigkeitenA200</item>
+        <item name="colorAccent">@color/ErnaehrungA200</item>
         <item name="material_drawer_selected_text">@color/Ernaehrung500</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
