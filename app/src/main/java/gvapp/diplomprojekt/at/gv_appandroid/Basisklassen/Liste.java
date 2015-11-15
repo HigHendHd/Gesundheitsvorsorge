@@ -14,7 +14,7 @@ import gvapp.diplomprojekt.at.gv_appandroid.R;
 /**
  * Created by Dennis on 14.11.2015.
  */
-public class Liste extends Fragment {
+public class Liste extends Fragment implements ListenAdapter.ClickListener {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -41,9 +41,8 @@ public class Liste extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        ListenEintrag le = new ListenEintrag();
-        le.addItem("Breaking News", "Sack Reis umgefallen");
-        mAdapter = new ListenAdapter(le);
+        mAdapter = new ListenAdapter(new ListenEintrag());
+        ((ListenAdapter) mAdapter).setClickListener(this);
 
         return view;
     }
@@ -52,5 +51,10 @@ public class Liste extends Fragment {
         mAdapter = adapter;
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
+    }
+
+    @Override
+    public void itemClicked(View v, int position) {
+
     }
 }

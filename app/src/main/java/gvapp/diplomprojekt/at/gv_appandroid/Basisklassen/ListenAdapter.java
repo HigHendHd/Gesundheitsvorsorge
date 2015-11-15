@@ -14,10 +14,15 @@ import gvapp.diplomprojekt.at.gv_appandroid.R;
 public class ListenAdapter extends RecyclerView.Adapter<ListenAdapter.ViewHolder> {
 
     private ListenEintrag list;
+    private ClickListener clickListener;
 
     // Provide a suitable constructor (depends on the kind of dataset)
     public ListenAdapter(ListenEintrag liste) {
         list = liste;
+    }
+
+    public void setClickListener(ClickListener clickListener) {
+        this.clickListener = clickListener;
     }
 
     // Create new views (invoked by the layout manager)
@@ -29,7 +34,7 @@ public class ListenAdapter extends RecyclerView.Adapter<ListenAdapter.ViewHolder
                 .inflate(R.layout.list_item, parent, false);
         // set the view's size, margins, paddings and layout parameters
 
-        ViewHolder vh = new ViewHolder(v);
+        ViewHolder vh = new ViewHolder(v, clickListener);
         return vh;
     }
 
@@ -49,19 +54,33 @@ public class ListenAdapter extends RecyclerView.Adapter<ListenAdapter.ViewHolder
         return list.getLenght();
     }
 
+    public interface ClickListener {
+        void itemClicked(View v, int position);
+    }
+
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         // each data item is just a string in this case
         public TextView tvTitle, tvSubtitle;
         public View view;
+        ClickListener clickListener;
 
-        public ViewHolder(View v) {
+        public ViewHolder(View v, ClickListener clkLis) {
             super(v);
             view = v;
+            clickListener = clkLis;
+            v.setOnClickListener(this);
             tvTitle = (TextView) v.findViewById(R.id.tvListItemTitle);
             tvSubtitle = (TextView) v.findViewById(R.id.tvListItemSubTitle);
+        }
+
+        @Override
+        public void onClick(View v) {
+            if (clickListener != null) {
+                clickListener.itemClicked(v, getAdapterPosition());
+            }
         }
     }
 }
