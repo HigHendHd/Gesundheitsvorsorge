@@ -24,4 +24,22 @@
     <string name="aerzte">Ärzte</string>
     <string name="restaurants">Restaurants</string>
     <string name="sportstaetten">Sportstätten</string>
+    <string name="feuerwehr">Feuerwehr</string>
+    <string name="polizei">Polizei</string>
+    <string name="rettung">Rettung</string>
+    <string name="euronotruf">Euronotruf</string>
+    <string name="bergrettung">Bergrettung</string>
+    <string name="notruffuergehoerlose">Notruf für Gehörlose</string>
+    <string name="aerztefunkdienst">Ärztefunkdienst</string>
+    <string name="orfkinderservice">ORF-Kinderservice (Rat auf Draht)</string>
+    <string name="aerzteflugambulanz">Ärzteflugambulanz</string>
+    <string name="frauenhelpline">Frauenhelpline</string>
+    <string name="frauennotruf">Frauennotruf</string>
+    <string name="telefonseelsorge">Telefonseelsorge</string>
+    <string name="gasgebrechen">Gasgebrechen</string>
+    <string name="arboe">ARBÖ</string>
+    <string name="oeamtc">ÖAMTC</string>
+    <string name="kinderundjugendanwaltdesbundes">Kinder- und Jugendanwalt des Bundes</string>
+    <string name="vergiftungsinformation">Vergiftungsinformation</string>
+    <string name="servicenummerderpolizei">Servicenummer der Polizei</string>
 </resources>

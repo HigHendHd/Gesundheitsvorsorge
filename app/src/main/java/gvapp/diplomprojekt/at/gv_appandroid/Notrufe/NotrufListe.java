@@ -21,7 +21,7 @@ public class NotrufListe extends Liste {
                              Bundle savedInstanceState) {
         View v = super.onCreateView(inflater, container, savedInstanceState);
 
-        super.setmAdapter(new NotrufAdapter(NotrufNummer.createNotrufNummern()));
+        super.setmAdapter(new NotrufAdapter(NotrufNummer.createNotrufNummern(getActivity())));
 
         return v;
     }
