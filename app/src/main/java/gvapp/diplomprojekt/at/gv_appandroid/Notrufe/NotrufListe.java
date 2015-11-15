@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.Liste;
-import gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten.NeuigkeitenAdapter;
 
 /**
  * Created by Dennis on 14.11.2015.
@@ -22,7 +21,7 @@ public class NotrufListe extends Liste {
                              Bundle savedInstanceState) {
         View v = super.onCreateView(inflater, container, savedInstanceState);
 
-        super.setmAdapter(new NeuigkeitenAdapter(new String[10]));
+        super.setmAdapter(new NotrufAdapter(NotrufNummer.createNotrufNummern()));
 
         return v;
     }

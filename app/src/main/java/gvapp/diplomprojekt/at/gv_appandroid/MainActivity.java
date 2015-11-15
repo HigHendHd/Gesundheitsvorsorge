@@ -46,41 +46,71 @@ public class MainActivity extends AppCompatActivity {
                 .addDrawerItems(
                         new SectionDrawerItem().withName(R.string.neuigkeiten),
                         new PrimaryDrawerItem().withName(R.string.neuigkeiten) //pos: 1
-                                .withIcon(GoogleMaterial.Icon.gmd_info_outline),
+                                .withIcon(GoogleMaterial.Icon.gmd_info_outline)
+                                .withSelectedTextColorRes(R.color.Neuigkeiten500)
+                                .withSelectedIconColorRes(R.color.Neuigkeiten500),
 
                         new SectionDrawerItem().withName(R.string.gesundheit),
                         new PrimaryDrawerItem().withName(R.string.aerzteverzeichnis) //pos: 3
-                                .withIcon(GoogleMaterial.Icon.gmd_hospital),
+                                .withIcon(GoogleMaterial.Icon.gmd_hospital)
+                                .withSelectedIconColorRes(R.color.Gesundheit500)
+                                .withSelectedTextColorRes(R.color.Gesundheit500),
                         new PrimaryDrawerItem().withName(R.string.aerztefinder) //pos: 4
-                                .withIcon(GoogleMaterial.Icon.gmd_hospital),
+                                .withIcon(GoogleMaterial.Icon.gmd_hospital)
+                                .withSelectedIconColorRes(R.color.Gesundheit500)
+                                .withSelectedTextColorRes(R.color.Gesundheit500),
 
                         new SectionDrawerItem().withName(R.string.ernaehrung),
                         new PrimaryDrawerItem().withName(R.string.restaurantsuche) //pos:6
-                                .withIcon(GoogleMaterial.Icon.gmd_local_dining),
+                                .withIcon(GoogleMaterial.Icon.gmd_local_dining)
+                                .withSelectedIconColorRes(R.color.Ernaehrung500)
+                                .withSelectedTextColorRes(R.color.Ernaehrung500),
                         new PrimaryDrawerItem().withName(R.string.rezepte) //pos: 7
-                                .withIcon(GoogleMaterial.Icon.gmd_local_dining),
+                                .withIcon(GoogleMaterial.Icon.gmd_local_dining)
+                                .withSelectedIconColorRes(R.color.Ernaehrung500)
+                                .withSelectedTextColorRes(R.color.Ernaehrung500),
                         new PrimaryDrawerItem().withName(R.string.diaeten) //pos: 8
-                                .withIcon(GoogleMaterial.Icon.gmd_local_dining),
+                                .withIcon(GoogleMaterial.Icon.gmd_local_dining)
+                                .withSelectedIconColorRes(R.color.Ernaehrung500)
+                                .withSelectedTextColorRes(R.color.Ernaehrung500),
                         new PrimaryDrawerItem().withName(R.string.trinkerinnerung) //pos: 9
-                                .withIcon(GoogleMaterial.Icon.gmd_local_drink),
+                                .withIcon(GoogleMaterial.Icon.gmd_local_drink)
+                                .withSelectedIconColorRes(R.color.Ernaehrung500)
+                                .withSelectedTextColorRes(R.color.Ernaehrung500),
                         new PrimaryDrawerItem().withName(R.string.bmirechner) //pos: 10
-                                .withIcon(GoogleMaterial.Icon.gmd_local_dining),
+                                .withIcon(GoogleMaterial.Icon.gmd_local_dining)
+                                .withSelectedIconColorRes(R.color.Ernaehrung500)
+                                .withSelectedTextColorRes(R.color.Ernaehrung500),
                         new PrimaryDrawerItem().withName(R.string.kfarechner) //pos: 11
-                                .withIcon(GoogleMaterial.Icon.gmd_local_dining),
+                                .withIcon(GoogleMaterial.Icon.gmd_local_dining)
+                                .withSelectedIconColorRes(R.color.Ernaehrung500)
+                                .withSelectedTextColorRes(R.color.Ernaehrung500),
 
                         new SectionDrawerItem().withName(R.string.sport),
                         new PrimaryDrawerItem().withName(R.string.uebungen) //pos: 13
-                                .withIcon(GoogleMaterial.Icon.gmd_run),
+                                .withIcon(GoogleMaterial.Icon.gmd_run)
+                                .withSelectedIconColorRes(R.color.Sport500)
+                                .withSelectedTextColorRes(R.color.Sport500),
                         new PrimaryDrawerItem().withName(R.string.trainingsplaene) //pos: 14
-                                .withIcon(GoogleMaterial.Icon.gmd_run),
+                                .withIcon(GoogleMaterial.Icon.gmd_run)
+                                .withSelectedIconColorRes(R.color.Sport500)
+                                .withSelectedTextColorRes(R.color.Sport500),
                         new PrimaryDrawerItem().withName(R.string.sportstaettensuche) //pos: 15
-                                .withIcon(GoogleMaterial.Icon.gmd_run),
+                                .withIcon(GoogleMaterial.Icon.gmd_run)
+                                .withSelectedIconColorRes(R.color.Sport500)
+                                .withSelectedTextColorRes(R.color.Sport500),
                         new PrimaryDrawerItem().withName(R.string.schrittzaehler) //pos: 16
-                                .withIcon(GoogleMaterial.Icon.gmd_run),
+                                .withIcon(GoogleMaterial.Icon.gmd_run)
+                                .withSelectedIconColorRes(R.color.Sport500)
+                                .withSelectedTextColorRes(R.color.Sport500),
                         new PrimaryDrawerItem().withName(R.string.wettbewerb) //pos: 17
-                                .withIcon(GoogleMaterial.Icon.gmd_run),
+                                .withIcon(GoogleMaterial.Icon.gmd_run)
+                                .withSelectedIconColorRes(R.color.Sport500)
+                                .withSelectedTextColorRes(R.color.Sport500),
                         new PrimaryDrawerItem().withName(R.string.bestenliste) //pos: 18
-                                .withIcon(GoogleMaterial.Icon.gmd_run),
+                                .withIcon(GoogleMaterial.Icon.gmd_run)
+                                .withSelectedIconColorRes(R.color.Sport500)
+                                .withSelectedTextColorRes(R.color.Sport500),
 
                         new SectionDrawerItem().withName(R.string.notruf),
                         new PrimaryDrawerItem().withName(R.string.notrufe) //pos: 20

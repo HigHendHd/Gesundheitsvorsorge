@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.Liste;
+import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.ListenEintrag;
 import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.AerzteAdapter;
 
 /**
@@ -22,7 +23,9 @@ public class DiaetenListe extends Liste {
                              Bundle savedInstanceState) {
         View v = super.onCreateView(inflater, container, savedInstanceState);
 
-        super.setmAdapter(new AerzteAdapter(new String[10]));
+        ListenEintrag le = new ListenEintrag();
+        le.addItem("Breaking News", "Sack Reis umgefallen");
+        super.setmAdapter(new AerzteAdapter(le));
 
         return v;
     }

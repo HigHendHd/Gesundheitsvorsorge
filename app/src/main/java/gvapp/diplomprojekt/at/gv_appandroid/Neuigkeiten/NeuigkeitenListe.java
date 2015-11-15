@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.Liste;
+import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.ListenEintrag;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,7 +24,9 @@ public class NeuigkeitenListe extends Liste {
                              Bundle savedInstanceState) {
         View v = super.onCreateView(inflater, container, savedInstanceState);
 
-        super.setmAdapter(new NeuigkeitenAdapter(new String[10]));
+        ListenEintrag le = new ListenEintrag();
+        le.addItem("Breaking News", "Sack Reis umgefallen");
+        super.setmAdapter(new NeuigkeitenAdapter(le));
 
         return v;
     }

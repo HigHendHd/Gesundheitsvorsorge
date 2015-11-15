@@ -13,11 +13,11 @@ import gvapp.diplomprojekt.at.gv_appandroid.R;
  */
 public class ListenAdapter extends RecyclerView.Adapter<ListenAdapter.ViewHolder> {
 
-    private String[] mDataset;
+    private ListenEintrag list;
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ListenAdapter(String[] myDataset) {
-        mDataset = myDataset;
+    public ListenAdapter(ListenEintrag liste) {
+        list = liste;
     }
 
     // Create new views (invoked by the layout manager)
@@ -38,12 +38,15 @@ public class ListenAdapter extends RecyclerView.Adapter<ListenAdapter.ViewHolder
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
+
+        holder.tvTitle.setText(list.getTitel(position) + "");
+        holder.tvSubtitle.setText(list.getUntertitel(position) + "");
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return mDataset.length;
+        return list.getLenght();
     }
 
     // Provide a reference to the views for each data item
@@ -51,10 +54,14 @@ public class ListenAdapter extends RecyclerView.Adapter<ListenAdapter.ViewHolder
     // you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        public TextView mTextView;
+        public TextView tvTitle, tvSubtitle;
+        public View view;
 
         public ViewHolder(View v) {
             super(v);
+            view = v;
+            tvTitle = (TextView) v.findViewById(R.id.tvListItemTitle);
+            tvSubtitle = (TextView) v.findViewById(R.id.tvListItemSubTitle);
         }
     }
 }

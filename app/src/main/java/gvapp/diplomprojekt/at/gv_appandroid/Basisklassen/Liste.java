@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import gvapp.diplomprojekt.at.gv_appandroid.DesignKlassen.DividerItemDecoration;
-import gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten.NeuigkeitenAdapter;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
 /**
@@ -42,7 +41,9 @@ public class Liste extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        mAdapter = new NeuigkeitenAdapter(new String[10]);
+        ListenEintrag le = new ListenEintrag();
+        le.addItem("Breaking News", "Sack Reis umgefallen");
+        mAdapter = new ListenAdapter(le);
 
         return view;
     }
