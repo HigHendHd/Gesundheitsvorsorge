@@ -3,7 +3,6 @@ package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.BMI_Rechner;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +25,6 @@ public class BmiFragment extends Fragment {
 
     private double calcBMI(int gewicht, int groesse) {
         double groesseInMeter = ((double) groesse) / 100;
-        Log.d("Groesse", "" + groesseInMeter);
         double bmi = gewicht / (groesseInMeter * groesseInMeter);
 
         bmi = Math.floor(bmi * 100) / 100;

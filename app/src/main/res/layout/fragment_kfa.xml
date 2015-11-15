@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="20dp"
-            android:text="@string/gewicht"
+            android:text="@string/trizezps"
             android:textSize="20sp" />
 
         <TextView
@@ -35,20 +35,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:indeterminate="false"
-        android:paddingTop="30dp"
+        android:paddingTop="20dp"
         android:progress="20" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="30dp">
+        android:paddingTop="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="20dp"
-            android:text="@string/groesse"
+            android:text="@string/bauchfalte"
             android:textSize="20sp" />
 
         <TextView
@@ -66,14 +66,45 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:indeterminate="false"
-        android:paddingTop="30dp"
+        android:paddingTop="20dp"
         android:progress="40" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="30dp">
+        android:paddingTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:text="@string/hueftfalte"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30"
+            android:textColor="@color/ErnaehrungA200"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/sbTEst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="false"
+        android:paddingTop="20dp"
+        android:progress="30" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -97,20 +128,50 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:indeterminate="false"
-        android:paddingTop="30dp"
+        android:paddingTop="20dp"
         android:progress="30" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:text="@string/geschlecht"
+        android:textSize="20sp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkedButton="@+id/rbWeiblich"
+        android:orientation="horizontal"
+        android:paddingTop="20dp">
+
+        <RadioButton
+            android:id="@+id/rbWeiblich"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:text="@string/weiblich"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/maennlich"
+            android:textSize="20sp" />
+
+    </RadioGroup>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="30dp">
+        android:paddingTop="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="20dp"
-            android:text="@string/ihrbmi"
+            android:text="@string/koerprefettanteil"
             android:textSize="20sp" />
 
         <TextView

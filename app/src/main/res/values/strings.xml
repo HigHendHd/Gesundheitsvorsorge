@@ -46,4 +46,13 @@
     <string name="groesse">Größe (cm):</string>
     <string name="alter">Alter (Jahre):</string>
     <string name="ihrbmi">Ihr BMI:</string>
+    <string name="trizezps">Trizeps (mm):</string>
+    <string name="bauchfalte">Bauchfalte (mm):</string>
+    <string name="hueftfalte">Hüftfalte (mm):</string>
+    <string name="brustfalte">Brustfalte (mm):</string>
+    <string name="oberschenkelfalte">Oberschenkelfalte (mm):</string>
+    <string name="koerprefettanteil">Körperfettanteil:</string>
+    <string name="geschlecht">Geschlecht:</string>
+    <string name="maennlich">Männlich</string>
+    <string name="weiblich">Weiblich</string>
 </resources>
