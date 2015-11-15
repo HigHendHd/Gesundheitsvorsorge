@@ -117,7 +117,7 @@
             android:id="@+id/tvBmi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="23,4"
+            android:text="26.77"
             android:textColor="@color/ErnaehrungA200"
             android:textSize="20sp" />
 

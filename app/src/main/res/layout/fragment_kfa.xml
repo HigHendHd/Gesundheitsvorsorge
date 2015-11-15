@@ -14,6 +14,7 @@
         android:paddingTop="10dp">
 
         <TextView
+            android:id="@+id/tvFalte1Identifier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="20dp"
@@ -21,22 +22,22 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/tvGewicht"
+            android:id="@+id/tvFalte1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="60"
+            android:text="10"
             android:textColor="@color/ErnaehrungA200"
             android:textSize="20sp" />
 
     </LinearLayout>
 
     <SeekBar
-        android:id="@+id/sbGewicht"
+        android:id="@+id/sbFalte1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:indeterminate="false"
         android:paddingTop="20dp"
-        android:progress="20" />
+        android:progress="10" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,6 +46,7 @@
         android:paddingTop="20dp">
 
         <TextView
+            android:id="@+id/tvFalte2Identifier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="20dp"
@@ -52,22 +54,22 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/tvGroesse"
+            android:id="@+id/tvFalte2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="160"
+            android:text="10"
             android:textColor="@color/ErnaehrungA200"
             android:textSize="20sp" />
 
     </LinearLayout>
 
     <SeekBar
-        android:id="@+id/sbGroesse"
+        android:id="@+id/sbFalte2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:indeterminate="false"
         android:paddingTop="20dp"
-        android:progress="40" />
+        android:progress="10" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -76,6 +78,7 @@
         android:paddingTop="20dp">
 
         <TextView
+            android:id="@+id/tvFalte3Identifier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="20dp"
@@ -83,22 +86,22 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/tvTest"
+            android:id="@+id/tvFalte3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="30"
+            android:text="10"
             android:textColor="@color/ErnaehrungA200"
             android:textSize="20sp" />
 
     </LinearLayout>
 
     <SeekBar
-        android:id="@+id/sbTEst"
+        android:id="@+id/sbFalte3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:indeterminate="false"
         android:paddingTop="20dp"
-        android:progress="30" />
+        android:progress="10" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -154,6 +157,7 @@
             android:textSize="20sp" />
 
         <RadioButton
+            android:id="@+id/rbMaennlich"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/maennlich"
@@ -175,10 +179,10 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/tvBmi"
+            android:id="@+id/tvKfa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="23,4"
+            android:text="13.7"
             android:textColor="@color/ErnaehrungA200"
             android:textSize="20sp" />
 
