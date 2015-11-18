@@ -220,6 +220,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }));
         //Judas is cool :)
+        //Judas ist noch cooler (y)
 
         result.setSelection(1, true);
 
