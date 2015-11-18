@@ -219,6 +219,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         }));
+        //Judas is cool :)
 
         result.setSelection(1, true);
 
