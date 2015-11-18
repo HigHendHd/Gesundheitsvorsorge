@@ -32,6 +32,9 @@ import gvapp.diplomprojekt.at.gv_appandroid.Sport.Uebungen.UebungsListe;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    //schauen wir mal ob github praktisch ist
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
