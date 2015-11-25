@@ -22,6 +22,7 @@ public class Liste extends Fragment implements ListenAdapter.ClickListener {
 
     public Liste() {
         // Required empty public constructor
+
     }
 
     @Override
