@@ -87,11 +87,11 @@ public class MainActivity extends AppCompatActivity {
                                 .withSelectedIconColorRes(R.color.Ernaehrung500)
                                 .withSelectedTextColorRes(R.color.Ernaehrung500),
                         new PrimaryDrawerItem().withName(R.string.bmirechner) //pos: 10
-                                .withIcon(GoogleMaterial.Icon.gmd_local_dining)
+                                .withIcon(GoogleMaterial.Icon.gmd_keyboard)
                                 .withSelectedIconColorRes(R.color.Ernaehrung500)
                                 .withSelectedTextColorRes(R.color.Ernaehrung500),
                         new PrimaryDrawerItem().withName(R.string.kfarechner) //pos: 11
-                                .withIcon(GoogleMaterial.Icon.gmd_local_dining)
+                                .withIcon(GoogleMaterial.Icon.gmd_keyboard)
                                 .withSelectedIconColorRes(R.color.Ernaehrung500)
                                 .withSelectedTextColorRes(R.color.Ernaehrung500),
 
@@ -109,21 +109,21 @@ public class MainActivity extends AppCompatActivity {
                                 .withSelectedIconColorRes(R.color.Sport500)
                                 .withSelectedTextColorRes(R.color.Sport500),
                         new PrimaryDrawerItem().withName(R.string.schrittzaehler) //pos: 16
-                                .withIcon(GoogleMaterial.Icon.gmd_run)
+                                .withIcon(GoogleMaterial.Icon.gmd_directions_run)
                                 .withSelectedIconColorRes(R.color.Sport500)
                                 .withSelectedTextColorRes(R.color.Sport500),
                         new PrimaryDrawerItem().withName(R.string.wettbewerb) //pos: 17
-                                .withIcon(GoogleMaterial.Icon.gmd_run)
+                                .withIcon(GoogleMaterial.Icon.gmd_assignment)
                                 .withSelectedIconColorRes(R.color.Sport500)
                                 .withSelectedTextColorRes(R.color.Sport500),
                         new PrimaryDrawerItem().withName(R.string.bestenliste) //pos: 18
-                                .withIcon(GoogleMaterial.Icon.gmd_run)
+                                .withIcon(GoogleMaterial.Icon.gmd_nature_people)
                                 .withSelectedIconColorRes(R.color.Sport500)
                                 .withSelectedTextColorRes(R.color.Sport500),
 
                         new SectionDrawerItem().withName(R.string.notruf),
                         new PrimaryDrawerItem().withName(R.string.notrufe) //pos: 20
-                                .withIcon(GoogleMaterial.Icon.gmd_phone_in_talk)
+                                .withIcon(GoogleMaterial.Icon.gmd_phone)
                                 .withSelectedIconColorRes(R.color.Notruf500)
                                 .withSelectedTextColorRes(R.color.Notruf700)
                 )
