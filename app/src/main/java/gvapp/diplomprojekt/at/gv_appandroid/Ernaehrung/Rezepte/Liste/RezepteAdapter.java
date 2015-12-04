@@ -1,4 +1,4 @@
-package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte;
+package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.Liste;
 
 import java.util.List;
 

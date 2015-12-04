@@ -1,6 +1,5 @@
-package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte;
+package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.Liste;
 
-import android.util.Log;
 import android.util.Xml;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -14,7 +13,7 @@ import java.util.List;
 /**
  * Created by Dennis on 04.12.2015.
  */
-public class RezepteParser {
+public class RezepteListenParser {
     // We don't use namespaces
     private static final String ns = null;
 
@@ -37,15 +36,10 @@ public class RezepteParser {
 
     public List parse(InputStream in) throws XmlPullParserException, IOException {
         try {
-            Log.v("Hallo", "1");
             XmlPullParser parser = Xml.newPullParser();
-            Log.v("Hallo", "2");
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
-            Log.v("Hallo", "3");
             parser.setInput(in, null);
-            Log.v("Hallo", "4");
             parser.nextTag();
-            Log.v("Hallo", "5");
             return readFeed(parser);
         } finally {
             in.close();
@@ -71,7 +65,7 @@ public class RezepteParser {
         return entries;
     }
 
-    private Rezept readRezept(XmlPullParser parser) throws XmlPullParserException, IOException {
+    private RezeptListenEintrag readRezept(XmlPullParser parser) throws XmlPullParserException, IOException {
         parser.require(XmlPullParser.START_TAG, ns, "rezept");
         String name = null;
         String bildUrl = null;
@@ -94,10 +88,10 @@ public class RezepteParser {
                 skip(parser);
             }
         }
-        Rezept rezept = new Rezept(name, "Rezept", url);
-        rezept.setBildUrl(bildUrl);
-        rezept.setId(id);
-        return rezept;
+        RezeptListenEintrag rezeptListenEintrag = new RezeptListenEintrag(name, "RezeptListenEintrag", url);
+        rezeptListenEintrag.setBildUrl(bildUrl);
+        rezeptListenEintrag.setId(id);
+        return rezeptListenEintrag;
     }
 
     // Processes name tags in the feed.

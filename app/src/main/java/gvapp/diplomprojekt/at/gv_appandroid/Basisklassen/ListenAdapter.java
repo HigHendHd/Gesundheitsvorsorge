@@ -55,6 +55,8 @@ public class ListenAdapter extends RecyclerView.Adapter<ListenAdapter.ViewHolder
         holder.tvTitle.setText(list.get(position).getLisTitel() + "");
         holder.tvSubtitle.setText(list.get(position).getLisUntertitel() + "");
         // show The Image
+
+        holder.ivThumbnail.setImageResource(0);
         if (list.get(position).getThumbnailUrl() != null) {
             new DownloadImageTask(holder.ivThumbnail)
                     .execute(list.get(position).getThumbnailUrl());

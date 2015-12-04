@@ -1,4 +1,4 @@
-package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte;
+package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.Liste;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -119,7 +119,7 @@ public class RezepteListe extends Liste {
             if (result != null) {
                 eintraege.clear();
                 try {
-                    eintraege.addAll(new RezepteParser().parse(result));
+                    eintraege.addAll(new RezepteListenParser().parse(result));
                 } catch (XmlPullParserException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
