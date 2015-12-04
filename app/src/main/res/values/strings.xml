@@ -57,4 +57,5 @@
     <string name="maennlich">Männlich</string>
     <string name="weiblich">Weiblich</string>
     <string name="keininternet">Keine Internetverbindung vorhanden.</string>
+    <string name="nochmalversuchen">Nochmal versuchen.</string>
 </resources>
