@@ -1,6 +1,7 @@
 package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.Liste;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -18,8 +19,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.Liste;
-import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.ListenEintrag;
 import gvapp.diplomprojekt.at.gv_appandroid.Daten.Constants;
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.Details.RezepteDetailAnsichtActivity;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
 /**
@@ -27,8 +28,17 @@ import gvapp.diplomprojekt.at.gv_appandroid.R;
  */
 public class RezepteListe extends Liste {
 
+    RezepteAdapter rezeptAdapter;
+
     public RezepteListe() {
         super();
+    }
+
+    @Override
+    public void itemClicked(View v, int position) {
+        Constants.rez = (RezeptListenEintrag) eintraege.get(position);
+        Intent intent = new Intent(getActivity(), RezepteDetailAnsichtActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -36,8 +46,9 @@ public class RezepteListe extends Liste {
                              Bundle savedInstanceState) {
         View v = super.onCreateView(inflater, container, savedInstanceState);
 
-        eintraege.add(new ListenEintrag("Breaking News", "Sack Reis umgefallen", null));
-        super.setmAdapter(new RezepteAdapter(eintraege));
+        rezeptAdapter = new RezepteAdapter(eintraege);
+        super.setmAdapter(rezeptAdapter);
+        rezeptAdapter.setClickListener(this);
 
         return v;
     }

@@ -1,15 +1,19 @@
 package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.Details;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import gvapp.diplomprojekt.at.gv_appandroid.Daten.Constants;
+import gvapp.diplomprojekt.at.gv_appandroid.Daten.DownloadImageTask;
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.Liste.RezeptListenEintrag;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
 public class RezepteDetailAnsichtActivity extends AppCompatActivity {
+
+    RezeptListenEintrag rezept;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,15 +22,15 @@ public class RezepteDetailAnsichtActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
 
+        rezept = Constants.rez;
+
+        ((TextView) findViewById(R.id.tvTitel)).setText(rezept.getLisTitel() + "");
+
+        if (rezept.getBildUrl() != null) {
+            new DownloadImageTask(((ImageView) findViewById(R.id.ivImage)))
+                    .execute(rezept.getBildUrl());
+        }
+    }
 }

@@ -1,5 +1,7 @@
 package gvapp.diplomprojekt.at.gv_appandroid.Notrufe;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,18 +46,18 @@ public class NotrufListe extends Liste {
         eintraege.add(new NotrufNummer().addItem(R.string.vergiftungsinformation, "01/406 43 43", getActivity()));
         eintraege.add(new NotrufNummer().addItem(R.string.servicenummerderpolizei, "059 133", getActivity()));
         eintraege.add(new NotrufNummer().addItem(R.string.hotlinefuervermisstekinder, "116000", getActivity()));
-        /*notrufNummer = NotrufNummer.createNotrufNummern(getActivity());
-        notrufAdapter = new NotrufAdapter(notrufNummer);
+
+        notrufAdapter = new NotrufAdapter(eintraege);
         super.setmAdapter(notrufAdapter);
-        notrufAdapter.setClickListener(this);*/
+        notrufAdapter.setClickListener(this);
 
         return v;
     }
 
     @Override
     public void itemClicked(View v, int position) {
-        /*Intent intent = new Intent(Intent.ACTION_DIAL);
-        intent.setData(Uri.parse("tel:" + notrufNummer.getUntertitel(position)));
-        startActivity(intent);*/
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:" + eintraege.get(position).getLisUntertitel()));
+        startActivity(intent);
     }
 }
