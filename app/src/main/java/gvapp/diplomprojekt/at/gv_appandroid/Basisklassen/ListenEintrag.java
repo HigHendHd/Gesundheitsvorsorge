@@ -1,16 +1,14 @@
 package gvapp.diplomprojekt.at.gv_appandroid.Basisklassen;
 
-import java.net.URL;
-
 /**
  * Created by Dennis on 14.11.2015.
  */
 public class ListenEintrag {
     protected String lisTitel;
     protected String lisUntertitel;
-    protected URL lisURL;
+    protected String lisURL;
 
-    public ListenEintrag(String lisTitel, String lisUntertitel, URL lisURL) {
+    public ListenEintrag(String lisTitel, String lisUntertitel, String lisURL) {
         this.lisTitel = lisTitel;
         this.lisUntertitel = lisUntertitel;
         this.lisURL = lisURL;
@@ -28,7 +26,7 @@ public class ListenEintrag {
         return lisUntertitel;
     }
 
-    public URL getLisURL() {
+    public String getLisURL() {
         return lisURL;
     }
 }

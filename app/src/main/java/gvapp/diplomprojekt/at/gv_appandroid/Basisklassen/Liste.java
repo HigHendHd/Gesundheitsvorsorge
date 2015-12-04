@@ -20,8 +20,8 @@ import gvapp.diplomprojekt.at.gv_appandroid.R;
 public class Liste extends Fragment implements ListenAdapter.ClickListener {
 
     protected List<ListenEintrag> eintraege = new ArrayList<ListenEintrag>();
+    protected RecyclerView.Adapter mAdapter;
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
     public Liste() {

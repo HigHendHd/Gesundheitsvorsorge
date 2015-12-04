@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.xmlpull.v1.XmlPullParserException;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -69,7 +71,7 @@ public class RezepteListe extends Liste {
     // Given a URL, establishes an HttpUrlConnection and retrieves
     // the web page content as a InputStream, which it returns as
     // a string.
-    private String downloadUrl(String myurl) throws IOException {
+    private InputStream downloadUrl(String myurl) throws IOException {
         InputStream is = null;
 
         try {
@@ -85,23 +87,13 @@ public class RezepteListe extends Liste {
             //Log.d(DEBUG_TAG, "The response is: " + response);
             is = conn.getInputStream();
 
-            // Convert the InputStream into a string
-            String contentAsString = readIt(is);
-            return contentAsString;
+            return is;
 
             // Makes sure that the InputStream is closed after the app is
             // finished using it.
         } finally {
-            if (is != null) {
-                is.close();
-            }
-        }
-    }
 
-    // Reads an InputStream and converts it to a String.
-    public String readIt(InputStream stream) throws IOException {
-        java.util.Scanner s = new java.util.Scanner(stream).useDelimiter("\\A");
-        return s.hasNext() ? s.next() : "";
+        }
     }
 
     // Uses AsyncTask to create a task away from the main UI thread. This task takes a
@@ -109,22 +101,34 @@ public class RezepteListe extends Liste {
     // has been established, the AsyncTask downloads the contents of the webpage as
     // an InputStream. Finally, the InputStream is converted into a string, which is
     // displayed in the UI by the AsyncTask's onPostExecute method.
-    private class DownloadRezepteTask extends AsyncTask<String, Void, String> {
+    private class DownloadRezepteTask extends AsyncTask<String, Void, InputStream> {
         @Override
-        protected String doInBackground(String... urls) {
+        protected InputStream doInBackground(String... urls) {
 
             // params comes from the execute() call: params[0] is the url.
             try {
                 return downloadUrl(urls[0]);
             } catch (IOException e) {
-                return "Unable to retrieve web page. URL may be invalid.";
+                return null;
             }
         }
 
         // onPostExecute displays the results of the AsyncTask.
         @Override
-        protected void onPostExecute(String result) {
-            Snackbar.make(getView(), result, Snackbar.LENGTH_LONG).show();
+        protected void onPostExecute(InputStream result) {
+            if (result != null) {
+                eintraege.clear();
+                try {
+                    eintraege.addAll(new RezepteParser().parse(result));
+                } catch (XmlPullParserException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                mAdapter.notifyDataSetChanged();
+            } else {
+                Snackbar.make(getView(), "Fehler", Snackbar.LENGTH_LONG).show();
+            }
         }
     }
 }
