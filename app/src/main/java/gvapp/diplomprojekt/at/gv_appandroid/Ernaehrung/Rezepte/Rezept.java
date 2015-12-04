@@ -19,6 +19,7 @@ public class Rezept extends ListenEintrag {
     }
 
     public void setBildUrl(String bildUrl) {
+        super.setThumbnailUrl(bildUrl);
         this.bildUrl = bildUrl;
     }
 

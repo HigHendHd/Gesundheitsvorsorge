@@ -1,11 +1,17 @@
 package gvapp.diplomprojekt.at.gv_appandroid.Basisklassen;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.InputStream;
 import java.util.List;
 
 import gvapp.diplomprojekt.at.gv_appandroid.R;
@@ -48,6 +54,11 @@ public class ListenAdapter extends RecyclerView.Adapter<ListenAdapter.ViewHolder
 
         holder.tvTitle.setText(list.get(position).getLisTitel() + "");
         holder.tvSubtitle.setText(list.get(position).getLisUntertitel() + "");
+        // show The Image
+        if (list.get(position).getThumbnailUrl() != null) {
+            new DownloadImageTask(holder.ivThumbnail)
+                    .execute(list.get(position).getThumbnailUrl());
+        }
     }
 
     // Return the size of your dataset (invoked by the layout manager)
@@ -67,6 +78,7 @@ public class ListenAdapter extends RecyclerView.Adapter<ListenAdapter.ViewHolder
         // each data item is just a string in this case
         public TextView tvTitle, tvSubtitle;
         public View view;
+        public ImageView ivThumbnail;
         ClickListener clickListener;
 
         public ViewHolder(View v, ClickListener clkLis) {
@@ -76,6 +88,7 @@ public class ListenAdapter extends RecyclerView.Adapter<ListenAdapter.ViewHolder
             v.setOnClickListener(this);
             tvTitle = (TextView) v.findViewById(R.id.tvListItemTitle);
             tvSubtitle = (TextView) v.findViewById(R.id.tvListItemSubTitle);
+            ivThumbnail = (ImageView) v.findViewById(R.id.ivThumbnail);
         }
 
         @Override
@@ -83,6 +96,31 @@ public class ListenAdapter extends RecyclerView.Adapter<ListenAdapter.ViewHolder
             if (clickListener != null) {
                 clickListener.itemClicked(v, getAdapterPosition());
             }
+        }
+    }
+
+    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+        ImageView bmImage;
+
+        public DownloadImageTask(ImageView bmImage) {
+            this.bmImage = bmImage;
+        }
+
+        protected Bitmap doInBackground(String... urls) {
+            String urldisplay = urls[0];
+            Bitmap mIcon11 = null;
+            try {
+                InputStream in = new java.net.URL(urldisplay).openStream();
+                mIcon11 = BitmapFactory.decodeStream(in);
+            } catch (Exception e) {
+                Log.e("Error", e.getMessage());
+                e.printStackTrace();
+            }
+            return mIcon11;
+        }
+
+        protected void onPostExecute(Bitmap result) {
+            bmImage.setImageBitmap(result);
         }
     }
 }

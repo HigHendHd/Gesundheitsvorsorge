@@ -7,6 +7,7 @@ public class ListenEintrag {
     protected String lisTitel;
     protected String lisUntertitel;
     protected String lisURL;
+    protected String thumbnailUrl;
 
     public ListenEintrag(String lisTitel, String lisUntertitel, String lisURL) {
         this.lisTitel = lisTitel;
@@ -16,6 +17,14 @@ public class ListenEintrag {
 
     public ListenEintrag() {
 
+    }
+
+    public String getThumbnailUrl() {
+        return thumbnailUrl;
+    }
+
+    public void setThumbnailUrl(String thumbnailUrl) {
+        this.thumbnailUrl = thumbnailUrl;
     }
 
     public String getLisTitel() {
