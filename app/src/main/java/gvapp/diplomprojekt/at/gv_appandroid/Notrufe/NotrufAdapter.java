@@ -1,5 +1,7 @@
 package gvapp.diplomprojekt.at.gv_appandroid.Notrufe;
 
+import java.util.List;
+
 import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.ListenAdapter;
 
 /**
@@ -8,7 +10,7 @@ import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.ListenAdapter;
 public class NotrufAdapter extends ListenAdapter {
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public NotrufAdapter(NotrufNummer liste) {
+    public NotrufAdapter(List<NotrufNummer> liste) {
         super(liste);
     }
 }

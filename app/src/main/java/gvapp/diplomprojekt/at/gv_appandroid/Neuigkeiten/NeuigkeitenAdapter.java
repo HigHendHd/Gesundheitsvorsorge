@@ -1,5 +1,7 @@
 package gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten;
 
+import java.util.List;
+
 import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.ListenAdapter;
 import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.ListenEintrag;
 
@@ -9,7 +11,7 @@ import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.ListenEintrag;
 public class NeuigkeitenAdapter extends ListenAdapter {
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public NeuigkeitenAdapter(ListenEintrag dataset) {
+    public NeuigkeitenAdapter(List<ListenEintrag> dataset) {
         super(dataset);
     }
 }

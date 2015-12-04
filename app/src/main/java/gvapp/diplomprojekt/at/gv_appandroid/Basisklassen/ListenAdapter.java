@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
 /**
@@ -13,11 +15,11 @@ import gvapp.diplomprojekt.at.gv_appandroid.R;
  */
 public class ListenAdapter extends RecyclerView.Adapter<ListenAdapter.ViewHolder> {
 
-    private ListenEintrag list;
+    private List<ListenEintrag> list;
     private ClickListener clickListener;
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ListenAdapter(ListenEintrag liste) {
+    public ListenAdapter(List<ListenEintrag> liste) {
         list = liste;
     }
 
@@ -44,14 +46,14 @@ public class ListenAdapter extends RecyclerView.Adapter<ListenAdapter.ViewHolder
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
-        holder.tvTitle.setText(list.getTitel(position) + "");
-        holder.tvSubtitle.setText(list.getUntertitel(position) + "");
+        holder.tvTitle.setText(list.get(position).getLisTitel() + "");
+        holder.tvSubtitle.setText(list.get(position).getLisUntertitel() + "");
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return list.getLenght();
+        return list.size();
     }
 
     public interface ClickListener {

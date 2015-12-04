@@ -8,6 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import gvapp.diplomprojekt.at.gv_appandroid.DesignKlassen.DividerItemDecoration;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
@@ -16,6 +19,7 @@ import gvapp.diplomprojekt.at.gv_appandroid.R;
  */
 public class Liste extends Fragment implements ListenAdapter.ClickListener {
 
+    protected List<ListenEintrag> eintraege = new ArrayList<ListenEintrag>();
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -42,7 +46,8 @@ public class Liste extends Fragment implements ListenAdapter.ClickListener {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        mAdapter = new ListenAdapter(new ListenEintrag());
+        eintraege.add(new ListenEintrag("Breaking News", "Sack Reis umgefallen", null));
+        mAdapter = new ListenAdapter(eintraege);
         ((ListenAdapter) mAdapter).setClickListener(this);
 
         return view;
