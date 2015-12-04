@@ -12,8 +12,6 @@ import android.view.ViewGroup;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -69,8 +67,8 @@ public class RezepteListe extends Liste {
     }
 
     // Given a URL, establishes an HttpUrlConnection and retrieves
-// the web page content as a InputStream, which it returns as
-// a string.
+    // the web page content as a InputStream, which it returns as
+    // a string.
     private String downloadUrl(String myurl) throws IOException {
         InputStream is = null;
 
@@ -88,7 +86,7 @@ public class RezepteListe extends Liste {
             is = conn.getInputStream();
 
             // Convert the InputStream into a string
-            String contentAsString = is.toString();
+            String contentAsString = readIt(is);
             return contentAsString;
 
             // Makes sure that the InputStream is closed after the app is
@@ -101,12 +99,9 @@ public class RezepteListe extends Liste {
     }
 
     // Reads an InputStream and converts it to a String.
-    public String readIt(InputStream stream, int len) throws IOException {
-        Reader reader = null;
-        reader = new InputStreamReader(stream, "UTF-8");
-        char[] buffer = new char[len];
-        reader.read(buffer);
-        return new String(buffer);
+    public String readIt(InputStream stream) throws IOException {
+        java.util.Scanner s = new java.util.Scanner(stream).useDelimiter("\\A");
+        return s.hasNext() ? s.next() : "";
     }
 
     // Uses AsyncTask to create a task away from the main UI thread. This task takes a
@@ -129,7 +124,7 @@ public class RezepteListe extends Liste {
         // onPostExecute displays the results of the AsyncTask.
         @Override
         protected void onPostExecute(String result) {
-            Snackbar.make(getView(), result, Snackbar.LENGTH_LONG);
+            Snackbar.make(getView(), result, Snackbar.LENGTH_LONG).show();
         }
     }
 }
