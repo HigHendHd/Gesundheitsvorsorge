@@ -26,26 +26,25 @@ public class NotrufListe extends Liste {
         View v = super.onCreateView(inflater, container, savedInstanceState);
 
         eintraege.add(new NotrufNummer().addItem(R.string.feuerwehr, "122", getActivity()));
-
-        /*retNummer.addItem(ctx.getResources().getString(R.string.polizei), "133");
-        retNummer.addItem(ctx.getResources().getString(R.string.rettung), "144");
-        retNummer.addItem(ctx.getResources().getString(R.string.euronotruf), "112");
-        retNummer.addItem(ctx.getResources().getString(R.string.bergrettung), "140");
-        retNummer.addItem(ctx.getResources().getString(R.string.notruffuergehoerlose), "0800 133 133");
-        retNummer.addItem(ctx.getResources().getString(R.string.aerztefunkdienst), "141");
-        retNummer.addItem(ctx.getResources().getString(R.string.orfkinderservice), "147");
-        retNummer.addItem(ctx.getResources().getString(R.string.aerzteflugambulanz), "40 144");
-        retNummer.addItem(ctx.getResources().getString(R.string.frauenhelpline), "0800 222 555");
-        retNummer.addItem(ctx.getResources().getString(R.string.frauennotruf), "01/71 71 9");
-        retNummer.addItem(ctx.getResources().getString(R.string.telefonseelsorge), "142");
-        retNummer.addItem(ctx.getResources().getString(R.string.gasgebrechen), "128");
-        retNummer.addItem(ctx.getResources().getString(R.string.arboe), "122");
-        retNummer.addItem(ctx.getResources().getString(R.string.oeamtc), "123");
-        retNummer.addItem(ctx.getResources().getString(R.string.kinderundjugendanwaltdesbundes), "0800-240264");
-        retNummer.addItem(ctx.getResources().getString(R.string.vergiftungsinformation), "01/406 43 43");
-        retNummer.addItem(ctx.getResources().getString(R.string.servicenummerderpolizei), "059 133");
-
-        notrufNummer = NotrufNummer.createNotrufNummern(getActivity());
+        eintraege.add(new NotrufNummer().addItem(R.string.polizei, "133", getActivity()));
+        eintraege.add(new NotrufNummer().addItem(R.string.rettung, "144", getActivity()));
+        eintraege.add(new NotrufNummer().addItem(R.string.euronotruf, "112", getActivity()));
+        eintraege.add(new NotrufNummer().addItem(R.string.bergrettung, "140", getActivity()));
+        eintraege.add(new NotrufNummer().addItem(R.string.notruffuergehoerlose, "0800 133 133", getActivity()));
+        eintraege.add(new NotrufNummer().addItem(R.string.aerztefunkdienst, "141", getActivity()));
+        eintraege.add(new NotrufNummer().addItem(R.string.orfkinderservice, "147", getActivity()));
+        eintraege.add(new NotrufNummer().addItem(R.string.aerzteflugambulanz, "40 144", getActivity()));
+        eintraege.add(new NotrufNummer().addItem(R.string.frauenhelpline, "0800 222 555", getActivity()));
+        eintraege.add(new NotrufNummer().addItem(R.string.frauennotruf, "01/71 71 9", getActivity()));
+        eintraege.add(new NotrufNummer().addItem(R.string.telefonseelsorge, "142", getActivity()));
+        eintraege.add(new NotrufNummer().addItem(R.string.gasgebrechen, "128", getActivity()));
+        eintraege.add(new NotrufNummer().addItem(R.string.arboe, "123", getActivity()));
+        eintraege.add(new NotrufNummer().addItem(R.string.oeamtc, "120", getActivity()));
+        eintraege.add(new NotrufNummer().addItem(R.string.kinderundjugendanwaltdesbundes, "0800-240264", getActivity()));
+        eintraege.add(new NotrufNummer().addItem(R.string.vergiftungsinformation, "01/406 43 43", getActivity()));
+        eintraege.add(new NotrufNummer().addItem(R.string.servicenummerderpolizei, "059 133", getActivity()));
+        eintraege.add(new NotrufNummer().addItem(R.string.hotlinefuervermisstekinder, "116000", getActivity()));
+        /*notrufNummer = NotrufNummer.createNotrufNummern(getActivity());
         notrufAdapter = new NotrufAdapter(notrufNummer);
         super.setmAdapter(notrufAdapter);
         notrufAdapter.setClickListener(this);*/
