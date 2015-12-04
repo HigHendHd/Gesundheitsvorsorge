@@ -22,9 +22,8 @@ public class TrainingsplanListe extends Liste {
                              Bundle savedInstanceState) {
         View v = super.onCreateView(inflater, container, savedInstanceState);
 
-        ListenEintrag le = new ListenEintrag();
-        le.addItem("Breaking News", "Sack Reis umgefallen");
-        super.setmAdapter(new TrainingsplanAdapter(le));
+        eintraege.add(new ListenEintrag("Breaking News", "Sack Reis umgefallen", null));
+        super.setmAdapter(new TrainingsplanAdapter(eintraege));
 
         return v;
     }

@@ -1,5 +1,7 @@
 package gvapp.diplomprojekt.at.gv_appandroid.Sport.Trainingsplaene;
 
+import java.util.List;
+
 import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.ListenAdapter;
 import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.ListenEintrag;
 
@@ -8,10 +10,8 @@ import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.ListenEintrag;
  */
 public class TrainingsplanAdapter extends ListenAdapter {
 
-    private String[] mDataset;
-
     // Provide a suitable constructor (depends on the kind of dataset)
-    public TrainingsplanAdapter(ListenEintrag dataset) {
+    public TrainingsplanAdapter(List<ListenEintrag> dataset) {
         super(dataset);
     }
 }
