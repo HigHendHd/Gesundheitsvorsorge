@@ -85,7 +85,7 @@ public class RezepteXmlParser {
 
     private Zutat readZutat(XmlPullParser parser) throws XmlPullParserException, IOException {
         parser.require(XmlPullParser.START_TAG, ns, "zutat");
-        double anzahl = 0;
+        String anzahl = null;
         String einheit = null;
         String zname = null;
         while (parser.next() != XmlPullParser.END_TAG) {
@@ -94,7 +94,7 @@ public class RezepteXmlParser {
             }
             String name = parser.getName();
             if (name.equals("anzahl")) {
-                anzahl = Double.parseDouble(readTag(parser, "anzahl"));
+                anzahl = readTag(parser, "anzahl");
             } else if (name.equals("einheit")) {
                 einheit = readTag(parser, "einheit");
             } else if (name.equals("zname")) {
