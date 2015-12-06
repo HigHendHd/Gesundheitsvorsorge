@@ -1,4 +1,4 @@
-package gvapp.diplomprojekt.at.gv_appandroid.Daten;
+package gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

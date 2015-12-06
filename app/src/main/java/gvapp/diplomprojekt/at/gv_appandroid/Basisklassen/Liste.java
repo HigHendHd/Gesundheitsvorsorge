@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +27,10 @@ public class Liste extends Fragment implements ListenAdapter.ClickListener {
 
     public Liste() {
         // Required empty public constructor
+
+    }
+
+    public void setEintraege(InputStream result) {
 
     }
 

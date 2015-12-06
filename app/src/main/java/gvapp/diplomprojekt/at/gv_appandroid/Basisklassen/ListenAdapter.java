@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import gvapp.diplomprojekt.at.gv_appandroid.Daten.DownloadImageTask;
+import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadImageTask;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
 /**
