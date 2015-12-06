@@ -30,17 +30,6 @@ public class RezepteDetailAnsichtActivity extends AppCompatActivity implements D
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         new DownloadXmlTask(this).execute(Constants.URL_REZEPTE_BASE + Constants.URL_REZEPT_AKTUELL);
-
-        //getSupportActionBar().setTitle("Schnitzel");
-
-        /*rezept = Constants.rez;
-
-        ((TextView) findViewById(R.id.tvTitel)).setText(rezept.getLisTitel() + "");
-
-        if (rezept.getBildUrl() != null) {
-            new DownloadImageTask(((ImageView) findViewById(R.id.ivImage)))
-                    .execute(rezept.getBildUrl());
-        }*/
     }
 
     @Override
@@ -53,6 +42,8 @@ public class RezepteDetailAnsichtActivity extends AppCompatActivity implements D
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+            getSupportActionBar().setTitle(rezept.getName() + "");
 
             ((TextView) findViewById(R.id.tvTitel)).setText(rezept.getName() + "");
 
