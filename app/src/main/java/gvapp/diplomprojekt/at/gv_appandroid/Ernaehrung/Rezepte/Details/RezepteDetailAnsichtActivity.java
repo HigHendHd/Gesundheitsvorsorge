@@ -8,8 +8,6 @@ import gvapp.diplomprojekt.at.gv_appandroid.R;
 
 public class RezepteDetailAnsichtActivity extends AppCompatActivity {
 
-    //RezeptListenEintrag rezept;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +17,7 @@ public class RezepteDetailAnsichtActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        getSupportActionBar().setTitle("Schnitzel");
+        //getSupportActionBar().setTitle("Schnitzel");
 
         /*rezept = Constants.rez;
 
