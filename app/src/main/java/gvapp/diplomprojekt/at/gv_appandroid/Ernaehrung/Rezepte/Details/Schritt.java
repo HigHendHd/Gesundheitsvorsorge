@@ -11,4 +11,12 @@ public class Schritt {
         this.nummer = nummer;
         this.text = text;
     }
+
+    public int getNummer() {
+        return nummer;
+    }
+
+    public String getText() {
+        return text;
+    }
 }

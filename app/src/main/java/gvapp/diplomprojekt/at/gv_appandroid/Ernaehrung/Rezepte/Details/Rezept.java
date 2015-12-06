@@ -33,6 +33,10 @@ public class Rezept {
         this.zutaten = zutaten;
     }
 
+    public void addZutat(Zutat z) {
+        zutaten.add(z);
+    }
+
     public int getAnzahlportionen() {
         return anzahlportionen;
     }

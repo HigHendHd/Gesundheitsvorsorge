@@ -52,24 +52,58 @@ public class RezepteDetailAnsichtActivity extends AppCompatActivity implements D
             }
 
             LinearLayout llPortionen = (LinearLayout) findViewById(R.id.llPortionen);
-
             TextView tvPortionen = new TextView(this);
             tvPortionen.setLayoutParams(new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT));
             tvPortionen.setText(" " + rezept.getAnzahlportionen());
-
             llPortionen.addView(tvPortionen);
 
             LinearLayout llKochdauer = (LinearLayout) findViewById(R.id.llKochdauer);
-
             TextView tvKochdauer = new TextView(this);
             tvKochdauer.setLayoutParams(new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT));
             tvKochdauer.setText(" " + rezept.getKochdauer());
-
             llKochdauer.addView(tvKochdauer);
+
+            LinearLayout llSchwierigkeitsgrad = (LinearLayout) findViewById(R.id.llSchwierigkeitsgrad);
+            TextView tvSchwierigkeitsgrad = new TextView(this);
+            tvSchwierigkeitsgrad.setLayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT));
+            tvSchwierigkeitsgrad.setText(" " + rezept.getSchwierigkeitsgrad());
+            llSchwierigkeitsgrad.addView(tvSchwierigkeitsgrad);
+
+            LinearLayout llMainLayout = (LinearLayout) findViewById(R.id.llMainLayout);
+            for (Zutat z : rezept.getZutaten()) {
+                LinearLayout llZutat = new LinearLayout(this);
+                llZutat.setLayoutParams(new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT));
+                llMainLayout.addView(llZutat);
+
+                TextView tvAnzahl = new TextView(this);
+                tvAnzahl.setLayoutParams(new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT));
+                tvAnzahl.setText("" + z.getAnzahl());
+                llZutat.addView(tvAnzahl);
+
+                TextView tvEinheit = new TextView(this);
+                tvEinheit.setLayoutParams(new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT));
+                tvEinheit.setText(" " + z.getEinheit());
+                llZutat.addView(tvEinheit);
+
+                TextView tvZname = new TextView(this);
+                tvZname.setLayoutParams(new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT));
+                tvZname.setText(" " + z.getZname());
+                llZutat.addView(tvZname);
+            }
         }
     }
 }

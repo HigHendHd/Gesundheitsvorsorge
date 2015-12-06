@@ -61,4 +61,6 @@
     <string name="title_activity_rezepte_detail_ansicht">RezepteDetailAnsichtActivity</string>
     <string name="anzahlprotionen">Anzahl Portionen:</string>
     <string name="kochdauer">Kochdauer:</string>
+    <string name="schwierigkeitsgrad">Schwierigkeitsgrad:</string>
+    <string name="zutaten">Zutaten:</string>
 </resources>
