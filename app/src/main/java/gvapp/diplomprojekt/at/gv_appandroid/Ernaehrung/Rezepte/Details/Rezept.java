@@ -21,17 +21,16 @@ public class Rezept {
         return schritte;
     }
 
+    public void setSchritte(List<Schritt> schritte) {
+        this.schritte = schritte;
+    }
+
     public List<Zutat> getZutaten() {
         return zutaten;
     }
 
-    public void addZutat(Zutat z) {
-
-        zutaten.add(z);
-    }
-
-    public void addSchritt(Schritt s) {
-        schritte.add(s);
+    public void setZutaten(List<Zutat> zutaten) {
+        this.zutaten = zutaten;
     }
 
     public int getAnzahlportionen() {

@@ -24,7 +24,7 @@ import gvapp.diplomprojekt.at.gv_appandroid.R;
 /**
  * Created by Dennis on 14.11.2015.
  */
-public class RezepteListe extends Liste {
+public class RezepteListe extends Liste implements DownloadXmlTask.XmlDownloader {
 
     RezepteAdapter rezeptAdapter;
 
@@ -79,7 +79,7 @@ public class RezepteListe extends Liste {
     }
 
     @Override
-    public void setEintraege(InputStream result) {
+    public void xmlDownloaded(InputStream result) {
         if (result != null) {
             eintraege.clear();
             try {

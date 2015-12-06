@@ -7,8 +7,6 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.Liste;
-
 /**
  * Created by Dennis on 06.12.2015.
  */
@@ -19,10 +17,10 @@ import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.Liste;
 // displayed in the UI by the AsyncTask's onPostExecute method.
 public class DownloadXmlTask extends AsyncTask<String, Void, InputStream> {
 
-    Liste list;
+    private XmlDownloader xmlDownloader;
 
-    public DownloadXmlTask(Liste l) {
-        list = l;
+    public DownloadXmlTask(XmlDownloader xml) {
+        xmlDownloader = xml;
     }
 
     @Override
@@ -39,7 +37,7 @@ public class DownloadXmlTask extends AsyncTask<String, Void, InputStream> {
     // onPostExecute displays the results of the AsyncTask.
     @Override
     protected void onPostExecute(InputStream result) {
-        list.setEintraege(result);
+        xmlDownloader.xmlDownloaded(result);
     }
 
     // Given a URL, establishes an HttpUrlConnection and retrieves
@@ -68,5 +66,9 @@ public class DownloadXmlTask extends AsyncTask<String, Void, InputStream> {
         } finally {
 
         }
+    }
+
+    public interface XmlDownloader {
+        void xmlDownloaded(InputStream result);
     }
 }
