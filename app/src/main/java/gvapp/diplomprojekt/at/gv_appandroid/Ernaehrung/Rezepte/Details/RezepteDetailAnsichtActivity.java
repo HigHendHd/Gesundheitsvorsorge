@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.xmlpull.v1.XmlPullParserException;
@@ -45,12 +46,30 @@ public class RezepteDetailAnsichtActivity extends AppCompatActivity implements D
 
             getSupportActionBar().setTitle(rezept.getName() + "");
 
-            ((TextView) findViewById(R.id.tvTitel)).setText(rezept.getName() + "");
-
             if (rezept.getBildUrl() != null) {
                 new DownloadImageTask(((ImageView) findViewById(R.id.ivImage)))
                         .execute(rezept.getBildUrl());
             }
+
+            LinearLayout llPortionen = (LinearLayout) findViewById(R.id.llPortionen);
+
+            TextView tvPortionen = new TextView(this);
+            tvPortionen.setLayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT));
+            tvPortionen.setText(" " + rezept.getAnzahlportionen());
+
+            llPortionen.addView(tvPortionen);
+
+            LinearLayout llKochdauer = (LinearLayout) findViewById(R.id.llKochdauer);
+
+            TextView tvKochdauer = new TextView(this);
+            tvKochdauer.setLayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT));
+            tvKochdauer.setText(" " + rezept.getKochdauer());
+
+            llKochdauer.addView(tvKochdauer);
         }
     }
 }

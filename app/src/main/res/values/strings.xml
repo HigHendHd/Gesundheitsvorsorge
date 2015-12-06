@@ -59,4 +59,6 @@
     <string name="keininternet">Keine Internetverbindung vorhanden.</string>
     <string name="nochmalversuchen">Nochmal versuchen.</string>
     <string name="title_activity_rezepte_detail_ansicht">RezepteDetailAnsichtActivity</string>
+    <string name="anzahlprotionen">Anzahl Portionen:</string>
+    <string name="kochdauer">Kochdauer:</string>
 </resources>

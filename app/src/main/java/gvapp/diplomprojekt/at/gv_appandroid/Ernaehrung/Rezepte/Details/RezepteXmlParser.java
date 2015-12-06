@@ -39,9 +39,13 @@ public class RezepteXmlParser {
             // Starts by looking for the entry tag
 
             if (name.equals("name")) {
-                rezept.setName(readName(parser));
+                rezept.setName(readTag(parser, "name"));
             } else if (name.equals("bild")) {
-                rezept.setBildUrl(readBild(parser));
+                rezept.setBildUrl(readTag(parser, "bild"));
+            } else if (name.equals("anzahlportionen")) {
+                rezept.setAnzahlportionen(Integer.parseInt(readTag(parser, "anzahlportionen")));
+            } else if (name.equals("kochdauer")) {
+                rezept.setKochdauer(readTag(parser, "kochdauer"));
             } else {
                 skip(parser);
             }
@@ -49,18 +53,11 @@ public class RezepteXmlParser {
         return rezept;
     }
 
-    private String readBild(XmlPullParser parser) throws IOException, XmlPullParserException {
-        parser.require(XmlPullParser.START_TAG, ns, "bild");
-        String bild = readText(parser);
-        parser.require(XmlPullParser.END_TAG, ns, "bild");
-        return bild;
-    }
-
-    private String readName(XmlPullParser parser) throws IOException, XmlPullParserException {
-        parser.require(XmlPullParser.START_TAG, ns, "name");
-        String name = readText(parser);
-        parser.require(XmlPullParser.END_TAG, ns, "name");
-        return name;
+    private String readTag(XmlPullParser parser, String tag) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, ns, tag);
+        String text = readText(parser);
+        parser.require(XmlPullParser.END_TAG, ns, tag);
+        return text;
     }
 
     private String readText(XmlPullParser parser) throws IOException, XmlPullParserException {
