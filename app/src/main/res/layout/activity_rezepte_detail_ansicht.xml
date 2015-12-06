@@ -24,7 +24,8 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="@dimen/tool_bar_top_padding">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -96,6 +97,48 @@
                         android:paddingBottom="10dp"
                         android:text="@string/zutaten"
                         android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/llZutaten"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp">
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp"
+                        android:text="@string/zubereitung"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/llSchritte"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp">
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llTipp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:id="@+id/tvTippInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="20dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 

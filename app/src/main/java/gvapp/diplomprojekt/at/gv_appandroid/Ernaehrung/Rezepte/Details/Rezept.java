@@ -25,6 +25,10 @@ public class Rezept {
         this.schritte = schritte;
     }
 
+    public void addSchritt(Schritt s) {
+        schritte.add(s);
+    }
+
     public List<Zutat> getZutaten() {
         return zutaten;
     }

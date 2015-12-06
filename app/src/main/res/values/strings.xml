@@ -63,4 +63,7 @@
     <string name="kochdauer">Kochdauer:</string>
     <string name="schwierigkeitsgrad">Schwierigkeitsgrad:</string>
     <string name="zutaten">Zutaten:</string>
+    <string name="zubereitung">Zubereitung:</string>
+    <string name="schritt">Schritt</string>
+    <string name="tipp">Tipp:</string>
 </resources>

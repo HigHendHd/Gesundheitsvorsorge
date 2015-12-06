@@ -52,11 +52,35 @@ public class RezepteXmlParser {
                 rezept.setId(Integer.parseInt(readTag(parser, "id")));
             } else if (name.equals("zutat")) {
                 rezept.addZutat(readZutat(parser));
+            } else if (name.equals("schritt")) {
+                rezept.addSchritt(readSchritt(parser));
+            } else if (name.equals("tipp")) {
+                rezept.setTipp(readTag(parser, "tipp"));
             } else {
                 skip(parser);
             }
         }
         return rezept;
+    }
+
+    private Schritt readSchritt(XmlPullParser parser) throws XmlPullParserException, IOException {
+        parser.require(XmlPullParser.START_TAG, ns, "schritt");
+        int nummer = 0;
+        String text = null;
+        while (parser.next() != XmlPullParser.END_TAG) {
+            if (parser.getEventType() != XmlPullParser.START_TAG) {
+                continue;
+            }
+            String name = parser.getName();
+            if (name.equals("nummer")) {
+                nummer = Integer.parseInt(readTag(parser, "nummer"));
+            } else if (name.equals("text")) {
+                text = readTag(parser, "text");
+            } else {
+                skip(parser);
+            }
+        }
+        return new Schritt(nummer, text);
     }
 
     private Zutat readZutat(XmlPullParser parser) throws XmlPullParserException, IOException {
@@ -81,7 +105,6 @@ public class RezepteXmlParser {
         }
         return new Zutat(anzahl, einheit, zname);
     }
-
 
     private String readTag(XmlPullParser parser, String tag) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, ns, tag);
