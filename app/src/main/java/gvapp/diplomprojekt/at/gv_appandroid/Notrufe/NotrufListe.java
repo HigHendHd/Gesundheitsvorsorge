@@ -15,9 +15,6 @@ import gvapp.diplomprojekt.at.gv_appandroid.R;
  */
 public class NotrufListe extends Liste {
 
-    private NotrufNummer notrufNummer;
-    private NotrufAdapter notrufAdapter;
-
     public NotrufListe() {
         super();
     }
@@ -47,7 +44,6 @@ public class NotrufListe extends Liste {
         eintraege.add(new NotrufNummer().addItem(R.string.servicenummerderpolizei, "059 133", getActivity()));
         eintraege.add(new NotrufNummer().addItem(R.string.hotlinefuervermisstekinder, "116000", getActivity()));
 
-        notrufAdapter = new NotrufAdapter(eintraege);
         super.xmlDownloaded(null);
 
         return v;
