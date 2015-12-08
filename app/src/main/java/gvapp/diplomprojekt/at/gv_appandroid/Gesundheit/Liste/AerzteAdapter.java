@@ -1,4 +1,4 @@
-package gvapp.diplomprojekt.at.gv_appandroid.Gesundheit;
+package gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Liste;
 
 import java.util.List;
 
