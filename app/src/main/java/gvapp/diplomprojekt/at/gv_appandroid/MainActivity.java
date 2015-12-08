@@ -23,7 +23,7 @@ import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Diaeten.DiaetenListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.KFA_Rechner.KfaFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.RestaurantListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.Liste.RezepteListe;
-import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.AerzteListe;
+import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Liste.AerzteListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten.NeuigkeitenListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Notrufe.NotrufListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Sport.Sportstaetten.SportstaettenListe;

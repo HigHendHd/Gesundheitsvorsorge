@@ -34,7 +34,7 @@ public class RezepteListe extends Liste implements DownloadXmlTask.XmlDownloader
 
     @Override
     public void itemClicked(View v, int position) {
-        Constants.selected_rezepte_id = ((RezeptListenEintrag) eintraege.get(position)).getId();
+        Constants.selected_rezepte_id = ((RezepteListenEintrag) eintraege.get(position)).getId();
         Constants.URL_REZEPT_AKTUELL = eintraege.get(position).getLisURL();
         Intent intent = new Intent(getActivity(), RezepteDetailAnsichtActivity.class);
         startActivity(intent);
@@ -64,7 +64,7 @@ public class RezepteListe extends Liste implements DownloadXmlTask.XmlDownloader
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
 
-            new DownloadXmlTask(this).execute(Constants.URL_REZEPTE_BASE + Constants.URL_REZEPTE_LISTE);
+            new DownloadXmlTask(this).execute(Constants.URL_BASE + Constants.URL_REZEPTE_BASE + Constants.URL_REZEPTE_LISTE);
 
         } else {
             Snackbar.make(getView(), getActivity().getString(R.string.keininternet),

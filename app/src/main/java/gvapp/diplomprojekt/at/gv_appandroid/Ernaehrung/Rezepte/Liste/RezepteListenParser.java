@@ -65,7 +65,7 @@ public class RezepteListenParser {
         return entries;
     }
 
-    private RezeptListenEintrag readRezept(XmlPullParser parser) throws XmlPullParserException, IOException {
+    private RezepteListenEintrag readRezept(XmlPullParser parser) throws XmlPullParserException, IOException {
         parser.require(XmlPullParser.START_TAG, ns, "rezept");
         String name = null;
         String bildUrl = null;
@@ -88,10 +88,10 @@ public class RezepteListenParser {
                 skip(parser);
             }
         }
-        RezeptListenEintrag rezeptListenEintrag = new RezeptListenEintrag(name, "RezeptListenEintrag", url);
-        rezeptListenEintrag.setBildUrl(bildUrl);
-        rezeptListenEintrag.setId(id);
-        return rezeptListenEintrag;
+        RezepteListenEintrag rezepteListenEintrag = new RezepteListenEintrag(name, "RezepteListenEintrag", url);
+        rezepteListenEintrag.setBildUrl(bildUrl);
+        rezepteListenEintrag.setId(id);
+        return rezepteListenEintrag;
     }
 
     // Processes name tags in the feed.

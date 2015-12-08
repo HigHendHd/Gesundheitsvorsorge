@@ -5,12 +5,12 @@ import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.ListenEintrag;
 /**
  * Created by Dennis on 04.12.2015.
  */
-public class RezeptListenEintrag extends ListenEintrag {
+public class RezepteListenEintrag extends ListenEintrag {
 
     String bildUrl;
     int id;
 
-    public RezeptListenEintrag(String lisTitel, String lisUntertitel, String lisURL) {
+    public RezepteListenEintrag(String lisTitel, String lisUntertitel, String lisURL) {
         super(lisTitel, lisUntertitel, lisURL);
     }
 
