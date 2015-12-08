@@ -9,6 +9,6 @@ public abstract class Constants {
     public static final String URL_REZEPTE_BASE = "/rezepte";
     public static final String URL_AERZTE_BASE = "/aerzte";
     public static final String URL_AERZTE_LISTE = "/aerzteliste.xml";
-    public static String URL_REZEPT_AKTUELL = "";
-    public static int selected_rezepte_id = 0;
+    public static String URL_AKTUELL = "";
+    public static int selected_id = 0;
 }

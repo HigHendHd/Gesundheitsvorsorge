@@ -48,8 +48,6 @@ public class NotrufListe extends Liste {
         eintraege.add(new NotrufNummer().addItem(R.string.hotlinefuervermisstekinder, "116000", getActivity()));
 
         notrufAdapter = new NotrufAdapter(eintraege);
-        super.setmAdapter(notrufAdapter);
-        notrufAdapter.setClickListener(this);
         super.xmlDownloaded(null);
 
         return v;

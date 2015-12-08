@@ -56,6 +56,7 @@ public class Liste extends Fragment implements ListenAdapter.ClickListener, Down
         // specify an adapter (see also next example)
         mAdapter = new ListenAdapter(eintraege);
         ((ListenAdapter) mAdapter).setClickListener(this);
+        setmAdapter(mAdapter);
 
         return view;
     }
@@ -65,7 +66,7 @@ public class Liste extends Fragment implements ListenAdapter.ClickListener, Down
         prgBar.setVisibility(View.INVISIBLE);
     }
 
-    public void setmAdapter(RecyclerView.Adapter adapter) {
+    private void setmAdapter(RecyclerView.Adapter adapter) {
         mAdapter = adapter;
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));

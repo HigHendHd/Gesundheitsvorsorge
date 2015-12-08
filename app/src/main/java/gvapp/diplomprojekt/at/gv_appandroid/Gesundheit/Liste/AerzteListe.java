@@ -1,6 +1,7 @@
 package gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Liste;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import java.io.InputStream;
 import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.Liste;
 import gvapp.diplomprojekt.at.gv_appandroid.Daten.Constants;
 import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadXmlTask;
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.Details.RezepteDetailAnsichtActivity;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
 /**
@@ -32,9 +34,6 @@ public class AerzteListe extends Liste implements DownloadXmlTask.XmlDownloader 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = super.onCreateView(inflater, container, savedInstanceState);
-
-        //eintraege.add(new ListenEintrag("Breaking News", "Sack Reis umgefallen", null));
-        super.setmAdapter(new AerzteAdapter(eintraege));
 
         return v;
     }
@@ -67,7 +66,10 @@ public class AerzteListe extends Liste implements DownloadXmlTask.XmlDownloader 
 
     @Override
     public void itemClicked(View v, int position) {
-
+        Constants.selected_id = eintraege.get(position).getId();
+        Constants.URL_AKTUELL = eintraege.get(position).getLisURL();
+        Intent intent = new Intent(getActivity(), RezepteDetailAnsichtActivity.class);
+        startActivity(intent);
     }
 
     @Override

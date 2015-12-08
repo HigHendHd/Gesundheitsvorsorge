@@ -26,16 +26,14 @@ import gvapp.diplomprojekt.at.gv_appandroid.R;
  */
 public class RezepteListe extends Liste implements DownloadXmlTask.XmlDownloader {
 
-    RezepteAdapter rezeptAdapter;
-
     public RezepteListe() {
         super();
     }
 
     @Override
     public void itemClicked(View v, int position) {
-        Constants.selected_rezepte_id = eintraege.get(position).getId();
-        Constants.URL_REZEPT_AKTUELL = eintraege.get(position).getLisURL();
+        Constants.selected_id = eintraege.get(position).getId();
+        Constants.URL_AKTUELL = eintraege.get(position).getLisURL();
         Intent intent = new Intent(getActivity(), RezepteDetailAnsichtActivity.class);
         startActivity(intent);
     }
@@ -44,10 +42,6 @@ public class RezepteListe extends Liste implements DownloadXmlTask.XmlDownloader
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = super.onCreateView(inflater, container, savedInstanceState);
-
-        rezeptAdapter = new RezepteAdapter(eintraege);
-        super.setmAdapter(rezeptAdapter);
-        rezeptAdapter.setClickListener(this);
 
         return v;
     }
