@@ -50,6 +50,7 @@ public class NotrufListe extends Liste {
         notrufAdapter = new NotrufAdapter(eintraege);
         super.setmAdapter(notrufAdapter);
         notrufAdapter.setClickListener(this);
+        super.xmlDownloaded(null);
 
         return v;
     }

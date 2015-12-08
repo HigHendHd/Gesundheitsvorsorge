@@ -9,10 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
 import java.io.InputStream;
 
 import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.Liste;
-import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.ListenEintrag;
 import gvapp.diplomprojekt.at.gv_appandroid.Daten.Constants;
 import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadXmlTask;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
@@ -31,7 +33,7 @@ public class AerzteListe extends Liste implements DownloadXmlTask.XmlDownloader 
                              Bundle savedInstanceState) {
         View v = super.onCreateView(inflater, container, savedInstanceState);
 
-        eintraege.add(new ListenEintrag("Breaking News", "Sack Reis umgefallen", null));
+        //eintraege.add(new ListenEintrag("Breaking News", "Sack Reis umgefallen", null));
         super.setmAdapter(new AerzteAdapter(eintraege));
 
         return v;
@@ -49,7 +51,7 @@ public class AerzteListe extends Liste implements DownloadXmlTask.XmlDownloader 
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
 
-            new DownloadXmlTask(this).execute(Constants.URL_BASE + Constants.URL_REZEPTE_BASE + Constants.URL_REZEPTE_LISTE);
+            new DownloadXmlTask(this).execute(Constants.URL_BASE + Constants.URL_AERZTE_BASE + Constants.URL_AERZTE_LISTE);
 
         } else {
             Snackbar.make(getView(), getActivity().getString(R.string.keininternet),
@@ -65,11 +67,24 @@ public class AerzteListe extends Liste implements DownloadXmlTask.XmlDownloader 
 
     @Override
     public void itemClicked(View v, int position) {
-        super.itemClicked(v, position);
+
     }
 
     @Override
     public void xmlDownloaded(InputStream result) {
-
+        if (result != null) {
+            eintraege.clear();
+            try {
+                eintraege.addAll(new AerzteListenParser().parse(result));
+            } catch (XmlPullParserException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            mAdapter.notifyDataSetChanged();
+        } else {
+            Snackbar.make(getView(), "Fehler", Snackbar.LENGTH_LONG).show();
+        }
+        super.xmlDownloaded(result);
     }
 }

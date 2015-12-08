@@ -10,6 +10,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.ListenEintrag;
+
 /**
  * Created by Dennis on 04.12.2015.
  */
@@ -65,7 +67,7 @@ public class RezepteListenParser {
         return entries;
     }
 
-    private RezepteListenEintrag readRezept(XmlPullParser parser) throws XmlPullParserException, IOException {
+    private ListenEintrag readRezept(XmlPullParser parser) throws XmlPullParserException, IOException {
         parser.require(XmlPullParser.START_TAG, ns, "rezept");
         String name = null;
         String bildUrl = null;
@@ -77,53 +79,28 @@ public class RezepteListenParser {
             }
             String tag = parser.getName();
             if (tag.equals("name")) {
-                name = readName(parser);
+                name = readTag(parser, "name");
             } else if (tag.equals("bild")) {
-                bildUrl = readBild(parser);
+                bildUrl = readTag(parser, "bild");
             } else if (tag.equals("link")) {
-                url = readLink(parser);
+                url = readTag(parser, "link");
             } else if (tag.equals("id")) {
-                id = readId(parser);
+                id = Integer.parseInt(readTag(parser, "id"));
             } else {
                 skip(parser);
             }
         }
-        RezepteListenEintrag rezepteListenEintrag = new RezepteListenEintrag(name, "RezepteListenEintrag", url);
-        rezepteListenEintrag.setBildUrl(bildUrl);
-        rezepteListenEintrag.setId(id);
-        return rezepteListenEintrag;
+        ListenEintrag aerzteListenEintrag = new ListenEintrag(name, "Rezept", url, id, bildUrl);
+        return aerzteListenEintrag;
     }
 
-    // Processes name tags in the feed.
-    private String readName(XmlPullParser parser) throws IOException, XmlPullParserException {
-        parser.require(XmlPullParser.START_TAG, ns, "name");
-        String title = readText(parser);
-        parser.require(XmlPullParser.END_TAG, ns, "name");
-        return title;
+    private String readTag(XmlPullParser parser, String tag) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, ns, tag);
+        String text = readText(parser);
+        parser.require(XmlPullParser.END_TAG, ns, tag);
+        return text;
     }
 
-    private String readBild(XmlPullParser parser) throws IOException, XmlPullParserException {
-        parser.require(XmlPullParser.START_TAG, ns, "bild");
-        String title = readText(parser);
-        parser.require(XmlPullParser.END_TAG, ns, "bild");
-        return title;
-    }
-
-    private String readLink(XmlPullParser parser) throws IOException, XmlPullParserException {
-        parser.require(XmlPullParser.START_TAG, ns, "link");
-        String title = readText(parser);
-        parser.require(XmlPullParser.END_TAG, ns, "link");
-        return title;
-    }
-
-    private int readId(XmlPullParser parser) throws IOException, XmlPullParserException {
-        parser.require(XmlPullParser.START_TAG, ns, "id");
-        int title = Integer.parseInt(readText(parser));
-        parser.require(XmlPullParser.END_TAG, ns, "id");
-        return title;
-    }
-
-    // Reads the text in the tags
     private String readText(XmlPullParser parser) throws IOException, XmlPullParserException {
         String result = "";
         if (parser.next() == XmlPullParser.TEXT) {

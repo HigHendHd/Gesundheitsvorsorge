@@ -22,7 +22,7 @@ public class RestaurantListe extends Liste {
                              Bundle savedInstanceState) {
         View v = super.onCreateView(inflater, container, savedInstanceState);
 
-        eintraege.add(new ListenEintrag("Breaking News", "Sack Reis umgefallen", null));
+        eintraege.add(new ListenEintrag("Breaking News", "Sack Reis umgefallen", null, 0, null));
         super.setmAdapter(new RestaurantAdapter(eintraege));
 
         return v;

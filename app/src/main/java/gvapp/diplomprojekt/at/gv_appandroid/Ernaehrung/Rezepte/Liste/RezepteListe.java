@@ -34,7 +34,7 @@ public class RezepteListe extends Liste implements DownloadXmlTask.XmlDownloader
 
     @Override
     public void itemClicked(View v, int position) {
-        Constants.selected_rezepte_id = ((RezepteListenEintrag) eintraege.get(position)).getId();
+        Constants.selected_rezepte_id = eintraege.get(position).getId();
         Constants.URL_REZEPT_AKTUELL = eintraege.get(position).getLisURL();
         Intent intent = new Intent(getActivity(), RezepteDetailAnsichtActivity.class);
         startActivity(intent);
@@ -93,5 +93,6 @@ public class RezepteListe extends Liste implements DownloadXmlTask.XmlDownloader
         } else {
             Snackbar.make(getView(), "Fehler", Snackbar.LENGTH_LONG).show();
         }
+        super.xmlDownloaded(result);
     }
 }

@@ -4,7 +4,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import java.io.InputStream;
 
@@ -13,9 +15,11 @@ import java.io.InputStream;
  */
 public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
     ImageView bmImage;
+    ProgressBar pbProgress;
 
-    public DownloadImageTask(ImageView bmImage) {
+    public DownloadImageTask(ImageView bmImage, ProgressBar pbProgress) {
         this.bmImage = bmImage;
+        this.pbProgress = pbProgress;
     }
 
     protected Bitmap doInBackground(String... urls) {
@@ -33,5 +37,7 @@ public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
 
     protected void onPostExecute(Bitmap result) {
         bmImage.setImageBitmap(result);
+        bmImage.setVisibility(View.VISIBLE);
+        pbProgress.setVisibility(View.INVISIBLE);
     }
 }

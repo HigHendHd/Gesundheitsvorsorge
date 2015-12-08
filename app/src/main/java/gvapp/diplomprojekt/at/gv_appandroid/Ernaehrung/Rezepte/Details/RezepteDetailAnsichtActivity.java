@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.xmlpull.v1.XmlPullParserException;
@@ -48,7 +49,8 @@ public class RezepteDetailAnsichtActivity extends AppCompatActivity implements D
             getSupportActionBar().setTitle(rezept.getName() + "");
 
             if (rezept.getBildUrl() != null) {
-                new DownloadImageTask(((ImageView) findViewById(R.id.ivImage)))
+                new DownloadImageTask(((ImageView) findViewById(R.id.ivImage)),
+                        ((ProgressBar) findViewById(R.id.pbProgress)))
                         .execute(rezept.getBildUrl());
             }
 

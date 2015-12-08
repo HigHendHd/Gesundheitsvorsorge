@@ -7,27 +7,29 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import gvapp.diplomprojekt.at.gv_appandroid.DesignKlassen.DividerItemDecoration;
+import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadXmlTask;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
 /**
  * Created by Dennis on 14.11.2015.
  */
-public class Liste extends Fragment implements ListenAdapter.ClickListener {
+public class Liste extends Fragment implements ListenAdapter.ClickListener, DownloadXmlTask.XmlDownloader {
 
     protected List<ListenEintrag> eintraege = new ArrayList<ListenEintrag>();
     protected RecyclerView.Adapter mAdapter;
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
+    private ProgressBar prgBar;
 
     public Liste() {
         // Required empty public constructor
-
     }
 
     public void setEintraege(InputStream result) {
@@ -40,6 +42,7 @@ public class Liste extends Fragment implements ListenAdapter.ClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_liste, container, false);
 
+        prgBar = (ProgressBar) view.findViewById(R.id.pbProgress);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
 
         // use this setting to improve performance if you know that changes
@@ -51,11 +54,15 @@ public class Liste extends Fragment implements ListenAdapter.ClickListener {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        eintraege.add(new ListenEintrag("Breaking News", "Sack Reis umgefallen", null));
         mAdapter = new ListenAdapter(eintraege);
         ((ListenAdapter) mAdapter).setClickListener(this);
 
         return view;
+    }
+
+    private void dataLoaded() {
+        mRecyclerView.setVisibility(View.VISIBLE);
+        prgBar.setVisibility(View.INVISIBLE);
     }
 
     public void setmAdapter(RecyclerView.Adapter adapter) {
@@ -67,5 +74,10 @@ public class Liste extends Fragment implements ListenAdapter.ClickListener {
     @Override
     public void itemClicked(View v, int position) {
 
+    }
+
+    @Override
+    public void xmlDownloaded(InputStream result) {
+        dataLoaded();
     }
 }

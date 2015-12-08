@@ -8,23 +8,22 @@ public class ListenEintrag {
     protected String lisUntertitel;
     protected String lisURL;
     protected String thumbnailUrl;
-
-    public ListenEintrag(String lisTitel, String lisUntertitel, String lisURL) {
-        this.lisTitel = lisTitel;
-        this.lisUntertitel = lisUntertitel;
-        this.lisURL = lisURL;
-    }
+    protected int id;
 
     public ListenEintrag() {
 
     }
 
-    public String getThumbnailUrl() {
-        return thumbnailUrl;
+    public ListenEintrag(String lisTitel, String lisUntertitel, String lisURL, int id, String thumbnailUrl) {
+        this.lisTitel = lisTitel;
+        this.lisUntertitel = lisUntertitel;
+        this.lisURL = lisURL;
+        this.id = id;
+        this.thumbnailUrl = thumbnailUrl;
     }
 
-    public void setThumbnailUrl(String thumbnailUrl) {
-        this.thumbnailUrl = thumbnailUrl;
+    public int getId() {
+        return id;
     }
 
     public String getLisTitel() {
@@ -37,5 +36,9 @@ public class ListenEintrag {
 
     public String getLisURL() {
         return lisURL;
+    }
+
+    public String getThumbnailUrl() {
+        return thumbnailUrl;
     }
 }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.List;
@@ -52,9 +53,10 @@ public class ListenAdapter extends RecyclerView.Adapter<ListenAdapter.ViewHolder
         holder.tvSubtitle.setText(list.get(position).getLisUntertitel() + "");
         // show The Image
 
-        holder.ivThumbnail.setImageResource(0);
+        holder.pbProgess.setVisibility(View.VISIBLE);
+        holder.ivThumbnail.setVisibility(View.INVISIBLE);
         if (list.get(position).getThumbnailUrl() != null) {
-            new DownloadImageTask(holder.ivThumbnail)
+            new DownloadImageTask(holder.ivThumbnail, holder.pbProgess)
                     .execute(list.get(position).getThumbnailUrl());
         }
     }
@@ -77,6 +79,7 @@ public class ListenAdapter extends RecyclerView.Adapter<ListenAdapter.ViewHolder
         public TextView tvTitle, tvSubtitle;
         public View view;
         public ImageView ivThumbnail;
+        public ProgressBar pbProgess;
         ClickListener clickListener;
 
         public ViewHolder(View v, ClickListener clkLis) {
@@ -84,6 +87,7 @@ public class ListenAdapter extends RecyclerView.Adapter<ListenAdapter.ViewHolder
             view = v;
             clickListener = clkLis;
             v.setOnClickListener(this);
+            pbProgess = (ProgressBar) v.findViewById(R.id.pbProgress);
             tvTitle = (TextView) v.findViewById(R.id.tvListItemTitle);
             tvSubtitle = (TextView) v.findViewById(R.id.tvListItemSubTitle);
             ivThumbnail = (ImageView) v.findViewById(R.id.ivThumbnail);
