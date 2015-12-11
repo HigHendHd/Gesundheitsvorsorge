@@ -3,6 +3,9 @@ package gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Details;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -10,6 +13,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import gvapp.diplomprojekt.at.gv_appandroid.Daten.Constants;
+import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadImageTask;
 import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadXmlTask;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
@@ -26,8 +30,8 @@ public class AerzteDetailActivity extends AppCompatActivity implements DownloadX
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        new DownloadXmlTask(this).execute(Constants.URL_BASE + Constants.URL_REZEPTE_BASE +
-                getIntent().getStringExtra(Constants.INTENT_REZEPTE_URL));
+        new DownloadXmlTask(this).execute(Constants.URL_BASE + Constants.URL_AERZTE_BASE +
+                getIntent().getStringExtra(Constants.INTENT_AERZTE_URL));
     }
 
     @Override
@@ -40,6 +44,16 @@ public class AerzteDetailActivity extends AppCompatActivity implements DownloadX
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+            getSupportActionBar().setTitle(arzt.getName() + "");
+
+            if (arzt.getBild() != null) {
+                new DownloadImageTask(((ImageView) findViewById(R.id.ivImage)),
+                        ((ProgressBar) findViewById(R.id.pbProgress)))
+                        .execute(arzt.getBild());
+            }
+
+            ((TextView) findViewById(R.id.tvFachgebiet)).setText(arzt.getFachgebiet() + "");
         }
     }
 }

@@ -1,5 +1,6 @@
 package gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Details;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,12 +12,12 @@ public class Arzt {
     private String name;
     private String geschlecht;
     private String fachgebiet;
-    private List<String> diplome;
-    private List<String> angebote;
-    private List<String> krankenkassen;
-    private List<Ordinationszeit> ordinationszeiten;
-    private List<Terminvereinbarung> terminvereinbarungen;
-    private List<String> fremdsprachen;
+    private List<String> diplome = new ArrayList<>();
+    private List<String> angebote = new ArrayList<>();
+    private List<String> krankenkassen = new ArrayList<>();
+    private List<Ordinationszeit> ordinationszeiten = new ArrayList<>();
+    private List<Terminvereinbarung> terminvereinbarungen = new ArrayList<>();
+    private List<String> fremdsprachen = new ArrayList<>();
     private Adresse adresse;
     private Erreichbarkeit erreichbarkeit;
 

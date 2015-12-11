@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Ernaehrung.Rezepte.Details.RezepteDetailAnsichtActivity"
+            android:name=".Ernaehrung.Rezepte.Details.RezepteDetailActivity"
             android:label="@string/title_activity_rezepte_detail_ansicht"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppThemeErnaehrung">

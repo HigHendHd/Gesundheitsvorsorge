@@ -18,7 +18,7 @@ import java.io.InputStream;
 import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.Liste;
 import gvapp.diplomprojekt.at.gv_appandroid.Daten.Constants;
 import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadXmlTask;
-import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.Details.RezepteDetailAnsichtActivity;
+import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Details.AerzteDetailActivity;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
 /**
@@ -66,7 +66,7 @@ public class AerzteListe extends Liste implements DownloadXmlTask.XmlDownloader 
 
     @Override
     public void itemClicked(View v, int position) {
-        Intent intent = new Intent(getActivity(), RezepteDetailAnsichtActivity.class);
+        Intent intent = new Intent(getActivity(), AerzteDetailActivity.class);
         intent.putExtra(Constants.INTENT_AERZTE_URL, eintraege.get(position).getLisURL());
         startActivity(intent);
     }

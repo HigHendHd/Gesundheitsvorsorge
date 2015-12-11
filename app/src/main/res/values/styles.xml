@@ -13,7 +13,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/Gesundheit500</item>
         <item name="colorPrimaryDark">@color/Gesundheit700</item>
-        <item name="colorAccent">@color/NeuigkeitenA200</item>
+        <item name="colorAccent">@color/GesundheitA200</item>
         <item name="material_drawer_selected_text">@color/Gesundheit500</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

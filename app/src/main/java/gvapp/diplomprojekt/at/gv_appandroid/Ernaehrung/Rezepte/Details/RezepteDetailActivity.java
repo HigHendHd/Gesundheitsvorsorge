@@ -19,14 +19,14 @@ import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadImageTask;
 import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadXmlTask;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
-public class RezepteDetailAnsichtActivity extends AppCompatActivity implements DownloadXmlTask.XmlDownloader {
+public class RezepteDetailActivity extends AppCompatActivity implements DownloadXmlTask.XmlDownloader {
 
     Rezept rezept;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rezepte_detail_ansicht);
+        setContentView(R.layout.activity_rezepte_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
