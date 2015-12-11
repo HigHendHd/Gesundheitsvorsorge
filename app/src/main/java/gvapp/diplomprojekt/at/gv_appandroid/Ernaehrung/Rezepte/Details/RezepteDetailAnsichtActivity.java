@@ -32,7 +32,8 @@ public class RezepteDetailAnsichtActivity extends AppCompatActivity implements D
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        new DownloadXmlTask(this).execute(Constants.URL_BASE + Constants.URL_REZEPTE_BASE + Constants.URL_AKTUELL);
+        new DownloadXmlTask(this).execute(Constants.URL_BASE + Constants.URL_REZEPTE_BASE +
+                getIntent().getStringExtra(Constants.INTENT_REZEPTE_URL));
     }
 
     @Override

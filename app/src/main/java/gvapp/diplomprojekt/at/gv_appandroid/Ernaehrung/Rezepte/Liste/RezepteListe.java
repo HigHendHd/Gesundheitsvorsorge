@@ -32,9 +32,8 @@ public class RezepteListe extends Liste implements DownloadXmlTask.XmlDownloader
 
     @Override
     public void itemClicked(View v, int position) {
-        Constants.selected_id = eintraege.get(position).getId();
-        Constants.URL_AKTUELL = eintraege.get(position).getLisURL();
         Intent intent = new Intent(getActivity(), RezepteDetailAnsichtActivity.class);
+        intent.putExtra(Constants.INTENT_REZEPTE_URL, eintraege.get(position).getLisURL());
         startActivity(intent);
     }
 

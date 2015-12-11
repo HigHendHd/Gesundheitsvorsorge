@@ -66,4 +66,5 @@
     <string name="zubereitung">Zubereitung:</string>
     <string name="schritt">Schritt</string>
     <string name="tipp">Tipp:</string>
+    <string name="title_activity_aerzte_detail">AerzteDetailActivity</string>
 </resources>
