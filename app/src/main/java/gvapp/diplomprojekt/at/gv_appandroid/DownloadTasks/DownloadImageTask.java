@@ -20,6 +20,8 @@ public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
     public DownloadImageTask(ImageView bmImage, ProgressBar pbProgress) {
         this.bmImage = bmImage;
         this.pbProgress = pbProgress;
+        bmImage.setVisibility(View.INVISIBLE);
+        pbProgress.setVisibility(View.VISIBLE);
     }
 
     protected Bitmap doInBackground(String... urls) {
