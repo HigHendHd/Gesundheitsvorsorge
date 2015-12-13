@@ -77,8 +77,22 @@
                             android:id="@+id/tvFachgebiet"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:paddingBottom="20dp"
                             android:textSize="20sp"
                             android:textStyle="bold|normal" />
+
+                        <TextView
+                            android:id="@+id/tvAdresse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:id="@+id/llOrdinationszeiten"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="20dp" />
 
                     </LinearLayout>
 
@@ -94,6 +108,18 @@
             android:layout_height="wrap_content"
             android:gravity="bottom"
             android:orientation="vertical">
+
+            <Button
+                android:id="@+id/bTelNummer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="dial" />
+
+            <Button
+                android:id="@+id/bAdresse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="openMaps" />
 
         </LinearLayout>
 

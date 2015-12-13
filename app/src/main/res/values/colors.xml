@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="Neuigkeiten500">#2196f3</color>
-    <color name="Neuigkeiten700">#1976d2</color>
+    <color name="Neuigkeiten500">#03A9F4</color>
+    <color name="Neuigkeiten700">#0288D1</color>
     <color name="NeuigkeitenA200">#FF4081</color>
 
-    <color name="Gesundheit500">#e91e63</color>
-    <color name="Gesundheit700">#c2185b</color>
+    <color name="Gesundheit500">#E91E63</color>
+    <color name="Gesundheit700">#C2185B</color>
     <color name="GesundheitA200">#64FFDA</color>
 
     <color name="Ernaehrung500">#ff5722</color>

@@ -21,6 +21,11 @@ public class Arzt {
     private Adresse adresse;
     private Erreichbarkeit erreichbarkeit;
 
+    public String getAdressString() {
+        return getAdresse().getStrasse() + " " + getAdresse().getNummer() +
+                ", " + getAdresse().getPostleitzahl() + " " + getAdresse().getStadt();
+    }
+
     public void addDiplom(String diplom) {
         diplome.add(diplom);
     }

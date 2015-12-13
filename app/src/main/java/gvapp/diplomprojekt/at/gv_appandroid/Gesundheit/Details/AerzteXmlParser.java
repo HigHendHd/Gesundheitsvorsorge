@@ -112,7 +112,7 @@ public class AerzteXmlParser {
                 skip(parser);
             }
         }
-        return new Adresse(strasse, nummer, postleitzahl, stadt);
+        return new Adresse(nummer, postleitzahl, stadt, strasse);
     }
 
     private Ordinationszeit readOrdinationszeit(XmlPullParser parser) throws XmlPullParserException, IOException {
@@ -135,7 +135,7 @@ public class AerzteXmlParser {
                 skip(parser);
             }
         }
-        return new Ordinationszeit(tag, start, ende);
+        return new Ordinationszeit(ende, start, tag);
     }
 
     private Terminvereinbarung readTerminvereinbarung(XmlPullParser parser) throws XmlPullParserException, IOException {
@@ -158,7 +158,7 @@ public class AerzteXmlParser {
                 skip(parser);
             }
         }
-        return new Terminvereinbarung(tag, start, ende);
+        return new Terminvereinbarung(ende, start, tag);
     }
 
     private String readTag(XmlPullParser parser, String tag) throws IOException, XmlPullParserException {
