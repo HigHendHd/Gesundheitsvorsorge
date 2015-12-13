@@ -44,7 +44,7 @@ public class DownloadXmlTask extends AsyncTask<String, Void, InputStream> {
     // the web page content as a InputStream, which it returns as
     // a string.
     private InputStream downloadUrl(String myurl) throws IOException {
-        InputStream is = null;
+        InputStream is;
 
         try {
             URL url = new URL(myurl);

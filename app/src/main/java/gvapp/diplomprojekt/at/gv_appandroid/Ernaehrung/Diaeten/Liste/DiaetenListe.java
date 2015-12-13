@@ -1,4 +1,4 @@
-package gvapp.diplomprojekt.at.gv_appandroid.Sport.Trainingsplaene;
+package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Diaeten.Liste;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -22,9 +22,9 @@ import gvapp.diplomprojekt.at.gv_appandroid.R;
 /**
  * Created by Dennis on 14.11.2015.
  */
-public class TrainingsplanListe extends Liste {
+public class DiaetenListe extends Liste {
 
-    public TrainingsplanListe() {
+    public DiaetenListe() {
         super();
     }
 
@@ -55,7 +55,7 @@ public class TrainingsplanListe extends Liste {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
 
-            new DownloadXmlTask(this).execute(Constants.URL_BASE + Constants.URL_WORKOUT_BASE + Constants.URL_WORKOUT_LISTE);
+            new DownloadXmlTask(this).execute(Constants.URL_BASE + Constants.URL_DIAETEN_BASE + Constants.URL_DIAETEN_LISTE);
 
         } else {
             Snackbar.make(getView(), getActivity().getString(R.string.keininternet),
@@ -74,7 +74,7 @@ public class TrainingsplanListe extends Liste {
         if (result != null) {
             eintraege.clear();
             try {
-                eintraege.addAll(new TrainingsplanListenParser().parse(result));
+                eintraege.addAll(new DiaetenListenParser().parse(result));
             } catch (XmlPullParserException e) {
                 e.printStackTrace();
             } catch (IOException e) {

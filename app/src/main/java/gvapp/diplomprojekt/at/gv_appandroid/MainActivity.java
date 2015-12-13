@@ -19,7 +19,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 import gvapp.diplomprojekt.at.gv_appandroid.DesignKlassen.ApplyColor;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.BMI_Rechner.BmiFragment;
-import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Diaeten.DiaetenListe;
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Diaeten.Liste.DiaetenListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.KFA_Rechner.KfaFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.RestaurantListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.Liste.RezepteListe;
