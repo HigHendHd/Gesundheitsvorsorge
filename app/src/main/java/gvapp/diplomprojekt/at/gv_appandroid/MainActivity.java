@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.android.gms.maps.MapFragment;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -17,12 +18,14 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
+import gvapp.diplomprojekt.at.gv_appandroid.Daten.Constants;
 import gvapp.diplomprojekt.at.gv_appandroid.DesignKlassen.ApplyColor;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.BMI_Rechner.BmiFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Diaeten.Liste.DiaetenListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.KFA_Rechner.KfaFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.RestaurantListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.Liste.RezepteListe;
+import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Karte.AerzteFinderFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Liste.AerzteListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten.NeuigkeitenListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Notrufe.NotrufListe;
@@ -31,6 +34,8 @@ import gvapp.diplomprojekt.at.gv_appandroid.Sport.Trainingsplaene.TrainingsplanL
 import gvapp.diplomprojekt.at.gv_appandroid.Sport.Uebungen.UebungsListe;
 
 public class MainActivity extends AppCompatActivity {
+
+    private int mapCode = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -148,6 +153,15 @@ public class MainActivity extends AppCompatActivity {
                     AerzteListe fragment = new AerzteListe();
                     ApplyColor.ApplyColorGesundheit(result, ctx, R.string.aerzte);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
+                    fragmentTransaction.commit();
+
+                    return false;
+                } else if (position == 4) {
+                    mapCode = Constants.MAP_AERZTE;
+
+                    MapFragment mMapFragment = AerzteFinderFragment.newInstance();
+                    ApplyColor.ApplyColorGesundheit(result, ctx, R.string.aerztefinder);
+                    fragmentTransaction.add(R.id.fragment_container, mMapFragment);
                     fragmentTransaction.commit();
 
                     return false;

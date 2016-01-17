@@ -33,4 +33,6 @@ public abstract class Constants {
 
     public static final String INTENT_REZEPTE_URL = "RezepteUrl";
     public static final String INTENT_AERZTE_URL = "AerzteUrl";
+
+    public static final int MAP_AERZTE = 1;
 }

@@ -39,6 +39,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="gvapp.diplomprojekt.at.gv_appandroid.MainActivity" />
         </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD4s85XcK5hio9lyxy3mJGQH9Lnu6Oayng" />
+
     </application>
 
 </manifest>
