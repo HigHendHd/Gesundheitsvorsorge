@@ -10,7 +10,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.google.android.gms.maps.MapFragment;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -159,9 +158,9 @@ public class MainActivity extends AppCompatActivity {
                 } else if (position == 4) {
                     mapCode = Constants.MAP_AERZTE;
 
-                    MapFragment mMapFragment = AerzteFinderFragment.newInstance();
+                    AerzteFinderFragment mMapFragment = AerzteFinderFragment.newInstance();
                     ApplyColor.ApplyColorGesundheit(result, ctx, R.string.aerztefinder);
-                    fragmentTransaction.add(R.id.fragment_container, mMapFragment);
+                    fragmentTransaction.replace(R.id.fragment_container, mMapFragment);
                     fragmentTransaction.commit();
 
                     return false;

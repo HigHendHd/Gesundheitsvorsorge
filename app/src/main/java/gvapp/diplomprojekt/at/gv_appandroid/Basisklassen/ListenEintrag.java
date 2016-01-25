@@ -9,6 +9,7 @@ public class ListenEintrag {
     protected String lisURL;
     protected String thumbnailUrl;
     protected int id;
+    private String adresse = "";
 
     public ListenEintrag() {
 
@@ -20,6 +21,14 @@ public class ListenEintrag {
         this.lisURL = lisURL;
         this.id = id;
         this.thumbnailUrl = thumbnailUrl;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
     }
 
     public int getId() {

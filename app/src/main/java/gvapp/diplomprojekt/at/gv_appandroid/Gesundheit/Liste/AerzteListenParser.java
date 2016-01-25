@@ -72,6 +72,7 @@ public class AerzteListenParser {
         String name = null;
         String bildUrl = null;
         String url = null;
+        String adresse = "";
         int id = 0;
         String fachgebiet = null;
         while (parser.next() != XmlPullParser.END_TAG) {
@@ -89,12 +90,41 @@ public class AerzteListenParser {
                 id = Integer.parseInt(readTag(parser, "id"));
             } else if (tag.equals("fachgebiet")) {
                 fachgebiet = readTag(parser, "fachgebiet");
+            } else if (tag.equals("adresse")) {
+                adresse = readAdresse(parser);
             } else {
                 skip(parser);
             }
         }
         ListenEintrag aerzteListenEintrag = new ListenEintrag(name, fachgebiet, url, id, bildUrl);
+        aerzteListenEintrag.setAdresse(adresse);
         return aerzteListenEintrag;
+    }
+
+    private String readAdresse(XmlPullParser parser) throws XmlPullParserException, IOException {
+        parser.require(XmlPullParser.START_TAG, ns, "adresse");
+        String strasse = null;
+        String nummer = null;
+        String postleitzahl = null;
+        String stadt = null;
+        while (parser.next() != XmlPullParser.END_TAG) {
+            if (parser.getEventType() != XmlPullParser.START_TAG) {
+                continue;
+            }
+            String name = parser.getName();
+            if (name.equals("strasse")) {
+                strasse = readTag(parser, name);
+            } else if (name.equals("nummer")) {
+                nummer = readTag(parser, name);
+            } else if (name.equals("postleitzahl")) {
+                postleitzahl = readTag(parser, name);
+            } else if (name.equals("stadt")) {
+                stadt = readTag(parser, name);
+            } else {
+                skip(parser);
+            }
+        }
+        return strasse + " " + nummer + ", " + postleitzahl + " " + stadt;
     }
 
     private String readTag(XmlPullParser parser, String tag) throws IOException, XmlPullParserException {
