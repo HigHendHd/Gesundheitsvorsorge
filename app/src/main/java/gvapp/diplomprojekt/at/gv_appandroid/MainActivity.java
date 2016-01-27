@@ -17,6 +17,7 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
+import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.Karte;
 import gvapp.diplomprojekt.at.gv_appandroid.Daten.Constants;
 import gvapp.diplomprojekt.at.gv_appandroid.DesignKlassen.ApplyColor;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.BMI_Rechner.BmiFragment;
@@ -78,55 +79,59 @@ public class MainActivity extends AppCompatActivity {
                                 .withIcon(GoogleMaterial.Icon.gmd_local_dining)
                                 .withSelectedIconColorRes(R.color.Ernaehrung500)
                                 .withSelectedTextColorRes(R.color.Ernaehrung500),
-                        new PrimaryDrawerItem().withName(R.string.rezepte) //pos: 7
+                        new PrimaryDrawerItem().withName(R.string.restaurantfinder) //pos:7
                                 .withIcon(GoogleMaterial.Icon.gmd_local_dining)
                                 .withSelectedIconColorRes(R.color.Ernaehrung500)
                                 .withSelectedTextColorRes(R.color.Ernaehrung500),
-                        new PrimaryDrawerItem().withName(R.string.diaeten) //pos: 8
+                        new PrimaryDrawerItem().withName(R.string.rezepte) //pos: 8
                                 .withIcon(GoogleMaterial.Icon.gmd_local_dining)
                                 .withSelectedIconColorRes(R.color.Ernaehrung500)
                                 .withSelectedTextColorRes(R.color.Ernaehrung500),
-                        new PrimaryDrawerItem().withName(R.string.trinkerinnerung) //pos: 9
+                        new PrimaryDrawerItem().withName(R.string.diaeten) //pos: 9
+                                .withIcon(GoogleMaterial.Icon.gmd_local_dining)
+                                .withSelectedIconColorRes(R.color.Ernaehrung500)
+                                .withSelectedTextColorRes(R.color.Ernaehrung500),
+                        new PrimaryDrawerItem().withName(R.string.trinkerinnerung) //pos: 10
                                 .withIcon(GoogleMaterial.Icon.gmd_local_drink)
                                 .withSelectedIconColorRes(R.color.Ernaehrung500)
                                 .withSelectedTextColorRes(R.color.Ernaehrung500),
-                        new PrimaryDrawerItem().withName(R.string.bmirechner) //pos: 10
+                        new PrimaryDrawerItem().withName(R.string.bmirechner) //pos: 11
                                 .withIcon(GoogleMaterial.Icon.gmd_keyboard)
                                 .withSelectedIconColorRes(R.color.Ernaehrung500)
                                 .withSelectedTextColorRes(R.color.Ernaehrung500),
-                        new PrimaryDrawerItem().withName(R.string.kfarechner) //pos: 11
+                        new PrimaryDrawerItem().withName(R.string.kfarechner) //pos: 12
                                 .withIcon(GoogleMaterial.Icon.gmd_keyboard)
                                 .withSelectedIconColorRes(R.color.Ernaehrung500)
                                 .withSelectedTextColorRes(R.color.Ernaehrung500),
 
                         new SectionDrawerItem().withName(R.string.sport),
-                        new PrimaryDrawerItem().withName(R.string.uebungen) //pos: 13
+                        new PrimaryDrawerItem().withName(R.string.uebungen) //pos: 14
                                 .withIcon(GoogleMaterial.Icon.gmd_run)
                                 .withSelectedIconColorRes(R.color.Sport500)
                                 .withSelectedTextColorRes(R.color.Sport500),
-                        new PrimaryDrawerItem().withName(R.string.trainingsplaene) //pos: 14
+                        new PrimaryDrawerItem().withName(R.string.trainingsplaene) //pos: 15
                                 .withIcon(GoogleMaterial.Icon.gmd_run)
                                 .withSelectedIconColorRes(R.color.Sport500)
                                 .withSelectedTextColorRes(R.color.Sport500),
-                        new PrimaryDrawerItem().withName(R.string.sportstaettensuche) //pos: 15
+                        new PrimaryDrawerItem().withName(R.string.sportstaettensuche) //pos: 16
                                 .withIcon(GoogleMaterial.Icon.gmd_run)
                                 .withSelectedIconColorRes(R.color.Sport500)
                                 .withSelectedTextColorRes(R.color.Sport500),
-                        new PrimaryDrawerItem().withName(R.string.schrittzaehler) //pos: 16
+                        new PrimaryDrawerItem().withName(R.string.schrittzaehler) //pos: 17
                                 .withIcon(GoogleMaterial.Icon.gmd_directions_run)
                                 .withSelectedIconColorRes(R.color.Sport500)
                                 .withSelectedTextColorRes(R.color.Sport500),
-                        new PrimaryDrawerItem().withName(R.string.wettbewerb) //pos: 17
+                        new PrimaryDrawerItem().withName(R.string.wettbewerb) //pos: 18
                                 .withIcon(GoogleMaterial.Icon.gmd_assignment)
                                 .withSelectedIconColorRes(R.color.Sport500)
                                 .withSelectedTextColorRes(R.color.Sport500),
-                        new PrimaryDrawerItem().withName(R.string.bestenliste) //pos: 18
+                        new PrimaryDrawerItem().withName(R.string.bestenliste) //pos: 19
                                 .withIcon(GoogleMaterial.Icon.gmd_nature_people)
                                 .withSelectedIconColorRes(R.color.Sport500)
                                 .withSelectedTextColorRes(R.color.Sport500),
 
                         new SectionDrawerItem().withName(R.string.notruf),
-                        new PrimaryDrawerItem().withName(R.string.notrufe) //pos: 20
+                        new PrimaryDrawerItem().withName(R.string.notrufe) //pos: 21
                                 .withIcon(GoogleMaterial.Icon.gmd_phone)
                                 .withSelectedIconColorRes(R.color.Notruf500)
                                 .withSelectedTextColorRes(R.color.Notruf700)
@@ -156,9 +161,9 @@ public class MainActivity extends AppCompatActivity {
 
                     return false;
                 } else if (position == 4) {
-                    mapCode = Constants.MAP_AERZTE;
-
-                    AerzteFinderFragment mMapFragment = AerzteFinderFragment.newInstance();
+                    Karte mMapFragment = AerzteFinderFragment.newInstance(
+                            Constants.URL_BASE + Constants.URL_AERZTE_BASE +
+                                    Constants.URL_AERZTE_LISTE, Constants.DATA_TYPE_AERZTE);
                     ApplyColor.ApplyColorGesundheit(result, ctx, R.string.aerztefinder);
                     fragmentTransaction.replace(R.id.fragment_container, mMapFragment);
                     fragmentTransaction.commit();
@@ -171,56 +176,56 @@ public class MainActivity extends AppCompatActivity {
                     fragmentTransaction.commit();
 
                     return false;
-                } else if (position == 7) {
+                } else if (position == 8) {
                     RezepteListe fragment = new RezepteListe();
                     ApplyColor.ApplyColorErnaehrung(result, ctx, R.string.rezepte);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
                     fragmentTransaction.commit();
 
                     return false;
-                } else if (position == 8) {
+                } else if (position == 9) {
                     DiaetenListe fragment = new DiaetenListe();
                     ApplyColor.ApplyColorErnaehrung(result, ctx, R.string.diaeten);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
                     fragmentTransaction.commit();
 
                     return false;
-                } else if (position == 10) {
+                } else if (position == 11) {
                     BmiFragment fragment = new BmiFragment();
                     ApplyColor.ApplyColorErnaehrung(result, ctx, R.string.bmirechner);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
                     fragmentTransaction.commit();
 
                     return false;
-                } else if (position == 11) {
+                } else if (position == 12) {
                     KfaFragment fragment = new KfaFragment();
                     ApplyColor.ApplyColorErnaehrung(result, ctx, R.string.kfarechner);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
                     fragmentTransaction.commit();
 
                     return false;
-                } else if (position == 13) {
+                } else if (position == 14) {
                     UebungsListe fragment = new UebungsListe();
                     ApplyColor.ApplyColorSport(result, ctx, R.string.uebungen);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
                     fragmentTransaction.commit();
 
                     return false;
-                } else if (position == 14) {
+                } else if (position == 15) {
                     TrainingsplanListe fragment = new TrainingsplanListe();
                     ApplyColor.ApplyColorSport(result, ctx, R.string.trainingsplaene);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
                     fragmentTransaction.commit();
 
                     return false;
-                } else if (position == 15) {
+                } else if (position == 16) {
                     SportstaettenListe fragment = new SportstaettenListe();
                     ApplyColor.ApplyColorSport(result, ctx, R.string.sportstaetten);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
                     fragmentTransaction.commit();
 
                     return false;
-                } else if (position == 20) {
+                } else if (position == 21) {
                     NotrufListe fragment = new NotrufListe();
                     ApplyColor.ApplyColorNotruf(result, ctx, R.string.notrufe);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
