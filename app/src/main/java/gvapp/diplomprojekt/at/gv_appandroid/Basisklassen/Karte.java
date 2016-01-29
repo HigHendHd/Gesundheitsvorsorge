@@ -38,6 +38,7 @@ import java.util.List;
 import gvapp.diplomprojekt.at.gv_appandroid.Daten.Constants;
 import gvapp.diplomprojekt.at.gv_appandroid.Daten.LocationConverter;
 import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadXmlTask;
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.Liste.RestaurantListenParser;
 import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Liste.AerzteListenParser;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
@@ -156,7 +157,7 @@ public class Karte extends MapFragment implements LocationListener, OnMapReadyCa
                         break;
 
                     case Constants.DATA_TYPE_RESTAURANTS:
-
+                        eintraege.addAll(new RestaurantListenParser().parse(result));
                         break;
                 }
             } catch (XmlPullParserException e) {

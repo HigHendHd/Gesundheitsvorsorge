@@ -1,4 +1,4 @@
-package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants;
+package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.Liste;
 
 import android.util.Xml;
 
@@ -73,6 +73,7 @@ public class RestaurantListenParser {
         String bildUrl = null;
         String url = null;
         String info = null;
+        String adresse = null;
         int id = 0;
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
@@ -89,12 +90,41 @@ public class RestaurantListenParser {
                 id = Integer.parseInt(readTag(parser, tag));
             } else if (tag.equals("ort")) {
                 info = readTag(parser, tag);
+            } else if (tag.equals("adresse")) {
+                adresse = readAdresse(parser);
             } else {
                 skip(parser);
             }
         }
         ListenEintrag aerzteListenEintrag = new ListenEintrag(name, info, url, id, bildUrl);
+        aerzteListenEintrag.setAdresse(adresse);
         return aerzteListenEintrag;
+    }
+
+    private String readAdresse(XmlPullParser parser) throws XmlPullParserException, IOException {
+        parser.require(XmlPullParser.START_TAG, ns, "adresse");
+        String strasse = null;
+        String nummer = null;
+        String postleitzahl = null;
+        String stadt = null;
+        while (parser.next() != XmlPullParser.END_TAG) {
+            if (parser.getEventType() != XmlPullParser.START_TAG) {
+                continue;
+            }
+            String name = parser.getName();
+            if (name.equals("strasse")) {
+                strasse = readTag(parser, name);
+            } else if (name.equals("nummer")) {
+                nummer = readTag(parser, name);
+            } else if (name.equals("postleitzahl")) {
+                postleitzahl = readTag(parser, name);
+            } else if (name.equals("stadt")) {
+                stadt = readTag(parser, name);
+            } else {
+                skip(parser);
+            }
+        }
+        return strasse + " " + nummer + ", " + postleitzahl + " " + stadt;
     }
 
     private String readTag(XmlPullParser parser, String tag) throws IOException, XmlPullParserException {

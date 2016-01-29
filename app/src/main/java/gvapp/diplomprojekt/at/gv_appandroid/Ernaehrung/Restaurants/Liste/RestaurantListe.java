@@ -1,4 +1,4 @@
-package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants;
+package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.Liste;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

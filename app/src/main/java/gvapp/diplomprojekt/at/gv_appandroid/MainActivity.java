@@ -23,7 +23,8 @@ import gvapp.diplomprojekt.at.gv_appandroid.DesignKlassen.ApplyColor;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.BMI_Rechner.BmiFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Diaeten.Liste.DiaetenListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.KFA_Rechner.KfaFragment;
-import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.RestaurantListe;
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.Karte.RestaurantFinderFragment;
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.Liste.RestaurantListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.Liste.RezepteListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Karte.AerzteFinderFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Liste.AerzteListe;
@@ -172,6 +173,16 @@ public class MainActivity extends AppCompatActivity {
                 } else if (position == 6) {
                     RestaurantListe fragment = new RestaurantListe();
                     ApplyColor.ApplyColorErnaehrung(result, ctx, R.string.restaurants);
+                    fragmentTransaction.replace(R.id.fragment_container, fragment);
+                    fragmentTransaction.commit();
+
+                    return false;
+                } else if (position == 7) {
+                    Karte fragment = RestaurantFinderFragment.newInstance(
+                            Constants.URL_BASE + Constants.URL_RESTAURANT_BASE +
+                                    Constants.URL_RESTAURANT_LISTE, Constants.DATA_TYPE_RESTAURANTS
+                    );
+                    ApplyColor.ApplyColorErnaehrung(result, ctx, R.string.restaurantfinder);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
                     fragmentTransaction.commit();
 

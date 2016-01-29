@@ -1,5 +1,7 @@
 package gvapp.diplomprojekt.at.gv_appandroid.Basisklassen;
 
+import android.util.Log;
+
 /**
  * Created by Dennis on 14.11.2015.
  */
@@ -24,11 +26,13 @@ public class ListenEintrag {
     }
 
     public String getAdresse() {
+        Log.v("Aufruf", "aufruf");
         return adresse;
     }
 
     public void setAdresse(String adresse) {
         this.adresse = adresse;
+        Log.v("Adresse", adresse);
     }
 
     public int getId() {
