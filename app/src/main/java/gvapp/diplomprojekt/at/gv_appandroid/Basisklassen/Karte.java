@@ -41,6 +41,7 @@ import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadXmlTask;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.Liste.RestaurantListenParser;
 import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Liste.AerzteListenParser;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
+import gvapp.diplomprojekt.at.gv_appandroid.Sport.Sportstaetten.Liste.SportstaettenListenParser;
 
 public class Karte extends MapFragment implements LocationListener, OnMapReadyCallback, DownloadXmlTask.XmlDownloader, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
@@ -158,6 +159,9 @@ public class Karte extends MapFragment implements LocationListener, OnMapReadyCa
 
                     case Constants.DATA_TYPE_RESTAURANTS:
                         eintraege.addAll(new RestaurantListenParser().parse(result));
+                        break;
+                    case Constants.DATA_TYPE_SPORTSTAETTEN:
+                        eintraege.addAll(new SportstaettenListenParser().parse(result));
                         break;
                 }
             } catch (XmlPullParserException e) {

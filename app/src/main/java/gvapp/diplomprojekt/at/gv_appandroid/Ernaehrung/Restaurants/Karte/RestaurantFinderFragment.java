@@ -7,5 +7,4 @@ import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.Karte;
  */
 public class RestaurantFinderFragment extends Karte {
 
-
 }

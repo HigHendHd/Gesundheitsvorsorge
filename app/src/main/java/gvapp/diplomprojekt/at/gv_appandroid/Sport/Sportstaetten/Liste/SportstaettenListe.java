@@ -1,4 +1,4 @@
-package gvapp.diplomprojekt.at.gv_appandroid.Sport.Sportstaetten;
+package gvapp.diplomprojekt.at.gv_appandroid.Sport.Sportstaetten.Liste;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

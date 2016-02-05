@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GV-App Android</string>
+    <string name="app_name">GV-App</string>
     <string name="action_settings">Settings</string>
     <string name="neuigkeiten">Neuigkeiten</string>
     <string name="gesundheit">Gesundheit</string>
@@ -67,5 +67,6 @@
     <string name="zubereitung">Zubereitung:</string>
     <string name="schritt">Schritt</string>
     <string name="tipp">Tipp:</string>
+    <string name="sportstaettenfinder">Sportstaettenfinder</string>
     <string name="title_activity_aerzte_detail">AerzteDetailActivity</string>
 </resources>

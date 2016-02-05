@@ -30,7 +30,8 @@ import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Karte.AerzteFinderFragmen
 import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Liste.AerzteListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten.NeuigkeitenListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Notrufe.NotrufListe;
-import gvapp.diplomprojekt.at.gv_appandroid.Sport.Sportstaetten.SportstaettenListe;
+import gvapp.diplomprojekt.at.gv_appandroid.Sport.Sportstaetten.Karte.SportstaettenFinderFragment;
+import gvapp.diplomprojekt.at.gv_appandroid.Sport.Sportstaetten.Liste.SportstaettenListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Sport.Trainingsplaene.TrainingsplanListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Sport.Uebungen.UebungsListe;
 
@@ -118,21 +119,25 @@ public class MainActivity extends AppCompatActivity {
                                 .withIcon(GoogleMaterial.Icon.gmd_run)
                                 .withSelectedIconColorRes(R.color.Sport500)
                                 .withSelectedTextColorRes(R.color.Sport500),
-                        new PrimaryDrawerItem().withName(R.string.schrittzaehler) //pos: 17
+                        new PrimaryDrawerItem().withName(R.string.sportstaettenfinder) //pos: 17
+                                .withIcon(GoogleMaterial.Icon.gmd_run)
+                                .withSelectedIconColorRes(R.color.Sport500)
+                                .withSelectedTextColorRes(R.color.Sport500),
+                        new PrimaryDrawerItem().withName(R.string.schrittzaehler) //pos: 18
                                 .withIcon(GoogleMaterial.Icon.gmd_directions_run)
                                 .withSelectedIconColorRes(R.color.Sport500)
                                 .withSelectedTextColorRes(R.color.Sport500),
-                        new PrimaryDrawerItem().withName(R.string.wettbewerb) //pos: 18
+                        new PrimaryDrawerItem().withName(R.string.wettbewerb) //pos: 19
                                 .withIcon(GoogleMaterial.Icon.gmd_assignment)
                                 .withSelectedIconColorRes(R.color.Sport500)
                                 .withSelectedTextColorRes(R.color.Sport500),
-                        new PrimaryDrawerItem().withName(R.string.bestenliste) //pos: 19
+                        new PrimaryDrawerItem().withName(R.string.bestenliste) //pos: 20
                                 .withIcon(GoogleMaterial.Icon.gmd_nature_people)
                                 .withSelectedIconColorRes(R.color.Sport500)
                                 .withSelectedTextColorRes(R.color.Sport500),
 
                         new SectionDrawerItem().withName(R.string.notruf),
-                        new PrimaryDrawerItem().withName(R.string.notrufe) //pos: 21
+                        new PrimaryDrawerItem().withName(R.string.notrufe) //pos: 22
                                 .withIcon(GoogleMaterial.Icon.gmd_phone)
                                 .withSelectedIconColorRes(R.color.Notruf500)
                                 .withSelectedTextColorRes(R.color.Notruf700)
@@ -236,7 +241,17 @@ public class MainActivity extends AppCompatActivity {
                     fragmentTransaction.commit();
 
                     return false;
-                } else if (position == 21) {
+                } else if (position == 17) {
+                    Karte fragment = SportstaettenFinderFragment.newInstance(
+                            Constants.URL_BASE + Constants.URL_SPORTSTAETTEN_BASE +
+                                    Constants.URL_SPORTSTAETTEN_LISTE, Constants.DATA_TYPE_SPORTSTAETTEN
+                    );
+                    ApplyColor.ApplyColorSport(result, ctx, R.string.sportstaettenfinder);
+                    fragmentTransaction.replace(R.id.fragment_container, fragment);
+                    fragmentTransaction.commit();
+
+                    return false;
+                } else if (position == 22) {
                     NotrufListe fragment = new NotrufListe();
                     ApplyColor.ApplyColorNotruf(result, ctx, R.string.notrufe);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
