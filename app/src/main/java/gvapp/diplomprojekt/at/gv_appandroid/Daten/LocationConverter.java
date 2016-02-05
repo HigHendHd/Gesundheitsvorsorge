@@ -3,6 +3,7 @@ package gvapp.diplomprojekt.at.gv_appandroid.Daten;
 import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
+import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -17,6 +18,7 @@ public abstract class LocationConverter {
         Geocoder coder = new Geocoder(context);
         List<Address> address;
         LatLng p1 = null;
+        Log.d("LocationConverter", strAddress);
 
         try {
             address = coder.getFromLocationName(strAddress, 5);

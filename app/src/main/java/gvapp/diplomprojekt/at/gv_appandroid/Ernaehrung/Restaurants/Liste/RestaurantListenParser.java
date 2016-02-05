@@ -116,9 +116,9 @@ public class RestaurantListenParser {
                 strasse = readTag(parser, name);
             } else if (name.equals("nummer")) {
                 nummer = readTag(parser, name);
-            } else if (name.equals("postleitzahl")) {
+            } else if (name.equals("plz")) {
                 postleitzahl = readTag(parser, name);
-            } else if (name.equals("stadt")) {
+            } else if (name.equals("ort")) {
                 stadt = readTag(parser, name);
             } else {
                 skip(parser);
