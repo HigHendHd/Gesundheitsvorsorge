@@ -57,6 +57,8 @@ public class AerzteXmlParser {
                 arzt.setAdresse(readAdresse(parser));
             } else if (name.equals("erreichbarkeit")) {
                 arzt.setErreichbarkeit(readErreichbarkeit(parser));
+            } else if (name.equals("krankenkassa")) {
+                arzt.addKrankenkassa(readTag(parser, name));
             } else {
                 skip(parser);
             }

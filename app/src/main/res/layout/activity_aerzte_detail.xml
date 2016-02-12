@@ -77,14 +77,23 @@
                             android:id="@+id/tvFachgebiet"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:orientation="horizontal"
                             android:paddingBottom="20dp"
                             android:textSize="20sp"
                             android:textStyle="bold|normal" />
 
+
                         <TextView
                             android:id="@+id/tvAdresse"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="10dp" />
+
+                        <TextView
+                            android:id="@+id/tvKrankenkassa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="10dp" />
 
                         <LinearLayout
                             android:id="@+id/llOrdinationszeiten"
@@ -93,6 +102,39 @@
                             android:orientation="vertical"
                             android:paddingBottom="10dp"
                             android:paddingTop="20dp" />
+
+                        <LinearLayout
+                            android:id="@+id/llTerminvereinbarung"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="10dp" />
+
+
+                        <TextView
+                            android:id="@+id/tvFremdsprachen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="10dp" />
+
+                        <LinearLayout
+                            android:id="@+id/llDiplom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingBottom="20dp"
+                            android:textSize="20sp"
+                            android:textStyle="bold|normal" />
+
+                        <LinearLayout
+                            android:id="@+id/llAngebot"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingBottom="20dp"
+                            android:textSize="20sp"
+                            android:textStyle="bold|normal" />
+
 
                     </LinearLayout>
 
