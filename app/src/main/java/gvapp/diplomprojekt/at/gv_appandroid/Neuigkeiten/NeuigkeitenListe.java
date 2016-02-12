@@ -45,7 +45,7 @@ public class NeuigkeitenListe extends Liste {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        createData();
+        //createData();
     }
 
     private void createData() {

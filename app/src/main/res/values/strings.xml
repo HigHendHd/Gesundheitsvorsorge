@@ -69,4 +69,5 @@
     <string name="tipp">Tipp:</string>
     <string name="sportstaettenfinder">Sportstaettenfinder</string>
     <string name="title_activity_aerzte_detail">AerzteDetailActivity</string>
+    <string name="oeffnungszeiten">Öffnungszeiten</string>
 </resources>

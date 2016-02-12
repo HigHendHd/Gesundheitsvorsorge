@@ -93,37 +93,14 @@ public class AerzteDetailActivity extends AppCompatActivity implements DownloadX
                 llOrdinationszeit.addView(tvZeit);
             }
 
-            LinearLayout llTerminvereinbarung = (LinearLayout) findViewById(R.id.llTerminvereinbarung);
-            for (Terminvereinbarung t : arzt.getTerminvereinbarungen()) {
-                llTerminvereinbarung.setLayoutParams(new LinearLayout.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.MATCH_PARENT));
-                llTerminvereinbarung.addView(llTerminvereinbarung);
-
-                TextView tvTag = new TextView(this);
-                tvTag.setLayoutParams(new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.WRAP_CONTENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT));
-                tvTag.setPadding(0, 0, 0, 10);
-                tvTag.setText(t.getTag() + ": ");
-                llTerminvereinbarung.addView(tvTag);
-
-                TextView tvZeit = new TextView(this);
-                tvZeit.setLayoutParams(new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.MATCH_PARENT));
-                tvZeit.setText(t.getStart() + "-" + t.getEnde());
-                tvZeit.setTypeface(null, Typeface.BOLD);
-                llTerminvereinbarung.addView(tvZeit);
-            }
-
-
             LinearLayout llDiplom = (LinearLayout) findViewById(R.id.llDiplom);
             for (String d : arzt.getDiplome()) {
-                llDiplom.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout llDiplome = new LinearLayout(this);
+                llDiplome.setLayoutParams(new LinearLayout.LayoutParams(
                         ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.MATCH_PARENT));
-                llDiplom.addView(llDiplom);
+                llDiplom.setOrientation(LinearLayout.VERTICAL);
+                llDiplom.addView(llDiplome);
 
                 TextView tvDiplom = new TextView(this);
                 tvDiplom.setLayoutParams(new LinearLayout.LayoutParams(
@@ -131,16 +108,19 @@ public class AerzteDetailActivity extends AppCompatActivity implements DownloadX
                         LinearLayout.LayoutParams.WRAP_CONTENT));
                 tvDiplom.setPadding(0, 0, 0, 10);
                 tvDiplom.setText(d);
-                llDiplom.addView(tvDiplom);
+                llDiplome.addView(tvDiplom);
 
             }
 
+
             LinearLayout llAngebot = (LinearLayout) findViewById(R.id.llAngebot);
             for (String a : arzt.getAngebote()) {
-                llDiplom.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout llAngebote = new LinearLayout(this);
+                llAngebote.setLayoutParams(new LinearLayout.LayoutParams(
                         ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.MATCH_PARENT));
-                llAngebot.addView(llAngebot);
+                llAngebot.setOrientation(LinearLayout.VERTICAL);
+                llAngebot.addView(llAngebote);
 
                 TextView tvAngebot = new TextView(this);
                 tvAngebot.setLayoutParams(new LinearLayout.LayoutParams(
@@ -148,16 +128,16 @@ public class AerzteDetailActivity extends AppCompatActivity implements DownloadX
                         LinearLayout.LayoutParams.WRAP_CONTENT));
                 tvAngebot.setPadding(0, 0, 0, 10);
                 tvAngebot.setText(a);
-                llDiplom.addView(tvAngebot);
+                llAngebote.addView(tvAngebot);
 
             }
 
 
             TextView tvKrankenkassa = (TextView) findViewById(R.id.tvKrankenkassa);
-            tvKrankenkassa.setText(arzt.getKrankenkassen() + "");
+            tvKrankenkassa.setText("Krankenkassen: \n" + arzt.getKrankenkassen());
 
             TextView tvFremdsprachen = (TextView) findViewById(R.id.tvFremdsprachen);
-            tvFremdsprachen.setText(arzt.getFremdsprachen() + "");
+            tvFremdsprachen.setText("Fremdsprachen: \n" + arzt.getFremdsprachen());
 
 
 
