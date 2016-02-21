@@ -93,7 +93,8 @@ public class RestaurantsDataSource {
         String weitereinfos = cursor.getString(idweitereinfos);
 
 
-        Restaurants restaurants = new Restaurants(id, name, kategorie, bild, info, telefonnr, oeffnungszeiten, adresse, weitereinfos);
+        Restaurants restaurants = new Restaurants(id, name, kategorie, bild, info, telefonnr,
+                oeffnungszeiten, adresse, weitereinfos);
 
         return restaurants;
     }
