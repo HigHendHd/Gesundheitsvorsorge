@@ -6,13 +6,15 @@ package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.Datenbank;
 public class Zutaten {
 
     private long r_id;
-    private int nummer;
-    private String text;
+    private String name;
+    private int anzahl;
+    private String einheit;
 
-    public Zutaten(long r_id, int nummer, String text) {
+    public Zutaten(long r_id, String name, int anzahl, String einheit) {
         this.r_id = r_id;
-        this.nummer = nummer;
-        this.text = text;
+        this.name = name;
+        this.anzahl = anzahl;
+        this.einheit = einheit;
     }
 
     public long getR_id() {
@@ -23,19 +25,27 @@ public class Zutaten {
         this.r_id = r_id;
     }
 
-    public int getNummer() {
-        return nummer;
+    public String getName() {
+        return name;
     }
 
-    public void setNummer(int nummer) {
-        this.nummer = nummer;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getText() {
-        return text;
+    public int getAnzahl() {
+        return anzahl;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setAnzahl(int anzahl) {
+        this.anzahl = anzahl;
+    }
+
+    public String getEinheit() {
+        return einheit;
+    }
+
+    public void setEinheit(String einheit) {
+        this.einheit = einheit;
     }
 }

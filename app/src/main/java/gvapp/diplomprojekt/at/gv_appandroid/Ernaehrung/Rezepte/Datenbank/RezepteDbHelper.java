@@ -16,7 +16,7 @@ public class RezepteDbHelper extends SQLiteOpenHelper {
 
     public static final String TABLE_REZEPTE = "rezepte_list";
     public static final String TABLE_SCHRITTE = "schritte_list";
-    public static final String TABLE_ZUTATEN = "_list";
+    public static final String TABLE_ZUTATEN = "zutaten_list";
 
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_NAME = "name";
@@ -40,7 +40,7 @@ public class RezepteDbHelper extends SQLiteOpenHelper {
                     COLUMN_TIPP + " INTEGER NOT NULL);";
 
     public static final String SQL_CREATESCHRITTE =
-            "CREATE TABLE " + TABLE_ZUTATEN +
+            "CREATE TABLE " + TABLE_SCHRITTE +
                     "(" + COLUMN_R_ID + "INTEGER PRIMARY KEY, " +
                     COLUMN_NUMMER + " INTEGER PRIMARY KEY, " +
                     COLUMN_TEXT + " TEXT NOT NULL, " +
@@ -64,7 +64,9 @@ public class RezepteDbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         try {
-            Log.d(LOG_TAG, "Die Tabelle wird mit SQL-Befehl: " + SQL_CREATEREZEPTE + " angelegt.");
+            Log.d(LOG_TAG, "Die Tabelle wird mit SQL-Befehl: " + SQL_CREATEREZEPTE + " "
+                    + SQL_CREATESCHRITTE + " " + SQL_CREATEZUTATEN + " angelegt.");
+
             db.execSQL(SQL_CREATEREZEPTE);
             db.execSQL(SQL_CREATESCHRITTE);
             db.execSQL(SQL_CREATEZUTATEN);
