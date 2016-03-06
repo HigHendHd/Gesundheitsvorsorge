@@ -70,4 +70,9 @@
     <string name="sportstaettenfinder">Sportstaettenfinder</string>
     <string name="title_activity_aerzte_detail">AerzteDetailActivity</string>
     <string name="oeffnungszeiten">Öffnungszeiten</string>
+    <string name="diplome">Diplome</string>
+    <string name="krankenkassen">Krankenkassen</string>
+    <string name="fremdsprachen">Fremdsprachen</string>
+    <string name="informationen">Informationen</string>
+    <string name="weitereinformationen">Weitere Informationen</string>
 </resources>

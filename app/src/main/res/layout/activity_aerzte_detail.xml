@@ -120,17 +120,39 @@
                             android:paddingBottom="10dp" />
 
                         <TextView
+                            android:id="@+id/tvKrankenkassen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="10dp"
+                            android:text="@string/krankenkassen"
+                            android:textStyle="bold" />
+
+                        <TextView
                             android:id="@+id/tvKrankenkassa"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingBottom="10dp" />
 
-
+                        <TextView
+                            android:id="@+id/tvFremdsprache"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="10dp"
+                            android:text="@string/fremdsprachen"
+                            android:textStyle="bold" />
                         <TextView
                             android:id="@+id/tvFremdsprachen"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingBottom="10dp" />
+
+                        <TextView
+                            android:id="@+id/tvDiplome"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:text="@string/diplome"
+                            android:textStyle="bold" />
 
                         <LinearLayout
                             android:id="@+id/llDiplom"

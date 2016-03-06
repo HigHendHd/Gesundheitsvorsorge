@@ -64,8 +64,8 @@ public class AerzteDetailActivity extends AppCompatActivity implements DownloadX
 
             LinearLayout llMainLayout = (LinearLayout) findViewById(R.id.llMainLayout);
 
-            TextView tvAdresse = (TextView) findViewById(R.id.tvAdresse);
-            tvAdresse.setText(arzt.getAdressString());
+            //TextView tvAdresse = (TextView) findViewById(R.id.tvAdresse);
+            //tvAdresse.setText(arzt.getAdressString());
 
             LinearLayout llOrdinationszeiten = (LinearLayout) findViewById(R.id.llOrdinationszeiten);
             for (Ordinationszeit o : arzt.getOrdinationszeiten()) {
@@ -93,6 +93,7 @@ public class AerzteDetailActivity extends AppCompatActivity implements DownloadX
                 llOrdinationszeit.addView(tvZeit);
             }
 
+
             LinearLayout llDiplom = (LinearLayout) findViewById(R.id.llDiplom);
             for (String d : arzt.getDiplome()) {
                 LinearLayout llDiplome = new LinearLayout(this);
@@ -101,6 +102,7 @@ public class AerzteDetailActivity extends AppCompatActivity implements DownloadX
                         ViewGroup.LayoutParams.MATCH_PARENT));
                 llDiplom.setOrientation(LinearLayout.VERTICAL);
                 llDiplom.addView(llDiplome);
+
 
                 TextView tvDiplom = new TextView(this);
                 tvDiplom.setLayoutParams(new LinearLayout.LayoutParams(
@@ -122,6 +124,8 @@ public class AerzteDetailActivity extends AppCompatActivity implements DownloadX
                 llAngebot.setOrientation(LinearLayout.VERTICAL);
                 llAngebot.addView(llAngebote);
 
+                TextView tvAngebote = new TextView(this);
+                tvAngebote.setText("Angebote: \n");
                 TextView tvAngebot = new TextView(this);
                 tvAngebot.setLayoutParams(new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -134,10 +138,10 @@ public class AerzteDetailActivity extends AppCompatActivity implements DownloadX
 
 
             TextView tvKrankenkassa = (TextView) findViewById(R.id.tvKrankenkassa);
-            tvKrankenkassa.setText("Krankenkassen: \n" + arzt.getKrankenkassen());
+            tvKrankenkassa.setText(arzt.getKrankenkassen() + "");
 
             TextView tvFremdsprachen = (TextView) findViewById(R.id.tvFremdsprachen);
-            tvFremdsprachen.setText("Fremdsprachen: \n" + arzt.getFremdsprachen());
+            tvFremdsprachen.setText(arzt.getFremdsprachen() + "");
 
 
 

@@ -16,7 +16,10 @@ import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.Datenbank.Res
 /**
  * Created by Dennis on 21.02.2016.
  */
+
 public class RezepteDataSource {
+
+
     private static final String LOG_TAG = RezepteDataSource.class.getSimpleName();
 
     private SQLiteDatabase database;
@@ -57,9 +60,9 @@ public class RezepteDataSource {
         ContentValues values = new ContentValues();
         values.put(RestaurantsDbHelper.COLUMN_NAME, name);
         values.put(RestaurantsDbHelper.COLUMN_BILD, bild);
-        values.put(RestaurantsDbHelper.COLUMN_KOCHDAUER, kochdauer);
-        values.put(RestaurantsDbHelper.COLUMN_SCHWIERIGKEITSGRAD, schwierigkeitsgrad);
-        values.put(RestaurantsDbHelper.COLUMN_TIPP, tipp);
+        //   values.put(RestaurantsDbHelper.COLUMN_KOCHDAUER, kochdauer);
+        //   values.put(RestaurantsDbHelper.COLUMN_SCHWIERIGKEITSGRAD, schwierigkeitsgrad);
+        //   values.put(RestaurantsDbHelper.COLUMN_TIPP, tipp);
 
         long insertId = database.insert(RestaurantsDbHelper.TABLE_RESTAURANT, null, values);
 
@@ -71,7 +74,9 @@ public class RezepteDataSource {
         Restaurants restaurants = cursorToRestaurants(cursor);
         cursor.close();
 
-        return restaurants;
+     /*   return restaurants; */
+        return null;
+
     }
     private Restaurants cursorToRestaurants(Cursor cursor) {
 
