@@ -9,8 +9,6 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.Datenbank.Restaurants;
-import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.Datenbank.RestaurantsDbHelper;
 
 
 /**
@@ -58,72 +56,72 @@ public class RezepteDataSource {
     public Rezepte createRezepte(String name, String bild, String kochdauer, String schwierigkeitsgrad,
                                          String tipp) {
         ContentValues values = new ContentValues();
-        values.put(RestaurantsDbHelper.COLUMN_NAME, name);
-        values.put(RestaurantsDbHelper.COLUMN_BILD, bild);
+        values.put(RezepteDbHelper.COLUMN_NAME, name);
+        values.put(RezepteDbHelper.COLUMN_BILD, bild);
         //   values.put(RestaurantsDbHelper.COLUMN_KOCHDAUER, kochdauer);
         //   values.put(RestaurantsDbHelper.COLUMN_SCHWIERIGKEITSGRAD, schwierigkeitsgrad);
         //   values.put(RestaurantsDbHelper.COLUMN_TIPP, tipp);
 
-        long insertId = database.insert(RestaurantsDbHelper.TABLE_RESTAURANT, null, values);
+        long insertId = database.insert(RezepteDbHelper.TABLE_REZEPTE, null, values);
 
-        Cursor cursor = database.query(RestaurantsDbHelper.TABLE_RESTAURANT,
-                columns, RestaurantsDbHelper.COLUMN_ID + "=" + insertId,
+        Cursor cursor = database.query(RezepteDbHelper.TABLE_REZEPTE,
+                columns, RezepteDbHelper.COLUMN_ID + "=" + insertId,
                 null, null, null, null);
 
         cursor.moveToFirst();
-        Restaurants restaurants = cursorToRestaurants(cursor);
+        Rezepte rezepte = cursorToRezepte(cursor);
         cursor.close();
 
      /*   return restaurants; */
         return null;
 
     }
-    private Restaurants cursorToRestaurants(Cursor cursor) {
+    private Rezepte cursorToRezepte(Cursor cursor) {
 
-        int idIndex = cursor.getColumnIndex(RestaurantsDbHelper.COLUMN_ID);
-        int idName = cursor.getColumnIndex(RestaurantsDbHelper.COLUMN_NAME);
-        int idAdresse = cursor.getColumnIndex(RestaurantsDbHelper.COLUMN_ADRESSE);
-        int idBild = cursor.getColumnIndex(RestaurantsDbHelper.COLUMN_BILD);
-        int idInfo = cursor.getColumnIndex(RestaurantsDbHelper.COLUMN_INFO);
-        int idKategorie = cursor.getColumnIndex(RestaurantsDbHelper.COLUMN_KATEGORIE);
-        int idOeffnungszeiten = cursor.getColumnIndex(RestaurantsDbHelper.COLUMN_OEFFNUNGSZEITEN);
-        int idTelefonnr = cursor.getColumnIndex(RestaurantsDbHelper.COLUMN_TELEFONNR);
-        int idweitereinfos = cursor.getColumnIndex(RestaurantsDbHelper.COLUMN_WEITEREINFOS);
+        int idIndex = cursor.getColumnIndex(RezepteDbHelper.COLUMN_ID);
+        int idName = cursor.getColumnIndex(RezepteDbHelper.COLUMN_NAME);
+        int idBild = cursor.getColumnIndex(RezepteDbHelper.COLUMN_BILD);
+        int idKochdauer = cursor.getColumnIndex(RezepteDbHelper.COLUMN_KOCHDAUER);
+        int idSchwierigkeitsgrad = cursor.getColumnIndex(RezepteDbHelper.COLUMN_SCHWIERIGKEITSGRAD);
+        int idR_id = cursor.getColumnIndex(RezepteDbHelper.COLUMN_R_ID);
+        int idTipp = cursor.getColumnIndex(RezepteDbHelper.COLUMN_TIPP);
+        int idText = cursor.getColumnIndex(RezepteDbHelper.COLUMN_TEXT);
+        int idEinheit = cursor.getColumnIndex(RezepteDbHelper.COLUMN_EINHEIT);
 
         long id = cursor.getLong(idIndex);
         String name = cursor.getString(idName);
         String bild = cursor.getString(idBild);
-        String adresse = cursor.getString(idAdresse);
-        String info = cursor.getString(idInfo);
-        String kategorie = cursor.getString(idKategorie);
-        String oeffnungszeiten = cursor.getString(idOeffnungszeiten);
-        int telefonnr = cursor.getInt(idTelefonnr);
-        String weitereinfos = cursor.getString(idweitereinfos);
+        String kochdauer = cursor.getString(idKochdauer);
+        String schwierigkeitsgrad = cursor.getString(idSchwierigkeitsgrad);
+        long r_id = cursor.getLong(idR_id);
+        String tipp = cursor.getString(idTipp);
+        int text = cursor.getInt(idText);
+        String einheit = cursor.getString(idEinheit);
 
 
-        Restaurants restaurants = new Restaurants(id, name, kategorie, bild, info, telefonnr,
-                oeffnungszeiten, adresse, weitereinfos);
+        Rezepte rezepte = new Rezepte(id, name, bild, kochdauer, schwierigkeitsgrad,
+                r_id, tipp, text, einheit);
 
-        return restaurants;
+        return rezepte;
     }
-    public List<Restaurants> getAllRestaurants() {
-        List<Restaurants> restaurantsList = new ArrayList<>();
+    public List<Rezepte> getAllRezepte() {
+        List<Rezepte> rezepteList = new ArrayList<>();
 
-        Cursor cursor = database.query(RestaurantsDbHelper.TABLE_RESTAURANT,
+        Cursor cursor = database.query(RezepteDbHelper.TABLE_REZEPTE,
                 columns, null, null, null, null, null);
 
         cursor.moveToFirst();
-        Restaurants restaurants;
+        Rezepte rezepte;
 
         while(!cursor.isAfterLast()) {
-            restaurants = cursorToRestaurants(cursor);
-            restaurantsList.add(restaurants);
-            Log.d(LOG_TAG, "ID: " + restaurants.getId() + ", Inhalt: " + restaurants.toString());
+            rezepte = cursorToRezepte(cursor);
+            rezepteList.add(rezepte);
+            Log.d(LOG_TAG, "ID: " + rezepte.getId() + ", Inhalt: " + rezepte.toString());
             cursor.moveToNext();
         }
 
         cursor.close();
 
-        return restaurantsList;
+        return rezepteList;
     }
 }
