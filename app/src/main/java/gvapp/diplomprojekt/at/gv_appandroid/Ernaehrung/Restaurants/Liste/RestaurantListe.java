@@ -33,7 +33,7 @@ public class RestaurantListe extends Liste {
     @Override
     public void itemClicked(View v, int position) {
         Intent intent = new Intent(getActivity(), RestaurantDetailActivity.class);
-        intent.putExtra(Constants.INTENT_REZEPTE_URL, eintraege.get(position).getLisURL());
+        intent.putExtra(Constants.INTENT_RESTAURANT_URL, eintraege.get(position).getLisURL());
         startActivity(intent);
     }
 

@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -35,8 +35,8 @@ public class RestaurantDetailActivity extends AppCompatActivity implements Downl
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        new DownloadXmlTask(this).execute(Constants.URL_BASE + Constants.URL_AERZTE_BASE +
-                getIntent().getStringExtra(Constants.INTENT_AERZTE_URL));
+        new DownloadXmlTask(this).execute(Constants.URL_BASE + Constants.URL_RESTAURANT_BASE +
+                getIntent().getStringExtra(Constants.INTENT_RESTAURANT_URL));
     }
 
     @Override
@@ -58,9 +58,6 @@ public class RestaurantDetailActivity extends AppCompatActivity implements Downl
             }
             ((TextView) findViewById(R.id.tvKategorie)).setText(restaurant.getKategorie() + "");
 
-            LinearLayout llMainLayout = (LinearLayout) findViewById(R.id.llMainLayout);
-
-
             TextView tvOeffnungszeiten = (TextView) findViewById(R.id.tvOeffnungszeiten);
             tvOeffnungszeiten.setText(restaurant.getOeffnungszeiten());
 
@@ -70,7 +67,8 @@ public class RestaurantDetailActivity extends AppCompatActivity implements Downl
             TextView tvWeitereInfo = (TextView) findViewById(R.id.tvWeitereInfo);
             tvWeitereInfo.setText(restaurant.getWeiterinfos());
 
-
+            ((Button) findViewById(R.id.bTelNummer)).setText(restaurant.getTelefonnr());
+            ((Button) findViewById(R.id.bAdresse)).setText(restaurant.getAdressString());
         }
     }
 

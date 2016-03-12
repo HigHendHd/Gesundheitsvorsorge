@@ -32,6 +32,15 @@
                 android:value="gvapp.diplomprojekt.at.gv_appandroid.MainActivity" />
         </activity>
         <activity
+            android:name=".Ernaehrung.Restaurants.Details.RestaurantDetailActivity"
+            android:label="@string/title_activity_rezepte_detail_ansicht"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppThemeErnaehrung">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="gvapp.diplomprojekt.at.gv_appandroid.MainActivity" />
+        </activity>
+        <activity
             android:name=".Gesundheit.Details.AerzteDetailActivity"
             android:label="@string/title_activity_aerzte_detail"
             android:parentActivityName=".MainActivity"

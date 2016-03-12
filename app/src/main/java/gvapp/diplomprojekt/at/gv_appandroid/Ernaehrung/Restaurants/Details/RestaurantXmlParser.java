@@ -49,7 +49,7 @@ public class RestaurantXmlParser {
                 restaurant.setInfo(readTag(parser, name));
             } else if (name.equals("adresse")) {
                 restaurant.setAdresse(readAdresse(parser));
-            } else if (name.equals("weiterinfo")) {
+            } else if (name.equals("weitereinfos")) {
                 restaurant.setWeiterinfos(readTag(parser, name));
             } else {
                 skip(parser);
@@ -73,9 +73,9 @@ public class RestaurantXmlParser {
                 strasse = readTag(parser, name);
             } else if (name.equals("nummer")) {
                 nummer = readTag(parser, name);
-            } else if (name.equals("postleitzahl")) {
+            } else if (name.equals("plz")) {
                 plz = readTag(parser, name);
-            } else if (name.equals("stadt")) {
+            } else if (name.equals("ort")) {
                 ort = readTag(parser, name);
             } else {
                 skip(parser);
