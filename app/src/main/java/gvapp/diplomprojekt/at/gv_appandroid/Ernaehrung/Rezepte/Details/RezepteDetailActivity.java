@@ -2,7 +2,6 @@ package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.Details;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -14,12 +13,13 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.io.InputStream;
 
+import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.DetailActivity;
 import gvapp.diplomprojekt.at.gv_appandroid.Daten.Constants;
 import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadImageTask;
 import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadXmlTask;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
-public class RezepteDetailActivity extends AppCompatActivity implements DownloadXmlTask.XmlDownloader {
+public class RezepteDetailActivity extends DetailActivity implements DownloadXmlTask.XmlDownloader {
 
     Rezept rezept;
 

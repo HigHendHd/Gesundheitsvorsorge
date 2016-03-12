@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,12 +18,13 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.io.InputStream;
 
+import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.DetailActivity;
 import gvapp.diplomprojekt.at.gv_appandroid.Daten.Constants;
 import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadImageTask;
 import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadXmlTask;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
-public class AerzteDetailActivity extends AppCompatActivity implements DownloadXmlTask.XmlDownloader {
+public class AerzteDetailActivity extends DetailActivity implements DownloadXmlTask.XmlDownloader {
 
     Arzt arzt;
 

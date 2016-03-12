@@ -54,6 +54,15 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD4s85XcK5hio9lyxy3mJGQH9Lnu6Oayng" />
 
+        <activity
+            android:name=".Ernaehrung.Diaeten.Details.DiaetenDetailActivity"
+            android:label="@string/title_activity_diaeten_detail"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppThemeErnaehrung">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="gvapp.diplomprojekt.at.gv_appandroid.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

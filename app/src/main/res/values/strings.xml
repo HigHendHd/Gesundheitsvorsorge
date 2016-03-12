@@ -75,4 +75,10 @@
     <string name="fremdsprachen">Fremdsprachen</string>
     <string name="informationen">Informationen</string>
     <string name="weitereinformationen">Weitere Informationen</string>
+    <string name="title_activity_diaeten_detail">DiaetenDetailActivity</string>
+    <string name="info">Info</string>
+    <string name="erklaerung">Erklärung</string>
+    <string name="vorteile">Vorteile</string>
+    <string name="nachteile">Nachteile</string>
+    <string name="fazit">Fazit</string>
 </resources>
