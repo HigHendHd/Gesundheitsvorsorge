@@ -12,7 +12,7 @@ public class Rezepte {
     private String schwierigkeitsgrad;
     private String tipp;
 
-    public Rezepte(long id, String name, String bild, String kochdauer, String schwierigkeitsgrad, String tipp) {
+    public Rezepte(long id, String s, String name, String bild, String kochdauer, long r_id, String schwierigkeitsgrad, int text, String tipp) {
         this.id = id;
         this.name = name;
         this.bild = bild;
