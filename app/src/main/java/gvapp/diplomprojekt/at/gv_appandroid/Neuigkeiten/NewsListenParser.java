@@ -44,7 +44,7 @@ public class NewsListenParser {
             parser.nextTag();
             return readFeed(parser);
         } finally {
-            in.close();
+            //in.close();
         }
     }
 

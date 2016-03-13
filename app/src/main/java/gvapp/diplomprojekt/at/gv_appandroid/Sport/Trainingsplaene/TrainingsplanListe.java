@@ -72,18 +72,15 @@ public class TrainingsplanListe extends Liste {
     @Override
     public void xmlDownloaded(InputStream result) {
         if (result != null) {
-            eintraege.clear();
             try {
-                eintraege.addAll(new TrainingsplanListenParser().parse(result));
+                retList = new TrainingsplanListenParser().parse(result);
             } catch (XmlPullParserException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            mAdapter.notifyDataSetChanged();
         } else {
             Snackbar.make(getView(), "Fehler", Snackbar.LENGTH_LONG).show();
         }
-        super.xmlDownloaded(result);
     }
 }

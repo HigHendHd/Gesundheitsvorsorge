@@ -25,26 +25,36 @@ public class DownloadXmlTask extends AsyncTask<String, Void, InputStream> {
 
     @Override
     protected InputStream doInBackground(String... urls) {
-
+        InputStream is = null;
         // params comes from the execute() call: params[0] is the url.
         try {
-            return downloadUrl(urls[0]);
+            is = downloadUrl(urls[0]);
+            xmlDownloader.xmlDownloaded(is);
+            return is;
         } catch (IOException e) {
             return null;
+        } finally {
+            try {
+                if (is != null) {
+                    is.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     // onPostExecute displays the results of the AsyncTask.
     @Override
     protected void onPostExecute(InputStream result) {
-        xmlDownloader.xmlDownloaded(result);
+        xmlDownloader.fillData();
     }
 
     // Given a URL, establishes an HttpUrlConnection and retrieves
     // the web page content as a InputStream, which it returns as
     // a string.
     private InputStream downloadUrl(String myurl) throws IOException {
-        InputStream is;
+        InputStream is = null;
 
         try {
             URL url = new URL(myurl);
@@ -66,9 +76,12 @@ public class DownloadXmlTask extends AsyncTask<String, Void, InputStream> {
         } finally {
 
         }
+        //return null;
     }
 
     public interface XmlDownloader {
         void xmlDownloaded(InputStream result);
+
+        void fillData();
     }
 }

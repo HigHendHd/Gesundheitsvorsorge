@@ -26,22 +26,13 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
-import org.xmlpull.v1.XmlPullParserException;
-
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import gvapp.diplomprojekt.at.gv_appandroid.Daten.Constants;
-import gvapp.diplomprojekt.at.gv_appandroid.Daten.LocationConverter;
 import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadXmlTask;
-import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.Liste.RestaurantListenParser;
-import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Liste.AerzteListenParser;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
-import gvapp.diplomprojekt.at.gv_appandroid.Sport.Sportstaetten.Liste.SportstaettenListenParser;
 
 public class Karte extends MapFragment implements LocationListener, OnMapReadyCallback, DownloadXmlTask.XmlDownloader, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
@@ -149,7 +140,7 @@ public class Karte extends MapFragment implements LocationListener, OnMapReadyCa
 
     @Override
     public void xmlDownloaded(InputStream result) {
-        if (result != null) {
+        /*if (result != null) {
             eintraege.clear();
             try {
                 switch (DATA_TYPE) {
@@ -180,7 +171,12 @@ public class Karte extends MapFragment implements LocationListener, OnMapReadyCa
             }
         } else {
             Snackbar.make(getView(), "Fehler im Download", Snackbar.LENGTH_LONG).show();
-        }
+        }*/
+    }
+
+    @Override
+    public void fillData() {
+
     }
 
     @Override

@@ -22,6 +22,7 @@ import gvapp.diplomprojekt.at.gv_appandroid.R;
  */
 public class Liste extends Fragment implements ListenAdapter.ClickListener, DownloadXmlTask.XmlDownloader {
 
+    protected List retList;
     protected List<ListenEintrag> eintraege = new ArrayList<ListenEintrag>();
     protected RecyclerView.Adapter mAdapter;
     private RecyclerView mRecyclerView;
@@ -47,7 +48,7 @@ public class Liste extends Fragment implements ListenAdapter.ClickListener, Down
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
-        mRecyclerView.setHasFixedSize(true);
+        //mRecyclerView.setHasFixedSize(true);
 
         // use a linear layout manager
         mLayoutManager = new LinearLayoutManager(getActivity());
@@ -79,6 +80,14 @@ public class Liste extends Fragment implements ListenAdapter.ClickListener, Down
 
     @Override
     public void xmlDownloaded(InputStream result) {
+
+    }
+
+    @Override
+    public void fillData() {
         dataLoaded();
+        eintraege.clear();
+        eintraege.addAll(retList);
+        mAdapter.notifyDataSetChanged();
     }
 }

@@ -1,6 +1,7 @@
 package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Diaeten.Liste;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import java.io.InputStream;
 import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.Liste;
 import gvapp.diplomprojekt.at.gv_appandroid.Daten.Constants;
 import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadXmlTask;
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Diaeten.Details.DiaetenDetailActivity;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
 /**
@@ -30,9 +32,9 @@ public class DiaetenListe extends Liste {
 
     @Override
     public void itemClicked(View v, int position) {
-        /*Intent intent = new Intent(getActivity(), RezepteDetailActivity.class);
-        intent.putExtra(Constants.INTENT_REZEPTE_URL, eintraege.get(position).getLisURL());
-        startActivity(intent);*/
+        Intent intent = new Intent(getActivity(), DiaetenDetailActivity.class);
+        intent.putExtra(Constants.INTENT_DIAETEN_URL, eintraege.get(position).getLisURL());
+        startActivity(intent);
     }
 
     @Override
@@ -72,18 +74,15 @@ public class DiaetenListe extends Liste {
     @Override
     public void xmlDownloaded(InputStream result) {
         if (result != null) {
-            eintraege.clear();
             try {
-                eintraege.addAll(new DiaetenListenParser().parse(result));
+                retList = new DiaetenListenParser().parse(result);
             } catch (XmlPullParserException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            mAdapter.notifyDataSetChanged();
         } else {
             Snackbar.make(getView(), "Fehler", Snackbar.LENGTH_LONG).show();
         }
-        super.xmlDownloaded(result);
     }
 }

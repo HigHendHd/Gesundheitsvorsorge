@@ -18,6 +18,7 @@ import java.io.InputStream;
 import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.Liste;
 import gvapp.diplomprojekt.at.gv_appandroid.Daten.Constants;
 import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadXmlTask;
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.Liste.RestaurantListenParser;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.Details.RezepteDetailActivity;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
@@ -74,18 +75,15 @@ public class RezepteListe extends Liste implements DownloadXmlTask.XmlDownloader
     @Override
     public void xmlDownloaded(InputStream result) {
         if (result != null) {
-            eintraege.clear();
             try {
-                eintraege.addAll(new RezepteListenParser().parse(result));
+                retList = new RestaurantListenParser().parse(result);
             } catch (XmlPullParserException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            mAdapter.notifyDataSetChanged();
         } else {
             Snackbar.make(getView(), "Fehler", Snackbar.LENGTH_LONG).show();
         }
-        super.xmlDownloaded(result);
     }
 }

@@ -11,6 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
 import java.io.InputStream;
 
 import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.Liste;
@@ -45,7 +48,7 @@ public class NeuigkeitenListe extends Liste {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        //createData();
+        createData();
     }
 
     private void createData() {
@@ -71,18 +74,15 @@ public class NeuigkeitenListe extends Liste {
     @Override
     public void xmlDownloaded(InputStream result) {
         if (result != null) {
-            eintraege.clear();
-            /*try {
-                eintraege.addAll(new NewsListenParser().parse(result));
+            try {
+                retList = new NewsListenParser().parse(result);
             } catch (XmlPullParserException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
-            }*/
-            mAdapter.notifyDataSetChanged();
+            }
         } else {
             Snackbar.make(getView(), "Fehler", Snackbar.LENGTH_LONG).show();
         }
-        super.xmlDownloaded(result);
     }
 }
