@@ -63,6 +63,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="gvapp.diplomprojekt.at.gv_appandroid.MainActivity" />
         </activity>
+        <activity
+            android:name=".Neuigkeiten.Details.NeuigkeitenDetailActivity"
+            android:label="@string/title_activity_neuigkeiten_detail"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppThemeNeuigkeiten.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="gvapp.diplomprojekt.at.gv_appandroid.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

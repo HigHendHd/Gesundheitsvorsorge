@@ -81,4 +81,5 @@
     <string name="vorteile">Vorteile</string>
     <string name="nachteile">Nachteile</string>
     <string name="fazit">Fazit</string>
+    <string name="title_activity_neuigkeiten_detail">NeuigkeitenDetailActivity</string>
 </resources>

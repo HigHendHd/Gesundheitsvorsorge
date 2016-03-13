@@ -3,6 +3,7 @@ package gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten.Liste;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import java.io.InputStream;
 import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.Liste;
 import gvapp.diplomprojekt.at.gv_appandroid.Daten.Constants;
 import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadXmlTask;
+import gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten.Details.NeuigkeitenDetailActivity;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
 /**
@@ -32,9 +34,9 @@ public class NeuigkeitenListe extends Liste {
 
     @Override
     public void itemClicked(View v, int position) {
-        /*Intent intent = new Intent(getActivity(), RezepteDetailActivity.class);
-        intent.putExtra(Constants.INTENT_REZEPTE_URL, eintraege.get(position).getLisURL());
-        startActivity(intent);*/
+        Intent intent = new Intent(getActivity(), NeuigkeitenDetailActivity.class);
+        intent.putExtra(Constants.INTENT_NEWS_URL, eintraege.get(position).getLisURL());
+        startActivity(intent);
     }
 
     @Override
