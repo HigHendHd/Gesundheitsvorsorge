@@ -1,4 +1,4 @@
-package gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten;
+package gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten.Liste;
 
 import android.util.Xml;
 

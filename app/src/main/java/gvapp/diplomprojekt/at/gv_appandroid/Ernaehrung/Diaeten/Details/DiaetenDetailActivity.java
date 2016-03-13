@@ -3,11 +3,18 @@ package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Diaeten.Details;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
 import java.io.InputStream;
 
 import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.DetailActivity;
 import gvapp.diplomprojekt.at.gv_appandroid.Daten.Constants;
+import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadImageTask;
 import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadXmlTask;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
@@ -33,7 +40,7 @@ public class DiaetenDetailActivity extends DetailActivity implements DownloadXml
 
     @Override
     public void xmlDownloaded(InputStream result) {
-        /*if (result != null) {
+        if (result != null) {
             try {
                 diaet = new DiaetenXmlParser().parse(result);
             } catch (XmlPullParserException e) {
@@ -41,28 +48,27 @@ public class DiaetenDetailActivity extends DetailActivity implements DownloadXml
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            getSupportActionBar().setTitle(diaet.getName() + "");
-
-            if (diaet.getBildUrl() != null) {
-                new DownloadImageTask(((ImageView) findViewById(R.id.ivImage)),
-                        ((ProgressBar) findViewById(R.id.pbProgress)))
-                        .execute(diaet.getBildUrl());
-            }
-
-            ((TextView) findViewById(R.id.tvInfo)).setText(diaet.getInfo());
-
-            ((TextView) findViewById(R.id.tvErklaerung)).setText(diaet.getErklaerung());
-
-            ((TextView) findViewById(R.id.tvVorteile)).setText(diaet.getVorteile());
-
-            ((TextView) findViewById(R.id.tvNachteile)).setText(diaet.getNachteile());
-
-            ((TextView) findViewById(R.id.tvFazit)).setText(diaet.getFazit());
-        }*/
+        }
     }
 
     @Override
     public void fillData() {
+        getSupportActionBar().setTitle(diaet.getName() + "");
 
+        if (diaet.getBildUrl() != null) {
+            new DownloadImageTask(((ImageView) findViewById(R.id.ivImage)),
+                    ((ProgressBar) findViewById(R.id.pbProgress)))
+                    .execute(diaet.getBildUrl());
+        }
+
+        ((TextView) findViewById(R.id.tvInfo)).setText(diaet.getInfo());
+
+        ((TextView) findViewById(R.id.tvErklaerung)).setText(diaet.getErklaerung());
+
+        ((TextView) findViewById(R.id.tvVorteile)).setText(diaet.getVorteile());
+
+        ((TextView) findViewById(R.id.tvNachteile)).setText(diaet.getNachteile());
+
+        ((TextView) findViewById(R.id.tvFazit)).setText(diaet.getFazit());
     }
 }

@@ -28,7 +28,7 @@ import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.Liste.Restaur
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.Liste.RezepteListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Karte.AerzteFinderFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Liste.AerzteListe;
-import gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten.NeuigkeitenListe;
+import gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten.Liste.NeuigkeitenListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Notrufe.NotrufListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Sport.Sportstaetten.Karte.SportstaettenFinderFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.Sport.Sportstaetten.Liste.SportstaettenListe;
