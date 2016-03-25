@@ -33,8 +33,7 @@ public class AlarmManagerBroadcastReciever extends BroadcastReceiver {
         AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(context, AlarmManagerBroadcastReciever.class);
         PendingIntent pi = PendingIntent.getBroadcast(context, 0, intent, 0);
-        //Nach ca 60 Sekundovices
-
+        //Nach einiger Zeit
         am.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(),
                 TrinkNotification.calcTimeFrame(), pi);
     }
