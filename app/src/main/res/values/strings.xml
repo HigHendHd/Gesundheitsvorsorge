@@ -85,7 +85,6 @@
     <string name="title_activity_sportstaetten_detail">SportstaettenDetailActivity</string>
     <string name="kategorie">Kategorie</string>
     <string name="bewertung">Bewertung</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fortschritt">Fortschritt</string>
 </resources>

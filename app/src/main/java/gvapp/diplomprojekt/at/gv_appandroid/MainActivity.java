@@ -26,6 +26,7 @@ import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.KFA_Rechner.KfaFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.Karte.RestaurantFinderFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.Liste.RestaurantListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.Liste.RezepteListe;
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Trinkerinnerung.TrinkerinnerungFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Karte.AerzteFinderFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Liste.AerzteListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten.Liste.NeuigkeitenListe;
@@ -202,6 +203,13 @@ public class MainActivity extends AppCompatActivity {
                 } else if (position == 9) {
                     DiaetenListe fragment = new DiaetenListe();
                     ApplyColor.ApplyColorErnaehrung(result, ctx, R.string.diaeten);
+                    fragmentTransaction.replace(R.id.fragment_container, fragment);
+                    fragmentTransaction.commit();
+
+                    return false;
+                } else if (position == 10) {
+                    TrinkerinnerungFragment fragment = new TrinkerinnerungFragment();
+                    ApplyColor.ApplyColorErnaehrung(result, ctx, R.string.trinkerinnerung);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
                     fragmentTransaction.commit();
 

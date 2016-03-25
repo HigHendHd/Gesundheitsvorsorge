@@ -1,6 +1,7 @@
 package gvapp.diplomprojekt.at.gv_appandroid.Basisklassen;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,6 +27,7 @@ public class Liste extends Fragment implements ListenAdapter.ClickListener, Down
     protected List retList;
     protected List<ListenEintrag> eintraege = new ArrayList<ListenEintrag>();
     protected RecyclerView.Adapter mAdapter;
+    Context ctx;
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     private ProgressBar prgBar;
@@ -43,6 +45,8 @@ public class Liste extends Fragment implements ListenAdapter.ClickListener, Down
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_liste, container, false);
+
+        ctx = getActivity();
 
         prgBar = (ProgressBar) view.findViewById(R.id.pbProgress);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
@@ -91,8 +95,10 @@ public class Liste extends Fragment implements ListenAdapter.ClickListener, Down
         try {
             eintraege.addAll(retList);
         } catch (Exception ex) {
-            Snackbar.make(getView(), getActivity().getString(R.string.keininternet),
-                    Snackbar.LENGTH_INDEFINITE).show();
+            if (getView() != null && ctx != null) {
+                Snackbar.make(getView(), ctx.getString(R.string.keininternet),
+                        Snackbar.LENGTH_INDEFINITE).show();
+            }
         }
         mAdapter.notifyDataSetChanged();
     }
