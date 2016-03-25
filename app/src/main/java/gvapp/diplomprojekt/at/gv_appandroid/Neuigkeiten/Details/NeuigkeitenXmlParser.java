@@ -42,7 +42,7 @@ public class NeuigkeitenXmlParser {
                 neuigkeit.setName(readTag(parser, name));
             } else if (name.equals("bild")) {
                 neuigkeit.setBildUrl(readTag(parser, name));
-            } else if (name.equals("test")) {
+            } else if (name.equals("text")) {
                 neuigkeit.setText(readTag(parser, name));
             } else {
                 skip(parser);

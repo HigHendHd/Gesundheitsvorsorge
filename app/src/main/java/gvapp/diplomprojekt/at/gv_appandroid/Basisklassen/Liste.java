@@ -2,6 +2,7 @@ package gvapp.diplomprojekt.at.gv_appandroid.Basisklassen;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -87,7 +88,12 @@ public class Liste extends Fragment implements ListenAdapter.ClickListener, Down
     public void fillData() {
         dataLoaded();
         eintraege.clear();
-        eintraege.addAll(retList);
+        try {
+            eintraege.addAll(retList);
+        } catch (Exception ex) {
+            Snackbar.make(getView(), getActivity().getString(R.string.keininternet),
+                    Snackbar.LENGTH_INDEFINITE).show();
+        }
         mAdapter.notifyDataSetChanged();
     }
 }
