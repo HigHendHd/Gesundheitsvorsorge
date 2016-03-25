@@ -82,4 +82,7 @@
     <string name="nachteile">Nachteile</string>
     <string name="fazit">Fazit</string>
     <string name="title_activity_neuigkeiten_detail">NeuigkeitenDetailActivity</string>
+    <string name="title_activity_sportstaetten_detail">SportstaettenDetailActivity</string>
+    <string name="kategorie">Kategorie</string>
+    <string name="bewertung">Bewertung</string>
 </resources>
