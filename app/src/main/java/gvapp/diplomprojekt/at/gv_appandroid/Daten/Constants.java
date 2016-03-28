@@ -40,4 +40,6 @@ public abstract class Constants {
     public static final int DATA_TYPE_AERZTE = 1;
     public static final int DATA_TYPE_RESTAURANTS = 2;
     public static final int DATA_TYPE_SPORTSTAETTEN = 3;
+
+    public static final String TRINKERINNERUNG_FILENAME = "trinkerinnerung";
 }

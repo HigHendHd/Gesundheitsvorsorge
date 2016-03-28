@@ -1,11 +1,14 @@
 package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Trinkerinnerung;
 
 
+import android.animation.ObjectAnimator;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.ProgressBar;
 
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
@@ -28,7 +31,15 @@ public class TrinkerinnerungFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        return inflater.inflate(R.layout.fragment_trinkerinnerung, container, false);
+        View view = inflater.inflate(R.layout.fragment_trinkerinnerung, container, false);
+
+        ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 0, 500); // see this max value coming back here, we animale towards that value
+        animation.setDuration(5000); //in milliseconds
+        animation.setInterpolator(new DecelerateInterpolator());
+        animation.start();
+
+        return view;
     }
 
 }

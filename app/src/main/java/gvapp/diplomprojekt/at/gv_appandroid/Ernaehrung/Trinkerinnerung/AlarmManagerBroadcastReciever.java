@@ -13,7 +13,7 @@ import android.os.PowerManager;
  */
 public class AlarmManagerBroadcastReciever extends BroadcastReceiver {
 
-    final public static String ONE_TIME = "onetime";
+    TrinkNotification trinkNotification;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -23,19 +23,22 @@ public class AlarmManagerBroadcastReciever extends BroadcastReceiver {
         wl.acquire();
 
         //Hier wird das Processing erledigt
-        TrinkNotification.makeNotification(context);
+        trinkNotification.makeNotification(context);
 
         //Wakelock wieder loslassen
         wl.release();
     }
 
-    public void setAlarm(Context context) {
+    public void setAlarm(Context context, int startTime, int endTime, int glasgroesse, double trinkmenge) {
+        trinkNotification = new TrinkNotification(context);
         AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(context, AlarmManagerBroadcastReciever.class);
         PendingIntent pi = PendingIntent.getBroadcast(context, 0, intent, 0);
         //Nach einiger Zeit
+        trinkNotification.writeVals(startTime, endTime, glasgroesse, trinkmenge);
+
         am.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(),
-                TrinkNotification.calcTimeFrame(), pi);
+                trinkNotification.calcTimeFrame(), pi);
     }
 
     public void cancelAlarm(Context context) {
