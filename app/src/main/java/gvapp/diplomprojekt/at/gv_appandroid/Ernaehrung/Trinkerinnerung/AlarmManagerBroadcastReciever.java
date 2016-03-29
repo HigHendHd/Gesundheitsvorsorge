@@ -34,6 +34,7 @@ public class AlarmManagerBroadcastReciever extends BroadcastReceiver {
     }
 
     public void setAlarm(Context context) {
+        saver = new TrinkerinnerungSettingSaver(context);
         AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(context, AlarmManagerBroadcastReciever.class);
         PendingIntent pi = PendingIntent.getBroadcast(context, 0, intent, 0);

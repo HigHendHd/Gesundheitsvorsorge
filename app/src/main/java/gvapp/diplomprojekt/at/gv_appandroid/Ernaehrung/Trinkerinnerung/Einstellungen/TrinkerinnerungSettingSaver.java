@@ -152,11 +152,9 @@ public class TrinkerinnerungSettingSaver {
     }
 
     public int calcTimeFrame() {
-        int retVal = (int) ((end.get(Calendar.HOUR_OF_DAY) - start.get(Calendar.HOUR_OF_DAY) +
+        return (int) ((float) (((end.get(Calendar.HOUR_OF_DAY) - start.get(Calendar.HOUR_OF_DAY) +
                 Math.abs(end.get(Calendar.MINUTE) - start.get(Calendar.MONTH))) /
-                ((1000 * trinkmenge) / glasgroesse)) * 1000 * 60 * 60;
-        Log.v("TimeFrame:", retVal + "");
-        return retVal;
+                ((1000 * trinkmenge) / glasgroesse)) * 1000 * 60 * 60));
     }
 
     private boolean readVals() {
