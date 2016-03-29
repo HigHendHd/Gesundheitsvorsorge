@@ -8,12 +8,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.PowerManager;
 
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Trinkerinnerung.Einstellungen.TrinkerinnerungSettingSaver;
+
 /**
  * Created by deathkid535 on 3/25/16.
  */
 public class AlarmManagerBroadcastReciever extends BroadcastReceiver {
 
-    TrinkNotification trinkNotification;
+    TrinkerinnerungSettingSaver saver;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -23,22 +25,21 @@ public class AlarmManagerBroadcastReciever extends BroadcastReceiver {
         wl.acquire();
 
         //Hier wird das Processing erledigt
+        saver = new TrinkerinnerungSettingSaver(context);
+        TrinkNotification trinkNotification = new TrinkNotification(saver);
         trinkNotification.makeNotification(context);
 
         //Wakelock wieder loslassen
         wl.release();
     }
 
-    public void setAlarm(Context context, int startTime, int endTime, int glasgroesse, double trinkmenge) {
-        trinkNotification = new TrinkNotification(context);
+    public void setAlarm(Context context) {
         AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(context, AlarmManagerBroadcastReciever.class);
         PendingIntent pi = PendingIntent.getBroadcast(context, 0, intent, 0);
-        //Nach einiger Zeit
-        trinkNotification.writeVals(startTime, endTime, glasgroesse, trinkmenge);
 
         am.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(),
-                trinkNotification.calcTimeFrame(), pi);
+                saver.calcTimeFrame(), pi);
     }
 
     public void cancelAlarm(Context context) {

@@ -29,8 +29,7 @@
             android:id="@+id/swTrinkerinnerungOnOff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="right"
-            android:onClick="onSwitched" />
+            android:gravity="right" />
 
     </LinearLayout>
 
@@ -47,9 +46,11 @@
             android:text="@string/taeglicheMenge" />
 
         <EditText
+            android:id="@+id/etTrinkmenge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="3"
+            android:gravity="center"
             android:inputType="numberDecimal"
             android:maxLength="3" />
 
@@ -68,9 +69,11 @@
             android:text="@string/glasgroesse" />
 
         <EditText
+            android:id="@+id/etGlasgroesse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="3"
+            android:gravity="center"
             android:inputType="number"
             android:maxLength="3" />
 
@@ -100,6 +103,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="5"
+            android:gravity="center"
             android:onClick="openTimePicker" />
 
         <TextView
@@ -113,6 +117,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="5"
+            android:gravity="center"
             android:onClick="openTimePicker" />
 
     </LinearLayout>

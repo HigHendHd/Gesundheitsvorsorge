@@ -16,6 +16,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ProgressBar;
 
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Trinkerinnerung.Einstellungen.TrinkerinnerugSettingActivity;
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Trinkerinnerung.Einstellungen.TrinkerinnerungSettingSaver;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
 /**
@@ -46,9 +47,12 @@ public class TrinkerinnerungFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_trinkerinnerung, container, false);
 
+        TrinkerinnerungSettingSaver saver = new TrinkerinnerungSettingSaver(getActivity());
+
         ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
-        ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 0, 96); // see this max value coming back here, we animale towards that value
-        animation.setDuration(5000); //in milliseconds
+        ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 0, (int)
+                ((saver.getGetrunken() / saver.getTrinkmenge()) * 100)); // see this max value coming back here, we animate towards that value
+        animation.setDuration(2000); //in milliseconds
         animation.setInterpolator(new DecelerateInterpolator());
         animation.start();
 

@@ -12,6 +12,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import gvapp.diplomprojekt.at.gv_appandroid.Daten.Constants;
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Trinkerinnerung.AlarmManagerBroadcastReciever;
 
 /**
  * Created by Dennis on 29.03.2016.
@@ -54,6 +55,8 @@ public class TrinkerinnerungSettingSaver {
     public void setAktiv(boolean aktiv) {
         this.aktiv = aktiv;
         writeVals();
+        if (aktiv) new AlarmManagerBroadcastReciever().setAlarm(ctx.getApplicationContext());
+        else new AlarmManagerBroadcastReciever().cancelAlarm(ctx.getApplicationContext());
     }
 
     public Context getCtx() {
@@ -117,7 +120,8 @@ public class TrinkerinnerungSettingSaver {
         FileOutputStream outputStream;
 
         try {
-            outputStream = ctx.openFileOutput(Constants.TRINKERINNERUNG_FILENAME, Context.MODE_PRIVATE);
+            outputStream = ctx.openFileOutput(Constants.TRINKERINNERUNG_FILENAME,
+                    Context.MODE_PRIVATE);
             outputStream.write(string.getBytes());
             outputStream.close();
         } catch (Exception ex) {
@@ -125,22 +129,34 @@ public class TrinkerinnerungSettingSaver {
         }
     }
 
-    public Calendar getEnd() {
-        return end;
+    public String getEnd() {
+        return String.format("%02d", end.get(Calendar.HOUR_OF_DAY)) + ":" +
+                String.format("%02d", end.get(Calendar.MINUTE));
     }
 
-    public void setEnd(Calendar end) {
-        this.end = end;
+    public void setEnd(int hours, int minutes) {
+        end.set(Calendar.HOUR_OF_DAY, hours);
+        end.set(Calendar.MINUTE, minutes);
         writeVals();
     }
 
-    public Calendar getStart() {
-        return start;
+    public String getStart() {
+        return String.format("%02d", start.get(Calendar.HOUR_OF_DAY)) + ":" +
+                String.format("%02d", start.get(Calendar.MINUTE));
     }
 
-    public void setStart(Calendar start) {
-        this.start = start;
+    public void setStart(int hours, int minutes) {
+        start.set(Calendar.HOUR_OF_DAY, hours);
+        start.set(Calendar.MINUTE, minutes);
         writeVals();
+    }
+
+    public int calcTimeFrame() {
+        int retVal = (int) ((end.get(Calendar.HOUR_OF_DAY) - start.get(Calendar.HOUR_OF_DAY) +
+                Math.abs(end.get(Calendar.MINUTE) - start.get(Calendar.MONTH))) /
+                ((1000 * trinkmenge) / glasgroesse)) * 1000 * 60 * 60;
+        Log.v("TimeFrame:", retVal + "");
+        return retVal;
     }
 
     private boolean readVals() {
@@ -160,7 +176,6 @@ public class TrinkerinnerungSettingSaver {
         } catch (IOException ex) {
             ex.printStackTrace();
             return false;
-
         }
 
         //Dateistruktur: 0:aktiv[1(0)];1:trinkmenge[3];2:getrunken[0];3:glasgroesse[250];4:start[08:00];5:end[20:00]
