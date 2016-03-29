@@ -2,18 +2,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Space
+        android:id="@+id/space"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
     <TextView
+        android:id="@+id/tvFortschritt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="" />
+        android:layout_below="@id/space"
+        android:layout_centerHorizontal="true"
+        android:text="2,9 von 3l getrunken!"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvProzent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tvFortschritt"
+        android:layout_centerHorizontal="true"
+        android:text="96%"
+        android:textSize="50sp" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:progress="0"
         android:progressDrawable="@drawable/circular"
         android:rotation="270" />

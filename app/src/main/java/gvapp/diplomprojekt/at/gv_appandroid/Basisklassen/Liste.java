@@ -36,10 +36,6 @@ public class Liste extends Fragment implements ListenAdapter.ClickListener, Down
         // Required empty public constructor
     }
 
-    public void setEintraege(InputStream result) {
-
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

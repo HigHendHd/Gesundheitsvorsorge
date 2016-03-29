@@ -84,7 +84,17 @@
                 android:value="gvapp.diplomprojekt.at.gv_appandroid.MainActivity" />
         </activity>
 
-        <receiver android:name=".Ernaehrung.Trinkerinnerung.AlarmManagerBroadcastReciever"></receiver>
+        <receiver android:name=".Ernaehrung.Trinkerinnerung.AlarmManagerBroadcastReciever" />
+
+        <activity
+            android:name=".Ernaehrung.Trinkerinnerung.Einstellungen.TrinkerinnerugSettingActivity"
+            android:label="@string/title_activity_trinkerinnerug_setting"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppThemeNeuigkeiten.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="gvapp.diplomprojekt.at.gv_appandroid.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
