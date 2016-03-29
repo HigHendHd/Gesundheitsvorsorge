@@ -15,7 +15,6 @@ import android.widget.EditText;
 import android.widget.Switch;
 
 import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.DetailActivity;
-import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Trinkerinnerung.TrinkNotification;
 import gvapp.diplomprojekt.at.gv_appandroid.PickerFragments.TimePickerFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
@@ -75,8 +74,6 @@ public class TrinkerinnerugSettingActivity extends DetailActivity implements
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 saver.setAktiv(isChecked);
-                TrinkNotification notification = new TrinkNotification(saver);
-                notification.makeNotification(ctx);
             }
         });
 
