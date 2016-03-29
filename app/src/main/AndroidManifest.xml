@@ -90,7 +90,7 @@
             android:name=".Ernaehrung.Trinkerinnerung.Einstellungen.TrinkerinnerugSettingActivity"
             android:label="@string/title_activity_trinkerinnerug_setting"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppThemeNeuigkeiten.NoActionBar">
+            android:theme="@style/AppThemeErnaehrung">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="gvapp.diplomprojekt.at.gv_appandroid.MainActivity" />

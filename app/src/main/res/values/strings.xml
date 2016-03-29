@@ -88,4 +88,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fortschritt">Fortschritt</string>
     <string name="title_activity_trinkerinnerug_setting">Einstellungen Trinkerinnerung</string>
+    <string name="taeglicheMenge">Tägliche Menge in l (3l empfohlen):</string>
+    <string name="glasgroesse">Glasgröße eingeben in ml (Durchschnitt 250 ml):</string>
+    <string name="ruhezeiten">Ruhezeiten</string>
+    <string name="von">Von </string>
+    <string name="bis">bis</string>
 </resources>

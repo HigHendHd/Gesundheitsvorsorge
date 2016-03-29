@@ -3,15 +3,19 @@ package gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Trinkerinnerung;
 
 import android.animation.ObjectAnimator;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ProgressBar;
 
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Trinkerinnerung.Einstellungen.TrinkerinnerugSettingActivity;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
 /**
@@ -43,7 +47,7 @@ public class TrinkerinnerungFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_trinkerinnerung, container, false);
 
         ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
-        ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 0, 100); // see this max value coming back here, we animale towards that value
+        ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 0, 96); // see this max value coming back here, we animale towards that value
         animation.setDuration(5000); //in milliseconds
         animation.setInterpolator(new DecelerateInterpolator());
         animation.start();
@@ -51,4 +55,16 @@ public class TrinkerinnerungFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Log.d("Log", item.getItemId() + " - Is ID");
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                Intent intent = new Intent(getActivity(), TrinkerinnerugSettingActivity.class);
+                getActivity().startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }

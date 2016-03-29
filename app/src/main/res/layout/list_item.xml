@@ -18,7 +18,8 @@
             android:id="@+id/tvListItemTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Breaking News"
+            android:ellipsize="end"
+            android:singleLine="true"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -26,14 +27,15 @@
             android:id="@+id/tvListItemSubTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
             android:paddingTop="12sp"
-            android:text="Sack Reis umgefallen"
             android:textSize="16sp" />
 
     </LinearLayout>
 
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="match_parent"
         android:layout_gravity="right">
 
