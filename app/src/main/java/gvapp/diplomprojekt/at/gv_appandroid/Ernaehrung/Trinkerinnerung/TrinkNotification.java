@@ -34,6 +34,11 @@ public class TrinkNotification {
 
     public TrinkNotification(Context ctx) {
         this.ctx = ctx;
+        try {
+            readVals();
+        } catch (Exception ex) {
+
+        }
     }
 
     public int calcTimeFrame() {
