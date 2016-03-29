@@ -24,6 +24,8 @@ import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.KFA_Rechner.KfaFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.Karte.RestaurantFinderFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Restaurants.Liste.RestaurantListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Rezepte.Liste.RezepteListe;
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Trinkerinnerung.AlarmManagerBroadcastReciever;
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Trinkerinnerung.Einstellungen.TrinkerinnerungSettingSaver;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Trinkerinnerung.TrinkerinnerungFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Karte.AerzteFinderFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.Gesundheit.Liste.AerzteListe;
@@ -44,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        if (new TrinkerinnerungSettingSaver(this).isAktiv() && !AlarmManagerBroadcastReciever.IS_ACTIVE) {
+            new AlarmManagerBroadcastReciever().setAlarm(this);
+        }
 
         final Context ctx = this;
 

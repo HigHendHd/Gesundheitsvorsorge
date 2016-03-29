@@ -127,6 +127,10 @@ public class TrinkerinnerungSettingSaver {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+
+        AlarmManagerBroadcastReciever alarm = new AlarmManagerBroadcastReciever();
+        alarm.cancelAlarm(ctx);
+        alarm.setAlarm(ctx);
     }
 
     public String getEnd() {

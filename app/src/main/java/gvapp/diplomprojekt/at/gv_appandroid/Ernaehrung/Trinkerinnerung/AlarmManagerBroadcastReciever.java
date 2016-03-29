@@ -15,6 +15,7 @@ import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Trinkerinnerung.Einstellu
  */
 public class AlarmManagerBroadcastReciever extends BroadcastReceiver {
 
+    public static boolean IS_ACTIVE = false;
     TrinkerinnerungSettingSaver saver;
 
     @Override
@@ -39,6 +40,8 @@ public class AlarmManagerBroadcastReciever extends BroadcastReceiver {
         Intent intent = new Intent(context, AlarmManagerBroadcastReciever.class);
         PendingIntent pi = PendingIntent.getBroadcast(context, 0, intent, 0);
 
+        IS_ACTIVE = true;
+
         am.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(),
                 saver.calcTimeFrame(), pi);
     }
@@ -48,5 +51,7 @@ public class AlarmManagerBroadcastReciever extends BroadcastReceiver {
         PendingIntent sender = PendingIntent.getBroadcast(context, 0, intent, 0);
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmManager.cancel(sender);
+
+        IS_ACTIVE = false;
     }
 }
