@@ -36,11 +36,11 @@ public class TimePickerFragment extends DialogFragment
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         if (timeSetter != null) {
             timeSetter.timeReturned(String.format("%02d", hourOfDay) + ":" +
-                    String.format("%02d", minute), hourOfDay, minute);
+                    String.format("%02d", minute));
         }
     }
 
     public interface TimeSetter {
-        void timeReturned(String time, int hours, int minutes);
+        void timeReturned(String time);
     }
 }

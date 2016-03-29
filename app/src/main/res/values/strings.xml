@@ -93,4 +93,5 @@
     <string name="ruhezeiten">Ruhezeiten</string>
     <string name="von">Von </string>
     <string name="bis">bis</string>
+    <string name="fehleruhrzeit">Die Anfangszeit muss vor der Endzeit liegen.</string>
 </resources>
