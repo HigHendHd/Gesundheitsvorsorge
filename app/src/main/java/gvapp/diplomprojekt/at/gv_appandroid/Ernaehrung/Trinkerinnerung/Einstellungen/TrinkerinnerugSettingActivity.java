@@ -26,6 +26,8 @@ public class TrinkerinnerugSettingActivity extends DetailActivity implements
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        TrinkerinnerungSettingSaver saver = new TrinkerinnerungSettingSaver(this);
+
         etStartTime = (Button) findViewById(R.id.etStartTime);
         etStartTime.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override

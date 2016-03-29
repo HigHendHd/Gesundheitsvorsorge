@@ -41,5 +41,6 @@ public abstract class Constants {
     public static final int DATA_TYPE_RESTAURANTS = 2;
     public static final int DATA_TYPE_SPORTSTAETTEN = 3;
 
-    public static final String TRINKERINNERUNG_FILENAME = "trinkerinnerung";
+    public static final String TRINKERINNERUNG_FILENAME = "TrinkErinnerungConfig.csv";
+    public static final String FILE_SEPERATOR = ";";
 }
