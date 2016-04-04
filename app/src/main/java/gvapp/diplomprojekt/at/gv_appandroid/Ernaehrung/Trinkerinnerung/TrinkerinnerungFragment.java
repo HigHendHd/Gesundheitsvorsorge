@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Trinkerinnerung.Einstellungen.TrinkerinnerungSettingActivity;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Trinkerinnerung.Einstellungen.TrinkerinnerungSettingSaver;
@@ -48,6 +49,12 @@ public class TrinkerinnerungFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_trinkerinnerung, container, false);
 
         TrinkerinnerungSettingSaver saver = new TrinkerinnerungSettingSaver(getActivity());
+
+        ((TextView) view.findViewById(R.id.tvProzent)).setText((saver.getGetrunken()
+                / saver.getTrinkmenge()) * 100 + "%");
+
+        ((TextView) view.findViewById(R.id.tvFortschritt)).setText(saver.getGetrunken() + " von " +
+                saver.getTrinkmenge() + " getrunken!");
 
         ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 0, (int)
