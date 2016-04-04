@@ -17,6 +17,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeNeuigkeiten.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,6 +29,7 @@
             android:name=".Ernaehrung.Rezepte.Details.RezepteDetailActivity"
             android:label="@string/title_activity_rezepte_detail_ansicht"
             android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeErnaehrung">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -37,6 +39,7 @@
             android:name=".Ernaehrung.Restaurants.Details.RestaurantDetailActivity"
             android:label="@string/title_activity_rezepte_detail_ansicht"
             android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeErnaehrung">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -46,6 +49,7 @@
             android:name=".Gesundheit.Details.AerzteDetailActivity"
             android:label="@string/title_activity_aerzte_detail"
             android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeGesundheit">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -60,6 +64,7 @@
             android:name=".Ernaehrung.Diaeten.Details.DiaetenDetailActivity"
             android:label="@string/title_activity_diaeten_detail"
             android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeErnaehrung">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -69,6 +74,7 @@
             android:name=".Neuigkeiten.Details.NeuigkeitenDetailActivity"
             android:label="@string/title_activity_neuigkeiten_detail"
             android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeNeuigkeiten.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -78,6 +84,7 @@
             android:name=".Sport.Sportstaetten.Details.SportstaettenDetailActivity"
             android:label="@string/title_activity_sportstaetten_detail"
             android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeSport">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -90,6 +97,7 @@
             android:name=".Ernaehrung.Trinkerinnerung.Einstellungen.TrinkerinnerungSettingActivity"
             android:label="@string/title_activity_trinkerinnerug_setting"
             android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeErnaehrung">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -99,6 +107,7 @@
             android:name=".Sport.Uebungen.Details.UebungsDetailActivity"
             android:label="@string/title_activity_uebungs_detail"
             android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeSport">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
