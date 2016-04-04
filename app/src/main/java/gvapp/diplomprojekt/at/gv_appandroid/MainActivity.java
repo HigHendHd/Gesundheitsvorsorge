@@ -128,21 +128,8 @@ public class MainActivity extends AppCompatActivity {
                                 .withIcon(GoogleMaterial.Icon.gmd_run)
                                 .withSelectedIconColorRes(R.color.Sport500)
                                 .withSelectedTextColorRes(R.color.Sport500),
-                        new PrimaryDrawerItem().withName(R.string.schrittzaehler) //pos: 18
-                                .withIcon(GoogleMaterial.Icon.gmd_directions_run)
-                                .withSelectedIconColorRes(R.color.Sport500)
-                                .withSelectedTextColorRes(R.color.Sport500),
-                        new PrimaryDrawerItem().withName(R.string.wettbewerb) //pos: 19
-                                .withIcon(GoogleMaterial.Icon.gmd_assignment)
-                                .withSelectedIconColorRes(R.color.Sport500)
-                                .withSelectedTextColorRes(R.color.Sport500),
-                        new PrimaryDrawerItem().withName(R.string.bestenliste) //pos: 20
-                                .withIcon(GoogleMaterial.Icon.gmd_nature_people)
-                                .withSelectedIconColorRes(R.color.Sport500)
-                                .withSelectedTextColorRes(R.color.Sport500),
-
                         new SectionDrawerItem().withName(R.string.notruf),
-                        new PrimaryDrawerItem().withName(R.string.notrufe) //pos: 22
+                        new PrimaryDrawerItem().withName(R.string.notrufe) //pos: 19
                                 .withIcon(GoogleMaterial.Icon.gmd_phone)
                                 .withSelectedIconColorRes(R.color.Notruf500)
                                 .withSelectedTextColorRes(R.color.Notruf700)
@@ -263,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
                     fragmentTransaction.commit();
 
                     return false;
-                } else if (position == 22) {
+                } else if (position == 19) {
                     NotrufListe fragment = new NotrufListe();
                     ApplyColor.ApplyColorNotruf(result, ctx, R.string.notrufe);
                     fragmentTransaction.replace(R.id.fragment_container, fragment);
