@@ -33,8 +33,8 @@ import gvapp.diplomprojekt.at.gv_appandroid.Neuigkeiten.Liste.NeuigkeitenListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Notrufe.NotrufListe;
 import gvapp.diplomprojekt.at.gv_appandroid.Sport.Sportstaetten.Karte.SportstaettenFinderFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.Sport.Sportstaetten.Liste.SportstaettenListe;
-import gvapp.diplomprojekt.at.gv_appandroid.Sport.Trainingsplaene.TrainingsplanListe;
-import gvapp.diplomprojekt.at.gv_appandroid.Sport.Uebungen.UebungsListe;
+import gvapp.diplomprojekt.at.gv_appandroid.Sport.Trainingsplaene.Liste.TrainingsplanListe;
+import gvapp.diplomprojekt.at.gv_appandroid.Sport.Uebungen.Liste.UebungsListe;
 
 public class MainActivity extends AppCompatActivity {
 

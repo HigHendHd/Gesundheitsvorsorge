@@ -1,4 +1,4 @@
-package gvapp.diplomprojekt.at.gv_appandroid.Sport.Uebungen;
+package gvapp.diplomprojekt.at.gv_appandroid.Sport.Uebungen.Liste;
 
 import android.util.Xml;
 

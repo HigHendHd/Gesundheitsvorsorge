@@ -95,6 +95,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="gvapp.diplomprojekt.at.gv_appandroid.MainActivity" />
         </activity>
+        <activity
+            android:name=".Sport.Uebungen.Details.UebungsDetailActivity"
+            android:label="@string/title_activity_uebungs_detail"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppThemeSport">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="gvapp.diplomprojekt.at.gv_appandroid.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

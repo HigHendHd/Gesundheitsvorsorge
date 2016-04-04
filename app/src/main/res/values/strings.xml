@@ -94,4 +94,7 @@
     <string name="von">Von </string>
     <string name="bis">bis</string>
     <string name="fehleruhrzeit">Die Anfangszeit muss vor der Endzeit liegen.</string>
+    <string name="title_activity_uebungs_detail">UebungsDetailActivity</string>
+    <string name="muskelgruppe">Muskelgruppe</string>
+    <string name="beschreibung">Beschreibung</string>
 </resources>
