@@ -67,6 +67,8 @@ public class SportstaettenDetailActivity extends DetailActivity implements Downl
 
         ((TextView) findViewById(R.id.tvInfo)).setText(sportstaette.getInfo() + "");
 
+        ((TextView) findViewById(R.id.tvOeffnungszeiten)).setText(sportstaette.getOeffnungszeiten() + "");
+
         ((TextView) findViewById(R.id.tvWeitereInfos)).setText(sportstaette.getWeitereinfos() + "");
 
         ((Button) findViewById(R.id.bAdresse)).setText(sportstaette.getAdressString() + "");
