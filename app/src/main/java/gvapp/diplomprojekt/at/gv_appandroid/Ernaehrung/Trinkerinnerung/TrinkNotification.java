@@ -33,8 +33,8 @@ public class TrinkNotification {
             NotificationCompat.Builder mBuilder =
                     new NotificationCompat.Builder(context)
                             .setSmallIcon(R.drawable.ic_local_drink_black_24dp)
-                            .setContentTitle("Trink wos")
-                            .setContentText("Oida")
+                            .setContentTitle("Trinkerinnerung GV-App")
+                            .setContentText("Bitte trinken Sie ein Glas Wasser.")
                             .setAutoCancel(true);
 
             Intent resultIntent = new Intent(context, MainActivity.class);
