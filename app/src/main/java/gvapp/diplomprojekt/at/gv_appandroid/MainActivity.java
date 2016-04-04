@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
@@ -143,6 +144,8 @@ public class MainActivity extends AppCompatActivity {
 
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                Log.d("Position", position + "");
 
                 if (position == 1) {
                     NeuigkeitenListe fragment = new NeuigkeitenListe();

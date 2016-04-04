@@ -44,7 +44,7 @@ public class NotrufListe extends Liste {
         eintraege.add(new NotrufNummer().addItem(R.string.servicenummerderpolizei, "059 133", getActivity()));
         eintraege.add(new NotrufNummer().addItem(R.string.hotlinefuervermisstekinder, "116000", getActivity()));
 
-        super.fillData();
+        super.fillNotrufe();
 
         return v;
     }

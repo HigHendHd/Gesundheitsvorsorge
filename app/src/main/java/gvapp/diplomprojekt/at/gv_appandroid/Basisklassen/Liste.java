@@ -98,4 +98,9 @@ public class Liste extends Fragment implements ListenAdapter.ClickListener, Down
         }
         mAdapter.notifyDataSetChanged();
     }
+
+    public void fillNotrufe() {
+        dataLoaded();
+        mAdapter.notifyDataSetChanged();
+    }
 }
