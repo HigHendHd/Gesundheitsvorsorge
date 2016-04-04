@@ -87,7 +87,7 @@
         <receiver android:name=".Ernaehrung.Trinkerinnerung.AlarmManagerBroadcastReciever" />
 
         <activity
-            android:name=".Ernaehrung.Trinkerinnerung.Einstellungen.TrinkerinnerugSettingActivity"
+            android:name=".Ernaehrung.Trinkerinnerung.Einstellungen.TrinkerinnerungSettingActivity"
             android:label="@string/title_activity_trinkerinnerug_setting"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppThemeErnaehrung">

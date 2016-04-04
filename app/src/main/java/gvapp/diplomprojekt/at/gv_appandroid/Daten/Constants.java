@@ -36,6 +36,7 @@ public abstract class Constants {
     public static final String INTENT_AERZTE_URL = "AerzteUrl";
     public static final String INTENT_DIAETEN_URL = "DiaetenUrl";
     public static final String INTENT_NEWS_URL = "DiaetenUrl";
+    public static final String INTENT_SPORTSTAETTEN_URL = "SportstaettenUrl";
 
     public static final int DATA_TYPE_AERZTE = 1;
     public static final int DATA_TYPE_RESTAURANTS = 2;

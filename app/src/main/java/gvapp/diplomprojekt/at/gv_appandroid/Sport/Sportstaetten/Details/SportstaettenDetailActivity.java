@@ -35,7 +35,7 @@ public class SportstaettenDetailActivity extends DetailActivity implements Downl
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         new DownloadXmlTask(this).execute(Constants.URL_BASE + Constants.URL_SPORTSTAETTEN_BASE +
-                getIntent().getStringExtra(Constants.INTENT_AERZTE_URL));
+                getIntent().getStringExtra(Constants.INTENT_SPORTSTAETTEN_URL));
     }
 
     @Override

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Trinkerinnerung.Einstellungen.TrinkerinnerugSettingActivity">
+    tools:context=".Ernaehrung.Trinkerinnerung.Einstellungen.TrinkerinnerungSettingActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

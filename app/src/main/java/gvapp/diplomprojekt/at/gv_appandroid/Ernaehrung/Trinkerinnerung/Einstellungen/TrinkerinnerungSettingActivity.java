@@ -18,7 +18,7 @@ import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.DetailActivity;
 import gvapp.diplomprojekt.at.gv_appandroid.PickerFragments.TimePickerFragment;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
-public class TrinkerinnerugSettingActivity extends DetailActivity implements
+public class TrinkerinnerungSettingActivity extends DetailActivity implements
         TimePickerFragment.TimeSetter {
 
     Button selectedView, etStartTime, etEndTime;

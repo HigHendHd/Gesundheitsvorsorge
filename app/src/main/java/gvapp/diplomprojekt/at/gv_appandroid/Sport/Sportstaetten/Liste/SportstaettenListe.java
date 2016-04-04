@@ -1,6 +1,7 @@
 package gvapp.diplomprojekt.at.gv_appandroid.Sport.Sportstaetten.Liste;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import gvapp.diplomprojekt.at.gv_appandroid.Basisklassen.Liste;
 import gvapp.diplomprojekt.at.gv_appandroid.Daten.Constants;
 import gvapp.diplomprojekt.at.gv_appandroid.DownloadTasks.DownloadXmlTask;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
+import gvapp.diplomprojekt.at.gv_appandroid.Sport.Sportstaetten.Details.SportstaettenDetailActivity;
 
 /**
  * Created by Dennis on 14.11.2015.
@@ -30,9 +32,9 @@ public class SportstaettenListe extends Liste {
 
     @Override
     public void itemClicked(View v, int position) {
-        /*Intent intent = new Intent(getActivity(), RezepteDetailActivity.class);
-        intent.putExtra(Constants.INTENT_REZEPTE_URL, eintraege.get(position).getLisURL());
-        startActivity(intent);*/
+        Intent intent = new Intent(getActivity(), SportstaettenDetailActivity.class);
+        intent.putExtra(Constants.INTENT_SPORTSTAETTEN_URL, eintraege.get(position).getLisURL());
+        startActivity(intent);
     }
 
     @Override

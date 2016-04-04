@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ProgressBar;
 
-import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Trinkerinnerung.Einstellungen.TrinkerinnerugSettingActivity;
+import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Trinkerinnerung.Einstellungen.TrinkerinnerungSettingActivity;
 import gvapp.diplomprojekt.at.gv_appandroid.Ernaehrung.Trinkerinnerung.Einstellungen.TrinkerinnerungSettingSaver;
 import gvapp.diplomprojekt.at.gv_appandroid.R;
 
@@ -64,7 +64,7 @@ public class TrinkerinnerungFragment extends Fragment {
         Log.d("Log", item.getItemId() + " - Is ID");
         switch (item.getItemId()) {
             case R.id.action_settings:
-                Intent intent = new Intent(getActivity(), TrinkerinnerugSettingActivity.class);
+                Intent intent = new Intent(getActivity(), TrinkerinnerungSettingActivity.class);
                 getActivity().startActivity(intent);
                 return true;
             default:
